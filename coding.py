@@ -1,14 +1,15 @@
-
 """
-coding.py - Codificación y decodificación Reed-Solomon RS(8,4).
+coding.py - Codificación y decodificación Reed-Solomon RS(8,4) sobre GF(2^8).
+
+Requiere reedsolo >= 1.0 (RSCodec.decode devuelve tres valores).
 """
 
 from reedsolo import RSCodec, ReedSolomonError
 
-# Parámetros Reed-Solomon RS(8,4)
+# Parámetros Reed-Solomon RS(8,4): 4 bytes de datos + 4 de paridad = 8 bytes (64 bits)
 RS_N = 8
 RS_K = 4
-RS_PARITY = RS_N - RS_K
+RS_PARITY = RS_N - RS_K  # Corrige hasta RS_PARITY // 2 = 2 símbolos (bytes) erróneos
 
 # Inicialización del codificador
 rs = RSCodec(RS_PARITY)
@@ -24,10 +25,10 @@ def encode_rs(data: bytes) -> bytes:
     Raises:
         ValueError: Si el bloque de entrada no tiene exactamente 4 bytes.
     """
-    if len(data) != RS_K: # Comprobamos que la longitud sea correcta con 4 bytes
+    if len(data) != RS_K:
         raise ValueError(f"La trama debe tener exactamente {RS_K} bytes. Longitud recibida: {len(data)}")
 
-    return rs.encode(data)
+    return bytes(rs.encode(data))  # rs.encode devuelve un bytearray; lo pasamos a bytes
 
 
 def decode_rs(encoded_data: bytes) -> bytes:
@@ -41,15 +42,12 @@ def decode_rs(encoded_data: bytes) -> bytes:
         ValueError: Si la longitud del bloque es incorrecta.
         ReedSolomonError: Si no es posible corregir los errores.
     """
+    if len(encoded_data) != RS_N:
+        raise ValueError(f"El bloque codificado debe tener exactamente {RS_N} bytes. Longitud recibida: {len(encoded_data)}")
 
-    if len(encoded_data) != RS_N: # Comprobamos que la longitud sea correcta con 8 bytes
-        raise ValueError(f"El bloque codificado debe tener exactamente {RS_N} bytes.")
-
-    decoded_msg, _, _ = rs.decode(encoded_data) #  RSCodec.decode() devuelve 3 variables
+    decoded_msg, _, _ = rs.decode(encoded_data)  # RSCodec.decode() devuelve 3 valores
 
     if len(decoded_msg) != RS_K:
         raise ReedSolomonError("Longitud inesperada del mensaje recuperado.")
 
     return bytes(decoded_msg)
-
-    

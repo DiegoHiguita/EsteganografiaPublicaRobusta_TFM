@@ -1,78 +1,94 @@
 """
 test_frame.py
-Pruebas unitarias para la construcción, deserialización y conversión binaria de la trama de 32 bits.
+Pruebas unitarias para la construcción, análisis y conversión binaria de la trama.
 """
+import random
 import unittest
-from frame import build_frame, parse_frame, bits_to_bytes, bytes_to_bits, FRAME_SIZE_BYTES, FRAME_SIZE_BITS
+
+from frame import (
+    build_frame, parse_frame, bits_to_bytes, bytes_to_bits,
+    is_valid_version, make_test_id,
+    FRAME_SIZE_BYTES, FRAME_SIZE_BITS, PROTOCOL_VERSION,
+)
+
 
 class TestFrame(unittest.TestCase):
 
     def test_build_and_parse_valid(self):
         """Verifica que build_frame y parse_frame sean simétricos con valores válidos."""
-        print('\nTest Simetría [TF]')
-        version_in = 0x01
-        test_id_in = 0xABCDEF
-        
-        frame_bytes = build_frame(version_in, test_id_in)
+        frame_bytes = build_frame(0x01, 0xABCDEF)
         self.assertEqual(len(frame_bytes), FRAME_SIZE_BYTES)
-        
-        version_out, test_id_out = parse_frame(frame_bytes)
-        self.assertEqual(version_out, version_in)
-        self.assertEqual(test_id_out, test_id_in)
+        self.assertEqual(parse_frame(frame_bytes), (0x01, 0xABCDEF))
+
+    def test_field_order(self):
+        """Verifica que V ocupa el primer byte y T los tres siguientes (big-endian)."""
+        self.assertEqual(build_frame(0x01, 0xABCDEF), b"\x01\xAB\xCD\xEF")
 
     def test_build_frame_edge_cases(self):
         """Verifica los límites de los enteros (0 y máximos de 8/24 bits)."""
-        print('\nTest Limites [TF]')
-        # Mínimos
-        min_bytes = build_frame(0, 0)
-        self.assertEqual(parse_frame(min_bytes), (0, 0))
-        
-        # Máximos (0xFF y 0xFFFFFF)
-        max_bytes = build_frame(0xFF, 0xFFFFFF)
-        self.assertEqual(parse_frame(max_bytes), (255, 16777215))
+        self.assertEqual(parse_frame(build_frame(0, 0)), (0, 0))
+        self.assertEqual(parse_frame(build_frame(0xFF, 0xFFFFFF)), (255, 16777215))
 
     def test_build_frame_out_of_bounds(self):
-        """Verifica que se lancen excepciones ValueError al superar 8 o 24 bits."""
-        print('\nTest Longitud [TF]')
+        """Verifica que se lance ValueError al superar 8 o 24 bits, o con valores negativos."""
         with self.assertRaises(ValueError):
-            build_frame(256, 0x123456)  # Versión > 8 bits
-            
+            build_frame(256, 0x123456)
         with self.assertRaises(ValueError):
-            build_frame(-1, 0x123456)   # Versión negativa
-            
+            build_frame(-1, 0x123456)
         with self.assertRaises(ValueError):
-            build_frame(1, 0x1000000)   # test_id > 24 bits
+            build_frame(1, 0x1000000)
+        with self.assertRaises(ValueError):
+            build_frame(1, -1)
 
     def test_parse_frame_invalid_length(self):
-        """Verifica error al parsear buffers de tamaño distinto a 4 bytes."""
-        print('\nTest Tamaño [TF]')
+        """Verifica error al analizar buffers de tamaño distinto a 4 bytes."""
         with self.assertRaises(ValueError):
-            parse_frame(b"\x01\x02\x03")  # 3 bytes
-            
+            parse_frame(b"\x01\x02\x03")
         with self.assertRaises(ValueError):
-            parse_frame(b"\x01\x02\x03\x04\x05")  # 5 bytes
+            parse_frame(b"\x01\x02\x03\x04\x05")
 
-    def test_bytes_to_bits_and_bits_to_bytes_roundtrip(self):
-        """Verifica la conversión bidireccional entre bytes y lista de bits."""
-        print('\nTest Conversor [TF]')
-        original_bytes = build_frame(0x81, 0xA5A5A5)  # Patrón con bits alternados
-        
-        bit_list = bytes_to_bits(original_bytes)
+    def test_is_valid_version(self):
+        """Verifica el criterio de aceptación sobre el campo V."""
+        self.assertTrue(is_valid_version(build_frame(PROTOCOL_VERSION, 0x123456)))
+        self.assertFalse(is_valid_version(build_frame(PROTOCOL_VERSION ^ 0x01, 0x123456)))
+
+    def test_make_test_id_is_reproducible(self):
+        """Verifica que T es de 24 bits y que la misma semilla da el mismo patrón."""
+        a = make_test_id(random.Random(42))
+        b = make_test_id(random.Random(42))
+        self.assertEqual(a, b)
+        self.assertTrue(0 <= a <= 0xFFFFFF)
+
+    def test_bytes_to_bits_known_vector(self):
+        """Verifica el orden de los bits: del más al menos significativo."""
+        bits = bytes_to_bits(b"\x80\x00\x00\x01")
+        self.assertEqual(bits[:8], [1, 0, 0, 0, 0, 0, 0, 0])
+        self.assertEqual(bits[-8:], [0, 0, 0, 0, 0, 0, 0, 1])
+
+    def test_roundtrip_32_bits(self):
+        """Verifica la conversión bidireccional con la trama de 32 bits."""
+        original = build_frame(0x81, 0xA5A5A5)
+        bit_list = bytes_to_bits(original)
         self.assertEqual(len(bit_list), FRAME_SIZE_BITS)
         self.assertTrue(all(b in (0, 1) for b in bit_list))
-        
-        reconstructed_bytes = bits_to_bytes(bit_list)
-        self.assertEqual(reconstructed_bytes, original_bytes)
+        self.assertEqual(bits_to_bytes(bit_list), original)
+
+    def test_roundtrip_64_bits(self):
+        """Verifica la conversión con la trama codificada (8 bytes = 64 bits)."""
+        original = bytes(range(8))
+        bit_list = bytes_to_bits(original)
+        self.assertEqual(len(bit_list), 64)
+        self.assertEqual(bits_to_bytes(bit_list), original)
 
     def test_bits_to_bytes_invalid_input(self):
         """Verifica errores de validación en la lista de bits."""
-        print('\nTest Bits [TF]')
         with self.assertRaises(ValueError):
-            bits_to_bytes([0] * 31)  # 31 bits en vez de 32
-            
+            bits_to_bytes([0] * 31)          # no es múltiplo de 8
         with self.assertRaises(ValueError):
-            invalid_bits = [0] * 31 + [2]  # Elemento distinto de 0 o 1
-            bits_to_bytes(invalid_bits)
+            bits_to_bytes([])                # vacía
+        with self.assertRaises(ValueError):
+            bits_to_bytes([0] * 31 + [2])    # valor distinto de 0 y 1
+
 
 if __name__ == "__main__":
     unittest.main()

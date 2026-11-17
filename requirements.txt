@@ -1,0 +1,9 @@
+# Python 3.11.4
+# pip freeze | findstr /i "reedsolo cryptography numpy opencv pillow scikit-image" 
+reedsolo == 1.7.0        # decode() devuelve 3 valores desde la 1.0
+cryptography == 50.0.2		
+numpy
+opencv-python
+Pillow
+scikit-image         # SSIM
+pytest
