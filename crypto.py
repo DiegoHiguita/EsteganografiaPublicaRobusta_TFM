@@ -1,10 +1,6 @@
 """
 crypto.py - Acuerdo de claves X25519 y derivación de la semilla del mapa (HKDF-SHA256).
 
-ESQUELETO: implementa las funciones marcadas con TODO. Orden sugerido:
-  1) generate_keypair   2) compute_shared_secret   3) derive_seed
-  4) sender_derive_seed y receiver_derive_seed (usan las anteriores)
-
 Convenciones:
   - Las claves se manejan como bytes en bruto (32 bytes), no como objetos de la biblioteca.
   - Nunca se escribe en logs ni en registros ninguna clave privada, secreto compartido ni semilla (RS-4).
@@ -25,15 +21,19 @@ def generate_keypair() -> tuple[bytes, bytes]:
     Genera un par de claves X25519.
     Returns:
         tuple[bytes, bytes]: (clave_privada, clave_publica), de 32 bytes cada una.
-
-    TODO:
-      - Crear la clave privada con X25519PrivateKey.generate().
-      - Obtener los bytes de la privada con private_bytes(encoding=Raw, format=Raw,
-        encryption_algorithm=NoEncryption()) (serialization.Encoding.Raw, serialization.PrivateFormat.Raw...).
-      - Obtener los bytes de la pública con private_key.public_key().public_bytes(Raw, Raw).
     """
-    raise NotImplementedError
+    pk = X25519PrivateKey.generate()
+    private_bytes = pk.private_bytes(
+        encoding=serialization.Encoding.Raw, #bytes en formato binario puro, sin codificación adicional ni estructura ASN.1/DER.
+        format=serialization.PrivateFormat.Raw,
+        encryption_algorithm=serialization.NoEncryption()
+    )
 
+    public_bytes = pk.public_key().public_bytes(
+        encoding=serialization.Encoding.Raw,
+        format=serialization.PublicFormat.Raw
+    )
+    return private_bytes, public_bytes 
 
 def compute_shared_secret(private_key: bytes, peer_public_key: bytes) -> bytes:
     """
@@ -44,15 +44,14 @@ def compute_shared_secret(private_key: bytes, peer_public_key: bytes) -> bytes:
     Raises:
         ValueError: Si alguna clave no tiene 32 bytes o si el resultado es todo ceros
                     (clave pública de orden bajo).
-
-    TODO:
-      - Validar longitudes (KEY_SIZE).
-      - Cargar con X25519PrivateKey.from_private_bytes y X25519PublicKey.from_public_bytes.
-      - Calcular private.exchange(public).
-      - Comprobar que el resultado no es b"\\x00" * 32 (según la versión de la biblioteca,
-        exchange() ya lanza ValueError; compruébalo con una prueba).
     """
-    raise NotImplementedError
+    if len(private_key) != KEY_SIZE or len(peer_public_key) != KEY_SIZE:
+        raise ValueError("Las claves deben tener 32 bytes.")
+
+    private_key_obj = X25519PrivateKey.from_private_bytes(private_key)
+    public_key_obj = X25519PublicKey.from_public_bytes(peer_public_key)
+
+    return private_key_obj.exchange(public_key_obj)
 
 
 def derive_seed(shared_secret: bytes, epk: bytes, pk_b: bytes) -> bytes:
@@ -64,12 +63,15 @@ def derive_seed(shared_secret: bytes, epk: bytes, pk_b: bytes) -> bytes:
         pk_b (bytes): clave pública de Bob.
     Returns:
         bytes: semilla de SEED_SIZE bytes.
-
-    TODO:
-      - HKDF(algorithm=hashes.SHA256(), length=SEED_SIZE, salt=None, info=CONTEXT_LABEL + epk + pk_b)
-      - Devolver .derive(shared_secret).
     """
-    raise NotImplementedError
+    info = CONTEXT_LABEL + epk + pk_b
+    hkdf = HKDF(
+        algorithm=hashes.SHA256(),
+        length=SEED_SIZE,
+        salt=None,
+        info=info
+    )
+    return hkdf.derive(shared_secret)
 
 
 def sender_derive_seed(pk_b: bytes) -> tuple[bytes, bytes]:
@@ -77,10 +79,12 @@ def sender_derive_seed(pk_b: bytes) -> tuple[bytes, bytes]:
     Lado de Alice: genera un par efímero, calcula el secreto con PK_B y deriva la semilla.
     Returns:
         tuple[bytes, bytes]: (semilla, epk). La clave privada efímera NO se devuelve (RS-4).
-
-    TODO: generate_keypair -> compute_shared_secret(esk, pk_b) -> derive_seed(S, epk, pk_b).
     """
-    raise NotImplementedError
+    esk, epk = generate_keypair()  # Genera un par efímero (esk, epk)
+    shared_secret = compute_shared_secret(esk, pk_b)  # Calcula el secreto compartido S
+    seed = derive_seed(shared_secret, epk, pk_b)  # Deriva la semilla K_mapa
+
+    return seed, epk  # Devuelve la semilla y la clave pública efímera (epk), pero no la clave privada efímera (esk
 
 
 def receiver_derive_seed(sk_b: bytes, pk_b: bytes, epk: bytes) -> bytes:
@@ -88,7 +92,7 @@ def receiver_derive_seed(sk_b: bytes, pk_b: bytes, epk: bytes) -> bytes:
     Lado de Bob: reconstruye la semilla con su clave privada y la clave efímera de Alice.
     Returns:
         bytes: la misma semilla que obtuvo Alice.
-
-    TODO: compute_shared_secret(sk_b, epk) -> derive_seed(S, epk, pk_b).
     """
-    raise NotImplementedError
+    shared_secret = compute_shared_secret(sk_b, epk)  # Calcula el secreto compartido S
+    seed = derive_seed(shared_secret, epk, pk_b)  # Deriva la semilla K_mapa
+    return seed  # Devuelve la semilla

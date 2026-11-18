@@ -1,7 +1,5 @@
 """
-test_crypto.py - Pruebas de crypto.py (ESQUELETO).
-
-Cuando implementes crypto.py, quita el decorador @unittest.skip y rellena cada prueba.
+test_crypto.py - Pruebas de crypto.py.
 Requisitos relacionados: RF-3, RS-1, RS-3, RS-4.
 """
 import unittest
@@ -9,55 +7,97 @@ import unittest
 import crypto
 
 
-@unittest.skip("Pendiente: implementar crypto.py")
 class TestCrypto(unittest.TestCase):
 
     def test_keypair_sizes_and_uniqueness(self):
         """Las claves privada y pública tienen 32 bytes y dos llamadas dan pares distintos."""
-        # TODO: sk1, pk1 = crypto.generate_keypair(); sk2, pk2 = crypto.generate_keypair()
-        # TODO: comprobar len == crypto.KEY_SIZE y que sk1 != sk2
-        pass
+        sk1, pk1 = crypto.generate_keypair()
+        sk2, pk2 = crypto.generate_keypair()
+
+        self.assertEqual(len(sk1), crypto.KEY_SIZE)
+        self.assertEqual(len(pk1), crypto.KEY_SIZE)
+        self.assertNotEqual(sk1, sk2)
+        self.assertNotEqual(pk1, pk2)
 
     def test_shared_secret_is_symmetric(self):
         """S calculado por Alice (esk, PK_B) y por Bob (SK_B, epk) es idéntico."""
-        # TODO: generar par de Bob y par efímero de Alice; comparar ambos secretos
-        pass
+        sk_b, pk_b = crypto.generate_keypair()        # par de Bob
+        esk_a, epk_a = crypto.generate_keypair()      # par efímero de Alice
+
+        s_alice = crypto.compute_shared_secret(esk_a, pk_b)
+        s_bob = crypto.compute_shared_secret(sk_b, epk_a)
+
+        self.assertEqual(s_alice, s_bob)
 
     def test_shared_secret_invalid_inputs(self):
         """Claves con longitud incorrecta lanzan ValueError."""
-        # TODO: compute_shared_secret(b"\x01" * 31, <pública válida>) -> ValueError
-        pass
+        sk, pk = crypto.generate_keypair()
+
+        with self.assertRaises(ValueError):
+            crypto.compute_shared_secret(b"\x01" * 31, pk)   # privada de 31 bytes
+        with self.assertRaises(ValueError):
+            crypto.compute_shared_secret(sk, b"\x01" * 33)   # pública de 33 bytes
 
     def test_low_order_public_key_rejected(self):
         """Una clave pública de orden bajo (32 ceros) lanza ValueError."""
-        # TODO: compute_shared_secret(<privada válida>, b"\x00" * 32) -> ValueError
-        pass
+        sk, _ = crypto.generate_keypair()
+
+        with self.assertRaises(ValueError):
+            crypto.compute_shared_secret(sk, b"\x00" * 32)
 
     def test_derive_seed_size_and_determinism(self):
         """La semilla tiene SEED_SIZE bytes y es la misma con las mismas entradas."""
-        # TODO: derive_seed(S, epk, pk_b) dos veces; comprobar longitud e igualdad
-        pass
+        _, pk_b = crypto.generate_keypair()
+        esk, epk = crypto.generate_keypair()
+        s = crypto.compute_shared_secret(esk, pk_b)
+
+        seed1 = crypto.derive_seed(s, epk, pk_b)
+        seed2 = crypto.derive_seed(s, epk, pk_b)
+
+        self.assertEqual(len(seed1), crypto.SEED_SIZE)
+        self.assertEqual(seed1, seed2)
 
     def test_seed_depends_on_context(self):
-        """Cambiar epk o pk_b (o S) cambia la semilla."""
-        # TODO: tres variantes de entrada -> tres semillas distintas
-        pass
+        """Cambiar epk, pk_b o S cambia la semilla."""
+        _, pk_b = crypto.generate_keypair()
+        esk, epk = crypto.generate_keypair()
+        s = crypto.compute_shared_secret(esk, pk_b)
+        _, otra_clave = crypto.generate_keypair()             # una clave pública cualquiera, distinta
+
+        base = crypto.derive_seed(s, epk, pk_b)
+        self.assertNotEqual(base, crypto.derive_seed(s, otra_clave, pk_b))       # otro epk
+        self.assertNotEqual(base, crypto.derive_seed(s, epk, otra_clave))        # otro pk_b
+        self.assertNotEqual(base, crypto.derive_seed(b"\x02" * 32, epk, pk_b))   # otro secreto S
 
     def test_sender_and_receiver_get_same_seed(self):
         """sender_derive_seed y receiver_derive_seed coinciden (RF-3, RS-3)."""
-        # TODO: sk_b, pk_b = generate_keypair(); seed_a, epk = sender_derive_seed(pk_b)
-        # TODO: seed_b = receiver_derive_seed(sk_b, pk_b, epk); assertEqual
-        pass
+        sk_b, pk_b = crypto.generate_keypair()
+
+        seed_alice, epk = crypto.sender_derive_seed(pk_b)
+        seed_bob = crypto.receiver_derive_seed(sk_b, pk_b, epk)
+
+        self.assertEqual(seed_alice, seed_bob)
 
     def test_wrong_private_key_gives_different_seed(self):
         """Con una clave privada incorrecta, Bob obtiene otra semilla (base de RS-1)."""
-        # TODO: usar la privada de otro par en receiver_derive_seed y comprobar que difiere
-        pass
+        sk_b, pk_b = crypto.generate_keypair()
+        sk_otra, _ = crypto.generate_keypair()                # la clave privada de otra persona
 
-    def test_sender_does_not_return_private_key(self):
-        """sender_derive_seed devuelve solo (semilla, epk) y ningún secreto adicional (RS-4)."""
-        # TODO: comprobar len(resultado) == 2 y que la privada efímera no aparece en el resultado
-        pass
+        seed_alice, epk = crypto.sender_derive_seed(pk_b)
+        seed_incorrecta = crypto.receiver_derive_seed(sk_otra, pk_b, epk)
+
+        self.assertNotEqual(seed_alice, seed_incorrecta)
+
+    def test_sender_returns_only_seed_and_epk(self):
+        """sender_derive_seed devuelve solo (semilla, epk), sin ningún secreto adicional (RS-4)."""
+        _, pk_b = crypto.generate_keypair()
+
+        result = crypto.sender_derive_seed(pk_b)
+        self.assertEqual(len(result), 2)
+
+        seed, epk = result
+        self.assertEqual(len(seed), crypto.SEED_SIZE)
+        self.assertEqual(len(epk), crypto.KEY_SIZE)
 
 
 if __name__ == "__main__":
