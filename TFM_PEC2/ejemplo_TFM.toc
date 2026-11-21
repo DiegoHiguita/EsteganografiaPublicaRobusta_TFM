@@ -1,0 +1,71 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {chapter}{\numberline {1}Introducción}{7}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Contexto y justificación del trabajo}{7}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Motivación y Modelo de Amenaza}{7}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Entorno Experimental y Definición de la Trama}{8}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}El Desafío del Canal Frecuencial JPEG}{8}{subsection.1.1.3}%
+\contentsline {section}{\numberline {1.2}Objetivos y alcance del trabajo}{9}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Objetivo general}{9}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Objetivos específicos}{9}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Delimitación del alcance}{10}{subsection.1.2.3}%
+\contentsline {section}{\numberline {1.3}Impacto ético-social, sostenibilidad y de diversidad}{10}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Impacto ético y social}{10}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Impacto en sostenibilidad}{11}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Impacto en diversidad e inclusión}{11}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}Enfoque y método seguido}{12}{subsection.1.3.4}%
+\contentsline {section}{\numberline {1.4}Planificación del trabajo}{13}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Listado de tareas e hitos}{13}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Planificación temporal}{15}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Recursos necesarios}{16}{subsection.1.4.3}%
+\contentsline {subsection}{\numberline {1.4.4}Gestión de riesgos y planes de mitigación}{16}{subsection.1.4.4}%
+\contentsline {section}{\numberline {1.5}Declaración sobre el uso de inteligencia artificial generativa}{17}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Estado del arte}{19}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Fundamentos de Esteganografía en Imágenes y Métricas de Rendimiento}{19}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Clasificación según el Dominio de Inserción y Resistencia al Canal}{20}{subsection.2.1.1}%
+\contentsline {section}{\numberline {2.2}Esteganografía en el dominio DCT: propuesta de Soria-Lorente y Berres}{20}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Esteganografía en el dominio DCT: modulación QIM, detectabilidad y robustez ante recompresión}{21}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Principios de QIM y adaptaciones para el control de errores y del histograma}{22}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Minimización de la distorsión: la perspectiva de J-UNIWARD}{23}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Robustez ante la recompresión JPEG}{23}{subsection.2.3.3}%
+\contentsline {paragraph}{Cómo se evalúa la robustez.}{23}{section*.5}%
+\contentsline {paragraph}{Métodos con codificación de canal y modulación por dither.}{24}{section*.6}%
+\contentsline {paragraph}{Selección de regiones robustas mediante aprendizaje.}{24}{section*.7}%
+\contentsline {paragraph}{Alternativas aprendidas de extremo a extremo.}{24}{section*.8}%
+\contentsline {subsection}{\numberline {2.3.4}Estegoanálisis y detectabilidad}{25}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}Software y herramientas existentes}{26}{subsection.2.3.5}%
+\contentsline {section}{\numberline {2.4}Esteganografía de clave pública: de los modelos formales a la práctica experimental}{27}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}El marco fundacional de von Ahn y Hopper}{27}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Extensión del modelo ante adversarios activos: Backes y Cachin}{27}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Análisis comparativo}{28}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Arquitectura y Diseño del Prototipo}{31}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Requisitos y objetivos de diseño}{31}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Modelo de amenaza}{31}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Requisitos funcionales, de seguridad y no funcionales}{32}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Casos de uso previstos}{33}{subsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.1.4}Objetivos y condiciones experimentales}{33}{subsection.3.1.4}%
+\contentsline {section}{\numberline {3.2}Arquitectura general del sistema}{33}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Modelo conceptual de comunicación}{34}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Separación entre diseño conceptual y parámetros de implementación}{34}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Especificación de módulos del prototipo}{36}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Regla QIM con \textit {dither}}{36}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Módulo emisor (codificación RS y modulación QIM-DCT)}{37}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Simulación del canal con pérdida (recompresión JPEG)}{37}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Módulo receptor (extracción QIM y decodificación RS)}{38}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.5}Parámetros de inserción}{39}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.6}Elección del código corrector}{40}{subsection.3.3.6}%
+\contentsline {section}{\numberline {3.4}Modelo de claves}{40}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Distribución de la clave pública efímera}{41}{subsection.3.4.1}%
+\contentsline {section}{\numberline {3.5}Plan de evaluación experimental}{41}{section.3.5}%
+\contentsline {subsubsection}{Diseño experimental y variables de control}{41}{section*.9}%
+\contentsline {subsubsection}{Ejecución de los ensayos}{42}{section*.10}%
+\contentsline {subsubsection}{Métricas de evaluación}{42}{section*.11}%
+\contentsline {subsubsection}{Registro de datos, trazabilidad y reproducibilidad}{43}{section*.12}%
+\contentsline {chapter}{\numberline {4}Implementación y pruebas}{44}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Entorno y organización del código}{44}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Módulos implementados}{45}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Trama experimental}{45}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Codificación Reed-Solomon}{45}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Acuerdo de claves y derivación de la semilla}{45}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Mapa de posiciones}{46}{subsection.4.2.4}%
+\contentsline {section}{\numberline {4.3}Pruebas realizadas}{46}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Bibliograf\'{\i }a}{47}{chapter.5}%

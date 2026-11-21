@@ -1,0 +1,1547 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{5}{online}{}{}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labeltitlesource}{title}
+      \field{title}{A secure image steganography framework for covert communication using asymmetric encryption and Huffman Compression}
+      \field{urlday}{3}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://research.idu.ac.id/index.php/jdte/article/download/166/14/370
+      \endverb
+      \verb{url}
+      \verb https://research.idu.ac.id/index.php/jdte/article/download/166/14/370
+      \endverb
+    \endentry
+    \entry{4}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=54d84914a1a27ba9f8106286e989ecf7}{%
+           family={Ahn},
+           familyi={A\bibinitperiod},
+           given={Luis},
+           giveni={L\bibinitperiod},
+           prefix={von},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=b26d89955246d1e65cef8ee488517743}{%
+           family={Hopper},
+           familyi={H\bibinitperiod},
+           given={Nicholas\bibnamedelima J.},
+           giveni={N\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{736580b657172eaec7708f09e9578aa3}
+      \strng{fullhash}{736580b657172eaec7708f09e9578aa3}
+      \strng{fullhashraw}{736580b657172eaec7708f09e9578aa3}
+      \strng{bibnamehash}{736580b657172eaec7708f09e9578aa3}
+      \strng{authorbibnamehash}{736580b657172eaec7708f09e9578aa3}
+      \strng{authornamehash}{736580b657172eaec7708f09e9578aa3}
+      \strng{authorfullhash}{736580b657172eaec7708f09e9578aa3}
+      \strng{authorfullhashraw}{736580b657172eaec7708f09e9578aa3}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Advances in Cryptology -- EUROCRYPT 2004}
+      \field{title}{Public-Key Steganography}
+      \field{urlday}{3}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{year}{2004}
+      \field{urldateera}{ce}
+      \field{pages}{323\bibrangedash 341}
+      \range{pages}{19}
+      \verb{urlraw}
+      \verb https://www-users.cse.umn.edu/~hoppernj/public_key_steganography.pdf
+      \endverb
+      \verb{url}
+      \verb https://www-users.cse.umn.edu/~hoppernj/public_key_steganography.pdf
+      \endverb
+    \endentry
+    \entry{19}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=4b96cad75f27ce1349d97e2aea69ac76}{%
+           family={Backes},
+           familyi={B\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=61f4a4d4aad7fed4999cd33172ca4ff3}{%
+           family={Cachin},
+           familyi={C\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=4591268c67f1c3a2dddd96c8b3457967}{%
+           family={Kilian},
+           familyi={K\bibinitperiod},
+           given={Joe},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{33e844a443e4e6ad993cf63ba9d7b521}
+      \strng{fullhash}{33e844a443e4e6ad993cf63ba9d7b521}
+      \strng{fullhashraw}{33e844a443e4e6ad993cf63ba9d7b521}
+      \strng{bibnamehash}{33e844a443e4e6ad993cf63ba9d7b521}
+      \strng{authorbibnamehash}{33e844a443e4e6ad993cf63ba9d7b521}
+      \strng{authornamehash}{33e844a443e4e6ad993cf63ba9d7b521}
+      \strng{authorfullhash}{33e844a443e4e6ad993cf63ba9d7b521}
+      \strng{authorfullhashraw}{33e844a443e4e6ad993cf63ba9d7b521}
+      \strng{editorbibnamehash}{4591268c67f1c3a2dddd96c8b3457967}
+      \strng{editornamehash}{4591268c67f1c3a2dddd96c8b3457967}
+      \strng{editorfullhash}{4591268c67f1c3a2dddd96c8b3457967}
+      \strng{editorfullhashraw}{4591268c67f1c3a2dddd96c8b3457967}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A complexity-theoretic model for public-key steganography with active attacks is introduced. The notion of steganographic security against adaptive chosen-covertext attacks ({SS}-{CCA}) and a relaxation called steganographic security against publicly-detectable replayable adaptive chosen-covertext attacks ({SS}-{PDR}-{CCA}) are formalized. These notions are closely related to {CCA}-security and {PDR}-{CCA}-security for public-key cryptosystems. In particular, it is shown that any {SS}-({PDR}-){CCA} stegosystem is a ({PDR}-){CCA}-secure public-key cryptosystem and that an {SS}-{PDR}-{CCA} stegosystem for any covertext distribution with sufficiently large min-entropy can be realized from any {PDR}-{CCA}-secure public-key cryptosystem with pseudorandom ciphertexts.}
+      \field{booktitle}{Theory of Cryptography}
+      \field{isbn}{9783540305767}
+      \field{langid}{english}
+      \field{title}{Public-Key Steganography with Active Attacks}
+      \field{year}{2005}
+      \field{dateera}{ce}
+      \field{pages}{210\bibrangedash 226}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1007/978-3-540-30576-7_12
+      \endverb
+      \keyw{Active Attack,Decryption Oracle,Negligible Probability,Passive Adversary,Security Parameter}
+    \endentry
+    \entry{bernstein2013elligator}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=cc77f8b5fa3840f90938819e591aae07}{%
+           family={Bernstein},
+           familyi={B\bibinitperiod},
+           given={Daniel\bibnamedelima J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=d9528fb2869236a3c4d978220eded42c}{%
+           family={Hamburg},
+           familyi={H\bibinitperiod},
+           given={Mike},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d4af4fac8370220e71230f313a952a42}{%
+           family={Krasnova},
+           familyi={K\bibinitperiod},
+           given={Anna},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2c76d81f56d9dce0a910572140690325}{%
+           family={Lange},
+           familyi={L\bibinitperiod},
+           given={Tanja},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{ad63d5a879ce705516adb9af26e5193b}
+      \strng{fullhash}{fd296dd77b3afad13ea48327ee4c67c2}
+      \strng{fullhashraw}{fd296dd77b3afad13ea48327ee4c67c2}
+      \strng{bibnamehash}{ad63d5a879ce705516adb9af26e5193b}
+      \strng{authorbibnamehash}{ad63d5a879ce705516adb9af26e5193b}
+      \strng{authornamehash}{ad63d5a879ce705516adb9af26e5193b}
+      \strng{authorfullhash}{fd296dd77b3afad13ea48327ee4c67c2}
+      \strng{authorfullhashraw}{fd296dd77b3afad13ea48327ee4c67c2}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proc. ACM Conference on Computer and Communications Security (CCS 2013)}
+      \field{title}{Elligator: Elliptic-Curve Points Indistinguishable from Uniform Random Strings}
+      \field{urlday}{13}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2013}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1145/2508859.2516734
+      \endverb
+      \verb{urlraw}
+      \verb https://eprint.iacr.org/2013/325
+      \endverb
+      \verb{url}
+      \verb https://eprint.iacr.org/2013/325
+      \endverb
+    \endentry
+    \entry{boroumand2019srnet}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=93d4e7c3b7f2bf778c59daab4f93f181}{%
+           family={Boroumand},
+           familyi={B\bibinitperiod},
+           given={Mehdi},
+           giveni={M\bibinitperiod}}}%
+        {{hash=67d85fe9da377c05e794ffdad3b680ab}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Mo},
+           giveni={M\bibinitperiod}}}%
+        {{hash=0b7ff038c1a27c940c01a4fd0cc68365}{%
+           family={Fridrich},
+           familyi={F\bibinitperiod},
+           given={Jessica},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{00220f1f3f03a8f6218b8d87c0c7437d}
+      \strng{fullhash}{00220f1f3f03a8f6218b8d87c0c7437d}
+      \strng{fullhashraw}{00220f1f3f03a8f6218b8d87c0c7437d}
+      \strng{bibnamehash}{00220f1f3f03a8f6218b8d87c0c7437d}
+      \strng{authorbibnamehash}{00220f1f3f03a8f6218b8d87c0c7437d}
+      \strng{authornamehash}{00220f1f3f03a8f6218b8d87c0c7437d}
+      \strng{authorfullhash}{00220f1f3f03a8f6218b8d87c0c7437d}
+      \strng{authorfullhashraw}{00220f1f3f03a8f6218b8d87c0c7437d}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Information Forensics and Security}
+      \field{number}{5}
+      \field{title}{Deep Residual Network for Steganalysis of Digital Images}
+      \field{volume}{14}
+      \field{year}{2019}
+      \field{pages}{1181\bibrangedash 1193}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1109/TIFS.2018.2871749
+      \endverb
+    \endentry
+    \entry{11}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=948ce605b73693cf329c7ad15180ae9a}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Brian},
+           giveni={B\bibinitperiod}}}%
+        {{hash=30b064b115fce20615301223494c11cb}{%
+           family={Wornell},
+           familyi={W\bibinitperiod},
+           given={Gregory\bibnamedelima W},
+           giveni={G\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{84cfcf16a00d618cdce6d72df107e189}
+      \strng{fullhash}{84cfcf16a00d618cdce6d72df107e189}
+      \strng{fullhashraw}{84cfcf16a00d618cdce6d72df107e189}
+      \strng{bibnamehash}{84cfcf16a00d618cdce6d72df107e189}
+      \strng{authorbibnamehash}{84cfcf16a00d618cdce6d72df107e189}
+      \strng{authornamehash}{84cfcf16a00d618cdce6d72df107e189}
+      \strng{authorfullhash}{84cfcf16a00d618cdce6d72df107e189}
+      \strng{authorfullhashraw}{84cfcf16a00d618cdce6d72df107e189}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Information Theory}
+      \field{number}{4}
+      \field{title}{Quantization index modulation: A class of provably good methods for digital watermarking and information embedding}
+      \field{urlday}{3}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{47}
+      \field{year}{2001}
+      \field{urldateera}{ce}
+      \field{pages}{1423\bibrangedash 1443}
+      \range{pages}{21}
+      \verb{urlraw}
+      \verb https://dsp-group.mit.edu/wp-content/uploads/2024/11/QuantizationIndexMod.pdf
+      \endverb
+      \verb{url}
+      \verb https://dsp-group.mit.edu/wp-content/uploads/2024/11/QuantizationIndexMod.pdf
+      \endverb
+    \endentry
+    \entry{cogranne2020alaska2}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=1ed3bf1d2bfcad6b3e1dce1138d5fd5a}{%
+           family={Cogranne},
+           familyi={C\bibinitperiod},
+           given={Rémi},
+           giveni={R\bibinitperiod}}}%
+        {{hash=1d0e7a7f4778dde3b8e20dcdfc00dfbf}{%
+           family={Giboulot},
+           familyi={G\bibinitperiod},
+           given={Quentin},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=e112e32a3370610a1df560365ddeff0a}{%
+           family={Bas},
+           familyi={B\bibinitperiod},
+           given={Patrick},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{9cfabfc386f85cd0ba5b7272b804077e}
+      \strng{fullhash}{9cfabfc386f85cd0ba5b7272b804077e}
+      \strng{fullhashraw}{9cfabfc386f85cd0ba5b7272b804077e}
+      \strng{bibnamehash}{9cfabfc386f85cd0ba5b7272b804077e}
+      \strng{authorbibnamehash}{9cfabfc386f85cd0ba5b7272b804077e}
+      \strng{authornamehash}{9cfabfc386f85cd0ba5b7272b804077e}
+      \strng{authorfullhash}{9cfabfc386f85cd0ba5b7272b804077e}
+      \strng{authorfullhashraw}{9cfabfc386f85cd0ba5b7272b804077e}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IEEE International Workshop on Information Forensics and Security (WIFS)}
+      \field{title}{{ALASKA\#2}: Challenging Academic Research on Steganalysis with Realistic Images}
+      \field{urlday}{12}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://alaska.utt.fr
+      \endverb
+      \verb{url}
+      \verb https://alaska.utt.fr
+      \endverb
+    \endentry
+    \entry{16}{book}{}{}
+      \name{author}{5}{}{%
+        {{hash=d2eb6afd8a260671f717305b2c9e688a}{%
+           family={Cox},
+           familyi={C\bibinitperiod},
+           given={Ingemar},
+           giveni={I\bibinitperiod}}}%
+        {{hash=03bc9e608b9401b81f565fece7e8ee8c}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={Matthew},
+           giveni={M\bibinitperiod}}}%
+        {{hash=63b4c190045a9468a9a740b72a8128c1}{%
+           family={Bloom},
+           familyi={B\bibinitperiod},
+           given={Jeffrey},
+           giveni={J\bibinitperiod}}}%
+        {{hash=0b7ff038c1a27c940c01a4fd0cc68365}{%
+           family={Fridrich},
+           familyi={F\bibinitperiod},
+           given={Jessica},
+           giveni={J\bibinitperiod}}}%
+        {{hash=2e49fb654856efd6b3a84601e3174474}{%
+           family={Kalker},
+           familyi={K\bibinitperiod},
+           given={Ton},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Morgan Kaufmann}%
+      }
+      \strng{namehash}{6d70e23f228d9c5e21260a40d7a10526}
+      \strng{fullhash}{578efc351bfaf142787a32fd98783e54}
+      \strng{fullhashraw}{578efc351bfaf142787a32fd98783e54}
+      \strng{bibnamehash}{6d70e23f228d9c5e21260a40d7a10526}
+      \strng{authorbibnamehash}{6d70e23f228d9c5e21260a40d7a10526}
+      \strng{authornamehash}{6d70e23f228d9c5e21260a40d7a10526}
+      \strng{authorfullhash}{578efc351bfaf142787a32fd98783e54}
+      \strng{authorfullhashraw}{578efc351bfaf142787a32fd98783e54}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2}
+      \field{title}{Digital watermarking and steganography}
+      \field{year}{2007}
+    \endentry
+    \entry{craver1998}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{hash=c7780f349856fa7711788a7bb8c12c1d}{%
+           family={Craver},
+           familyi={C\bibinitperiod},
+           given={Scott},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{c7780f349856fa7711788a7bb8c12c1d}
+      \strng{fullhash}{c7780f349856fa7711788a7bb8c12c1d}
+      \strng{fullhashraw}{c7780f349856fa7711788a7bb8c12c1d}
+      \strng{bibnamehash}{c7780f349856fa7711788a7bb8c12c1d}
+      \strng{authorbibnamehash}{c7780f349856fa7711788a7bb8c12c1d}
+      \strng{authornamehash}{c7780f349856fa7711788a7bb8c12c1d}
+      \strng{authorfullhash}{c7780f349856fa7711788a7bb8c12c1d}
+      \strng{authorfullhashraw}{c7780f349856fa7711788a7bb8c12c1d}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Information Hiding (IH 1998)}
+      \field{series}{Lecture Notes in Computer Science}
+      \field{title}{On Public-Key Steganography in the Presence of an Active Warden}
+      \field{urlday}{11}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{volume}{1525}
+      \field{year}{1998}
+      \field{urldateera}{ce}
+      \field{pages}{355\bibrangedash 368}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1007/3-540-49380-8_25
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/3-540-49380-8_25
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/3-540-49380-8_25
+      \endverb
+    \endentry
+    \entry{14}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=31066774ae3f1b44655a6e3230afa320}{%
+           family={Evsutin},
+           familyi={E\bibinitperiod},
+           given={Oleg},
+           giveni={O\bibinitperiod}}}%
+        {{hash=58a2244fb9198b38d4cdc26bb9a95f1b}{%
+           family={Melman},
+           familyi={M\bibinitperiod},
+           given={Anna},
+           giveni={A\bibinitperiod}}}%
+        {{hash=19079bed2f4ad1f7b39e2b2fa02bbe17}{%
+           family={Meshcheryakov},
+           familyi={M\bibinitperiod},
+           given={Roman},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{75aff1167ea1d0c8aa0611b029c9b986}
+      \strng{fullhash}{75aff1167ea1d0c8aa0611b029c9b986}
+      \strng{fullhashraw}{75aff1167ea1d0c8aa0611b029c9b986}
+      \strng{bibnamehash}{75aff1167ea1d0c8aa0611b029c9b986}
+      \strng{authorbibnamehash}{75aff1167ea1d0c8aa0611b029c9b986}
+      \strng{authornamehash}{75aff1167ea1d0c8aa0611b029c9b986}
+      \strng{authorfullhash}{75aff1167ea1d0c8aa0611b029c9b986}
+      \strng{authorfullhashraw}{75aff1167ea1d0c8aa0611b029c9b986}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper proposes a new algorithm for hiding data in the frequency domain of digital images using the discrete cosine transform. This algorithm uses quantization index modulation ({QIM}) as the basic embedding operation. Frequency embedding is characterized by the problem of error appearance in a secret message arising directly at the embedding stage. The embedded message is distorted due to the loss of information when restoring integer pixel values from the frequency domain. This problem is significant if the integrity of the transmitted information is critical. For example, an insignificant distortion of an encrypted message leads to the impossibility of decrypting and, consequently, to the loss of all encrypted information. The proposed algorithm solves this problem via an iterative embedding procedure, which corrects the arising errors. Another distinctive feature of this algorithm is the adaptive correction of distortions of the frequency coefficients’ histogram. For this purpose, the embedding procedure adapts to the features of the image and masks the arising distortions. Computing experiments and comparison with the state-of-the-art demonstrate the effectiveness of our algorithm.}
+      \field{day}{1}
+      \field{issn}{0165-1684}
+      \field{journaltitle}{Signal Processing}
+      \field{month}{2}
+      \field{shortjournal}{Signal Processing}
+      \field{title}{Algorithm of error-free information embedding into the {DCT} domain of digital images based on the {QIM} method using adaptive masking of distortions}
+      \field{urlday}{15}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{179}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1016/j.sigpro.2020.107811
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0165168420303558
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0165168420303558
+      \endverb
+      \keyw{Data hiding,Error-free embedding,Frequency-domain image embedding,Image steganography,Information security,{QIM}}
+    \endentry
+    \entry{3}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=0b7ff038c1a27c940c01a4fd0cc68365}{%
+           family={Fridrich},
+           familyi={F\bibinitperiod},
+           given={Jessica},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{0b7ff038c1a27c940c01a4fd0cc68365}
+      \strng{fullhash}{0b7ff038c1a27c940c01a4fd0cc68365}
+      \strng{fullhashraw}{0b7ff038c1a27c940c01a4fd0cc68365}
+      \strng{bibnamehash}{0b7ff038c1a27c940c01a4fd0cc68365}
+      \strng{authorbibnamehash}{0b7ff038c1a27c940c01a4fd0cc68365}
+      \strng{authornamehash}{0b7ff038c1a27c940c01a4fd0cc68365}
+      \strng{authorfullhash}{0b7ff038c1a27c940c01a4fd0cc68365}
+      \strng{authorfullhashraw}{0b7ff038c1a27c940c01a4fd0cc68365}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9780521190190}
+      \field{title}{Steganography in Digital Media: Principles, Algorithms, and Applications}
+      \field{year}{2009}
+    \endentry
+    \entry{fridrich2012rich}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=0b7ff038c1a27c940c01a4fd0cc68365}{%
+           family={Fridrich},
+           familyi={F\bibinitperiod},
+           given={Jessica},
+           giveni={J\bibinitperiod}}}%
+        {{hash=6d246bbc0f02984feac492853e2011eb}{%
+           family={Kodovský},
+           familyi={K\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{8cf21ebf0824b05162fd8903c618ee4a}
+      \strng{fullhash}{8cf21ebf0824b05162fd8903c618ee4a}
+      \strng{fullhashraw}{8cf21ebf0824b05162fd8903c618ee4a}
+      \strng{bibnamehash}{8cf21ebf0824b05162fd8903c618ee4a}
+      \strng{authorbibnamehash}{8cf21ebf0824b05162fd8903c618ee4a}
+      \strng{authornamehash}{8cf21ebf0824b05162fd8903c618ee4a}
+      \strng{authorfullhash}{8cf21ebf0824b05162fd8903c618ee4a}
+      \strng{authorfullhashraw}{8cf21ebf0824b05162fd8903c618ee4a}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Information Forensics and Security}
+      \field{number}{3}
+      \field{title}{Rich Models for Steganalysis of Digital Images}
+      \field{volume}{7}
+      \field{year}{2012}
+      \field{pages}{868\bibrangedash 882}
+      \range{pages}{15}
+    \endentry
+    \entry{hetzl2005steghide}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=ccb99a2b1f560d60347ba376955d8793}{%
+           family={Hetzl},
+           familyi={H\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a2fd7e6fca32deb028c924ba80cfa4df}{%
+           family={Mutzel},
+           familyi={M\bibinitperiod},
+           given={Petra},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{8038aa00bc2cc7e7c0202cf0d14350db}
+      \strng{fullhash}{8038aa00bc2cc7e7c0202cf0d14350db}
+      \strng{fullhashraw}{8038aa00bc2cc7e7c0202cf0d14350db}
+      \strng{bibnamehash}{8038aa00bc2cc7e7c0202cf0d14350db}
+      \strng{authorbibnamehash}{8038aa00bc2cc7e7c0202cf0d14350db}
+      \strng{authornamehash}{8038aa00bc2cc7e7c0202cf0d14350db}
+      \strng{authorfullhash}{8038aa00bc2cc7e7c0202cf0d14350db}
+      \strng{authorfullhashraw}{8038aa00bc2cc7e7c0202cf0d14350db}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Communications and Multimedia Security (CMS 2005)}
+      \field{title}{A Graph-Theoretic Approach to Steganography}
+      \field{year}{2005}
+    \endentry
+    \entry{holub2015dctr}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=6b57a0bbda2c1e9f05c9e9cc751bd40a}{%
+           family={Holub},
+           familyi={H\bibinitperiod},
+           given={Vojtěch},
+           giveni={V\bibinitperiod}}}%
+        {{hash=0b7ff038c1a27c940c01a4fd0cc68365}{%
+           family={Fridrich},
+           familyi={F\bibinitperiod},
+           given={Jessica},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{3b87968ab05723d2dbffa232e81b685c}
+      \strng{fullhash}{3b87968ab05723d2dbffa232e81b685c}
+      \strng{fullhashraw}{3b87968ab05723d2dbffa232e81b685c}
+      \strng{bibnamehash}{3b87968ab05723d2dbffa232e81b685c}
+      \strng{authorbibnamehash}{3b87968ab05723d2dbffa232e81b685c}
+      \strng{authornamehash}{3b87968ab05723d2dbffa232e81b685c}
+      \strng{authorfullhash}{3b87968ab05723d2dbffa232e81b685c}
+      \strng{authorfullhashraw}{3b87968ab05723d2dbffa232e81b685c}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Information Forensics and Security}
+      \field{number}{2}
+      \field{title}{Low-Complexity Features for {JPEG} Steganalysis Using Undecimated {DCT}}
+      \field{volume}{10}
+      \field{year}{2015}
+      \field{pages}{219\bibrangedash 228}
+      \range{pages}{10}
+    \endentry
+    \entry{17}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=6b57a0bbda2c1e9f05c9e9cc751bd40a}{%
+           family={Holub},
+           familyi={H\bibinitperiod},
+           given={Vojtěch},
+           giveni={V\bibinitperiod}}}%
+        {{hash=0b7ff038c1a27c940c01a4fd0cc68365}{%
+           family={Fridrich},
+           familyi={F\bibinitperiod},
+           given={Jessica},
+           giveni={J\bibinitperiod}}}%
+        {{hash=76fbe4826eefe64aa0005e75dca0483c}{%
+           family={Denemark},
+           familyi={D\bibinitperiod},
+           given={Tomáš},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{01bd8207701903e087df20709edc8971}
+      \strng{fullhash}{01bd8207701903e087df20709edc8971}
+      \strng{fullhashraw}{01bd8207701903e087df20709edc8971}
+      \strng{bibnamehash}{01bd8207701903e087df20709edc8971}
+      \strng{authorbibnamehash}{01bd8207701903e087df20709edc8971}
+      \strng{authornamehash}{01bd8207701903e087df20709edc8971}
+      \strng{authorfullhash}{01bd8207701903e087df20709edc8971}
+      \strng{authorfullhashraw}{01bd8207701903e087df20709edc8971}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Currently, the most successful approach to steganography in empirical objects, such as digital media, is to embed the payload while minimizing a suitably defined distortion function. The design of the distortion is essentially the only task left to the steganographer since efficient practical codes exist that embed near the payload-distortion bound. The practitioner’s goal is to design the distortion to obtain a scheme with a high empirical statistical detectability. In this paper, we propose a universal distortion design called universal wavelet relative distortion ({UNIWARD}) that can be applied for embedding in an arbitrary domain. The embedding distortion is computed as a sum of relative changes of coefficients in a directional filter bank decomposition of the cover image. The directionality forces the embedding changes to such parts of the cover object that are difficult to model in multiple directions, such as textures or noisy regions, while avoiding smooth regions or clean edges. We demonstrate experimentally using rich models as well as targeted attacks that steganographic methods built using {UNIWARD} match or outperform the current state of the art in the spatial domain, {JPEG} domain, and side-informed {JPEG} domain.}
+      \field{day}{3}
+      \field{issn}{1687-417X}
+      \field{journaltitle}{{EURASIP} Journal on Information Security}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{number}{1}
+      \field{shortjournal}{{EURASIP} J. on Info. Security}
+      \field{title}{Universal distortion function for steganography in an arbitrary domain}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{2014}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1186/1687-417X-2014-1
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1186/1687-417X-2014-1
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1186/1687-417X-2014-1
+      \endverb
+      \keyw{Cover Image,Distortion Function,Filter Bank,Stego Image,Wavelet Coefficient}
+    \endentry
+    \entry{10}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=7a17c6b4817d8ed2aa5cdd30d7e1ddb0}{%
+           family={Hostalot},
+           familyi={H\bibinitperiod},
+           given={Daniel\bibnamedelima Lerch},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
+      \strng{fullhash}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
+      \strng{fullhashraw}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
+      \strng{bibnamehash}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
+      \strng{authorbibnamehash}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
+      \strng{authornamehash}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
+      \strng{authorfullhash}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
+      \strng{authorfullhashraw}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
+      \field{extraname}{1}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Capítulo 'Esteganografía en imágenes {JPEG}' del libro 'Esteganografía para programadores Python'}
+      \field{langid}{spanish}
+      \field{shorttitle}{Esteganografía para programadores Python}
+      \field{title}{Esteganografía para programadores Python: Esteganografía en imágenes {JPEG}}
+      \field{urlday}{2}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://daniellerch.me/stego/books/stegopython/jpegimages-es/
+      \endverb
+      \verb{url}
+      \verb https://daniellerch.me/stego/books/stegopython/jpegimages-es/
+      \endverb
+    \endentry
+    \entry{2}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=7a17c6b4817d8ed2aa5cdd30d7e1ddb0}{%
+           family={Hostalot},
+           familyi={H\bibinitperiod},
+           given={Daniel\bibnamedelima Lerch},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
+      \strng{fullhash}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
+      \strng{fullhashraw}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
+      \strng{bibnamehash}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
+      \strng{authorbibnamehash}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
+      \strng{authornamehash}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
+      \strng{authorfullhash}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
+      \strng{authorfullhashraw}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
+      \field{extraname}{2}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Laboratorio de Esteganografía, Estegoanálisis y watermarking}
+      \field{langid}{spanish}
+      \field{title}{{StegoLab}}
+      \field{urlday}{26}
+      \field{urlmonth}{9}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://daniellerch.me/stegolab-es/
+      \endverb
+      \verb{url}
+      \verb https://daniellerch.me/stegolab-es/
+      \endverb
+    \endentry
+    \entry{kodovsky2012jpegrich}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=6d246bbc0f02984feac492853e2011eb}{%
+           family={Kodovský},
+           familyi={K\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=0b7ff038c1a27c940c01a4fd0cc68365}{%
+           family={Fridrich},
+           familyi={F\bibinitperiod},
+           given={Jessica},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{24b9be17d120c97227b39af936fbeb45}
+      \strng{fullhash}{24b9be17d120c97227b39af936fbeb45}
+      \strng{fullhashraw}{24b9be17d120c97227b39af936fbeb45}
+      \strng{bibnamehash}{24b9be17d120c97227b39af936fbeb45}
+      \strng{authorbibnamehash}{24b9be17d120c97227b39af936fbeb45}
+      \strng{authornamehash}{24b9be17d120c97227b39af936fbeb45}
+      \strng{authorfullhash}{24b9be17d120c97227b39af936fbeb45}
+      \strng{authorfullhashraw}{24b9be17d120c97227b39af936fbeb45}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proc. SPIE, Media Watermarking, Security, and Forensics}
+      \field{title}{Steganalysis of {JPEG} Images Using Rich Models}
+      \field{volume}{8303}
+      \field{year}{2012}
+      \field{pages}{81\bibrangedash 93}
+      \range{pages}{13}
+    \endentry
+    \entry{rfc5869}{report}{}{}
+      \name{author}{2}{}{%
+        {{hash=088445b3855bedf4bcc9d25651eb98b2}{%
+           family={Krawczyk},
+           familyi={K\bibinitperiod},
+           given={Hugo},
+           giveni={H\bibinitperiod}}}%
+        {{hash=dc2f23c3f14f9cd1c536b30807ce64ef}{%
+           family={Eronen},
+           familyi={E\bibinitperiod},
+           given={Pasi},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Internet Engineering Task Force (IETF)}%
+      }
+      \strng{namehash}{7aa18e167d610292530e7275ce23cbbc}
+      \strng{fullhash}{7aa18e167d610292530e7275ce23cbbc}
+      \strng{fullhashraw}{7aa18e167d610292530e7275ce23cbbc}
+      \strng{bibnamehash}{7aa18e167d610292530e7275ce23cbbc}
+      \strng{authorbibnamehash}{7aa18e167d610292530e7275ce23cbbc}
+      \strng{authornamehash}{7aa18e167d610292530e7275ce23cbbc}
+      \strng{authorfullhash}{7aa18e167d610292530e7275ce23cbbc}
+      \strng{authorfullhashraw}{7aa18e167d610292530e7275ce23cbbc}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{5869}
+      \field{title}{{HMAC}-based Extract-and-Expand Key Derivation Function ({HKDF})}
+      \field{type}{RFC}
+      \field{urlday}{10}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2010}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.17487/RFC5869
+      \endverb
+      \verb{urlraw}
+      \verb https://www.rfc-editor.org/info/rfc5869
+      \endverb
+      \verb{url}
+      \verb https://www.rfc-editor.org/info/rfc5869
+      \endverb
+    \endentry
+    \entry{rfc7748}{report}{}{}
+      \name{author}{3}{}{%
+        {{hash=9f7c1bea618246029e139c169baaf321}{%
+           family={Langley},
+           familyi={L\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod}}}%
+        {{hash=d9528fb2869236a3c4d978220eded42c}{%
+           family={Hamburg},
+           familyi={H\bibinitperiod},
+           given={Mike},
+           giveni={M\bibinitperiod}}}%
+        {{hash=2561e47066e8b6e1ea6914463f60f78d}{%
+           family={Turner},
+           familyi={T\bibinitperiod},
+           given={Sean},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Internet Engineering Task Force (IETF)}%
+      }
+      \strng{namehash}{101194dbbc2e5d1631f6c07d46015afb}
+      \strng{fullhash}{101194dbbc2e5d1631f6c07d46015afb}
+      \strng{fullhashraw}{101194dbbc2e5d1631f6c07d46015afb}
+      \strng{bibnamehash}{101194dbbc2e5d1631f6c07d46015afb}
+      \strng{authorbibnamehash}{101194dbbc2e5d1631f6c07d46015afb}
+      \strng{authornamehash}{101194dbbc2e5d1631f6c07d46015afb}
+      \strng{authorfullhash}{101194dbbc2e5d1631f6c07d46015afb}
+      \strng{authorfullhashraw}{101194dbbc2e5d1631f6c07d46015afb}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{7748}
+      \field{title}{Elliptic Curves for Security}
+      \field{type}{RFC}
+      \field{urlday}{10}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.17487/RFC7748
+      \endverb
+      \verb{urlraw}
+      \verb https://www.rfc-editor.org/info/rfc7748
+      \endverb
+      \verb{url}
+      \verb https://www.rfc-editor.org/info/rfc7748
+      \endverb
+    \endentry
+    \entry{1}{software}{}{}
+      \name{author}{2}{}{%
+        {{hash=e7947392c7131c7deb0a58426f61f977}{%
+           family={Lerch-Hostalot},
+           familyi={L\bibinithyphendelim H\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=35e6c2a08491b078f2b7bb8a436bd546}{%
+           family={Megías},
+           familyi={M\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{64d66f788740c19b23c2599d3725a17e}
+      \strng{fullhash}{64d66f788740c19b23c2599d3725a17e}
+      \strng{fullhashraw}{64d66f788740c19b23c2599d3725a17e}
+      \strng{bibnamehash}{64d66f788740c19b23c2599d3725a17e}
+      \strng{authorbibnamehash}{64d66f788740c19b23c2599d3725a17e}
+      \strng{authornamehash}{64d66f788740c19b23c2599d3725a17e}
+      \strng{authorfullhash}{64d66f788740c19b23c2599d3725a17e}
+      \strng{authorfullhashraw}{64d66f788740c19b23c2599d3725a17e}
+      \field{extraname}{1}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{An open-source toolbox for steganalysis}
+      \field{month}{1}
+      \field{note}{original-date: 2017-08-26T20:50:34Z}
+      \field{shorttitle}{Aletheia}
+      \field{title}{Aletheia: an open-source toolbox for steganalysis}
+      \field{urlday}{25}
+      \field{urlmonth}{9}
+      \field{urlyear}{2026}
+      \field{year}{2024}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://joss.theoj.org/papers/10.21105/joss.05982
+      \endverb
+      \verb{url}
+      \verb https://joss.theoj.org/papers/10.21105/joss.05982
+      \endverb
+    \endentry
+    \entry{lerch2016ats}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=e7947392c7131c7deb0a58426f61f977}{%
+           family={Lerch-Hostalot},
+           familyi={L\bibinithyphendelim H\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=35e6c2a08491b078f2b7bb8a436bd546}{%
+           family={Megías},
+           familyi={M\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{64d66f788740c19b23c2599d3725a17e}
+      \strng{fullhash}{64d66f788740c19b23c2599d3725a17e}
+      \strng{fullhashraw}{64d66f788740c19b23c2599d3725a17e}
+      \strng{bibnamehash}{64d66f788740c19b23c2599d3725a17e}
+      \strng{authorbibnamehash}{64d66f788740c19b23c2599d3725a17e}
+      \strng{authornamehash}{64d66f788740c19b23c2599d3725a17e}
+      \strng{authorfullhash}{64d66f788740c19b23c2599d3725a17e}
+      \strng{authorfullhashraw}{64d66f788740c19b23c2599d3725a17e}
+      \field{extraname}{2}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Engineering Applications of Artificial Intelligence}
+      \field{title}{Unsupervised Steganalysis Based on Artificial Training Sets}
+      \field{volume}{50}
+      \field{year}{2016}
+      \field{pages}{45\bibrangedash 59}
+      \range{pages}{15}
+    \endentry
+    \entry{8}{online}{}{}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Why metadata matters as much as message content: traffic analysis, what encrypted platforms still observe and retain, and practical approaches to minimising metadata …}
+      \field{langid}{spanish}
+      \field{shorttitle}{Metadata}
+      \field{title}{Metadata: The Half of Privacy That Encryption Doesn't Cover}
+      \field{titleaddon}{Attomus}
+      \field{urlday}{3}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://attomus.com/blog/2026-metadata-what-encryption-does-not-hide/
+      \endverb
+      \verb{url}
+      \verb https://attomus.com/blog/2026-metadata-what-encryption-does-not-hide/
+      \endverb
+    \endentry
+    \entry{15}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=4a297542101a00884b598d1aa91fc669}{%
+           family={Noda},
+           familyi={N\bibinitperiod},
+           given={Hideki},
+           giveni={H\bibinitperiod}}}%
+        {{hash=e9b96e6cf6b17198dd6fe87a9b17ae71}{%
+           family={Niimi},
+           familyi={N\bibinitperiod},
+           given={Michiharu},
+           giveni={M\bibinitperiod}}}%
+        {{hash=45ddff7063b4ec803917f23d3a93b601}{%
+           family={Kawaguchi},
+           familyi={K\bibinitperiod},
+           given={Eiji},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{b124618c989ea8adcda9620cf08b703a}
+      \strng{fullhash}{b124618c989ea8adcda9620cf08b703a}
+      \strng{fullhashraw}{b124618c989ea8adcda9620cf08b703a}
+      \strng{bibnamehash}{b124618c989ea8adcda9620cf08b703a}
+      \strng{authorbibnamehash}{b124618c989ea8adcda9620cf08b703a}
+      \strng{authornamehash}{b124618c989ea8adcda9620cf08b703a}
+      \strng{authorfullhash}{b124618c989ea8adcda9620cf08b703a}
+      \strng{authorfullhashraw}{b124618c989ea8adcda9620cf08b703a}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper presents two {JPEG} steganographic methods using quantization index modulation ({QIM}) in the discrete cosine transform ({DCT}) domain. The two methods approximately preserve the histogram of quantized {DCT} coefficients, aiming at secure {JPEG} steganography against histogram-based attacks. In comparison with F5 as a representative {JPEG} steganography, the proposed methods show high performance with regard to embedding rate, {PSNR} of stego image, and particularly histogram preservation.}
+      \field{day}{1}
+      \field{issn}{0167-8655}
+      \field{journaltitle}{Pattern Recognition Letters}
+      \field{month}{4}
+      \field{number}{5}
+      \field{shortjournal}{Pattern Recognition Letters}
+      \field{title}{High-performance {JPEG} steganography using quantization index modulation in {DCT} domain}
+      \field{urlday}{14}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{27}
+      \field{year}{2006}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1016/j.patrec.2005.09.008
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0167865505002618
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0167865505002618
+      \endverb
+      \keyw{{DCT},Histogram matching,Information hiding,Information security,{JPEG},Quantization index modulation,Steganography}
+    \endentry
+    \entry{21}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=0d00c2d290eff4841f5032b392db1e00}{%
+           family={Petitcolas},
+           familyi={P\bibinitperiod},
+           given={Fabien\bibnamedelimb A.\bibnamedelimi P.},
+           giveni={F\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{0d00c2d290eff4841f5032b392db1e00}
+      \strng{fullhash}{0d00c2d290eff4841f5032b392db1e00}
+      \strng{fullhashraw}{0d00c2d290eff4841f5032b392db1e00}
+      \strng{bibnamehash}{0d00c2d290eff4841f5032b392db1e00}
+      \strng{authorbibnamehash}{0d00c2d290eff4841f5032b392db1e00}
+      \strng{authornamehash}{0d00c2d290eff4841f5032b392db1e00}
+      \strng{authorfullhash}{0d00c2d290eff4841f5032b392db1e00}
+      \strng{authorfullhashraw}{0d00c2d290eff4841f5032b392db1e00}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{These post-proceedings contain 27 papers that were accepted for presentation at the Fifth International Workshop on Information Hiding, held 7–9 October 2002, in Noordwijkerhout, The Netherlands. The papers were selected from 78 submissions on the basis of their scienti?c excellence and novelty by the program committee. We tried to have a balanced program covering several aspects of information hiding. The program committee was composed of Ross J. Anderson (Univ- sity of Cambridge, {UK}), Jan Camenisch ({IBM} Zurich Research Laboratory, Switzerland), Ingemar J. Cox ({NEC} Research Institute, {USA}), John {McHugh} ({SEI}/{CERT}, {USA}), Ira S. Moskowitz (Naval Research Laboratory, {USA}), Job Oostveen (Philips Research, The Netherlands), Andreas P?tzmann (Dresden University of Technology, Germany), Mike Reiter (Carnegie Mellon University, {USA}), and me. We all wish to thank all the authors of submissions for o?ering their papers for consideration. This year, contrary to the four previous workshops, the call for papers - quested anonymous submissions. However, anonymity was not compulsory and we did accept some papers in which the identity of the authors was clear. Each submission was assigned to three members of the program committee. Papers submitted by program committee members were assigned to four reviewers. The program committee relied on the advice of outside colleagues. We also insisted that 12 of the 27 accepted papers should be revised according to the comments of the reviewers.}
+      \field{day}{1}
+      \field{isbn}{9783540364153}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{note}{Google-Books-{ID}: {ClxqCQAAQBAJ}}
+      \field{pagetotal}{438}
+      \field{shorttitle}{Information Hiding}
+      \field{title}{Information Hiding: 5th International Workshop, {IH} 2002, Noordwijkerhout, The Netherlands, October 7-9, 2002, Revised Papers}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \keyw{Computers / General,Computers / Information Technology,Computers / Networking / General,Computers / Operating Systems / General,Computers / Security / Cryptography \& Encryption,Computers / Social Aspects,Law / Science \& Technology,Social Science / General}
+    \endentry
+    \entry{provos2001outguess}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{hash=60b1af3e10b3553c9b4eb4055120912c}{%
+           family={Provos},
+           familyi={P\bibinitperiod},
+           given={Niels},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{60b1af3e10b3553c9b4eb4055120912c}
+      \strng{fullhash}{60b1af3e10b3553c9b4eb4055120912c}
+      \strng{fullhashraw}{60b1af3e10b3553c9b4eb4055120912c}
+      \strng{bibnamehash}{60b1af3e10b3553c9b4eb4055120912c}
+      \strng{authorbibnamehash}{60b1af3e10b3553c9b4eb4055120912c}
+      \strng{authornamehash}{60b1af3e10b3553c9b4eb4055120912c}
+      \strng{authorfullhash}{60b1af3e10b3553c9b4eb4055120912c}
+      \strng{authorfullhashraw}{60b1af3e10b3553c9b4eb4055120912c}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proc. 10th USENIX Security Symposium}
+      \field{title}{Defending Against Statistical Steganalysis}
+      \field{year}{2001}
+    \endentry
+    \entry{reed1960}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=37f57c5f7585b47da1946352cee4d6dd}{%
+           family={Reed},
+           familyi={R\bibinitperiod},
+           given={Irving\bibnamedelima S.},
+           giveni={I\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=abd0d5108903894427446c09ce75de64}{%
+           family={Solomon},
+           familyi={S\bibinitperiod},
+           given={Gustave},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{582d8799d79ba58b6cbb33707a573404}
+      \strng{fullhash}{582d8799d79ba58b6cbb33707a573404}
+      \strng{fullhashraw}{582d8799d79ba58b6cbb33707a573404}
+      \strng{bibnamehash}{582d8799d79ba58b6cbb33707a573404}
+      \strng{authorbibnamehash}{582d8799d79ba58b6cbb33707a573404}
+      \strng{authornamehash}{582d8799d79ba58b6cbb33707a573404}
+      \strng{authorfullhash}{582d8799d79ba58b6cbb33707a573404}
+      \strng{authorfullhashraw}{582d8799d79ba58b6cbb33707a573404}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Society for Industrial and Applied Mathematics}
+      \field{number}{2}
+      \field{title}{Polynomial Codes Over Certain Finite Fields}
+      \field{urlday}{14}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{volume}{8}
+      \field{year}{1960}
+      \field{urldateera}{ce}
+      \field{pages}{300\bibrangedash 304}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1137/0108018
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1137/0108018
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1137/0108018
+      \endverb
+    \endentry
+    \entry{song2015gfr}{inproceedings}{}{}
+      \name{author}{5}{}{%
+        {{hash=565ad5f1aa45290e229e76d339d7d183}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Xiaofeng},
+           giveni={X\bibinitperiod}}}%
+        {{hash=d3b36c37b357ec95fd19dfe3f6b45d29}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Fenlin},
+           giveni={F\bibinitperiod}}}%
+        {{hash=4c5ba4a3dd8cd61239cc093d8ce08d01}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Chunfang},
+           giveni={C\bibinitperiod}}}%
+        {{hash=36afd9ada0dacc0c79c8239218da2f65}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Xiangyang},
+           giveni={X\bibinitperiod}}}%
+        {{hash=f4db9373a5ba3555eac8a45bcd339479}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yi},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{f010a91c9715b0d5443f0d7af7cf4049}
+      \strng{fullhash}{fda8da62209b12641405fca2deb83353}
+      \strng{fullhashraw}{fda8da62209b12641405fca2deb83353}
+      \strng{bibnamehash}{f010a91c9715b0d5443f0d7af7cf4049}
+      \strng{authorbibnamehash}{f010a91c9715b0d5443f0d7af7cf4049}
+      \strng{authornamehash}{f010a91c9715b0d5443f0d7af7cf4049}
+      \strng{authorfullhash}{fda8da62209b12641405fca2deb83353}
+      \strng{authorfullhashraw}{fda8da62209b12641405fca2deb83353}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proc. ACM Workshop on Information Hiding and Multimedia Security (IH\&MMSec)}
+      \field{title}{Steganalysis of Adaptive {JPEG} Steganography Using 2{D} {G}abor Filters}
+      \field{year}{2015}
+      \field{pages}{15\bibrangedash 23}
+      \range{pages}{9}
+    \endentry
+    \entry{13}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=2b02ea593136390f88a5da58299412dd}{%
+           family={Soria-Lorente},
+           familyi={S\bibinithyphendelim L\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3a32376e648a6ba088a78c6d15d0524d}{%
+           family={Berres},
+           familyi={B\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{cac552ad3a19962fad2ae16002a9645b}
+      \strng{fullhash}{cac552ad3a19962fad2ae16002a9645b}
+      \strng{fullhashraw}{cac552ad3a19962fad2ae16002a9645b}
+      \strng{bibnamehash}{cac552ad3a19962fad2ae16002a9645b}
+      \strng{authorbibnamehash}{cac552ad3a19962fad2ae16002a9645b}
+      \strng{authornamehash}{cac552ad3a19962fad2ae16002a9645b}
+      \strng{authorfullhash}{cac552ad3a19962fad2ae16002a9645b}
+      \strng{authorfullhashraw}{cac552ad3a19962fad2ae16002a9645b}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This contribution proposes a novel steganographic method based on the compression standard according to the Joint Photographic Expert Group and an Entropy Thresholding technique. The steganographic algorithm uses one public key and one private key to generate a binary sequence of pseudorandom numbers that indicate where the elements of the binary sequence of a secret message will be inserted. The insertion takes eventually place at the first seven {AC} coefficients in the transformed {DCT} domain. Before the insertion of the message the image undergoes several transformations. After the insertion the inverse transformations are applied in reverse order to the original transformations. The insertion itself takes only place if an entropy threshold of the corresponding block is satisfied and if the pseudorandom number indicates to do so. The experimental work on the validation of the algorithm consists of the calculation of the peak signal-to-noise ratio ({PSNR}), the difference and correlation distortion metrics, the histogram analysis, and the relative entropy, comparing the same characteristics for the cover and stego image. The proposed algorithm improves the level of imperceptibility analyzed through the {PSNR} values. A steganalysis experiment shows that the proposed algorithm is highly resistant against the Chi-square attack.}
+      \field{issn}{1939-0122}
+      \field{journaltitle}{Security and Communication Networks}
+      \field{langid}{english}
+      \field{number}{1}
+      \field{title}{A Secure Steganographic Algorithm Based on Frequency Domain for the Transmission of Hidden Information}
+      \field{urlday}{16}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{2017}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1155/2017/5397082
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1155/2017/5397082
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1155/2017/5397082
+      \endverb
+    \endentry
+    \entry{tancik2020stegastamp}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=9a18985a5c8b8be23d0ec9de0a3c87b9}{%
+           family={Tancik},
+           familyi={T\bibinitperiod},
+           given={Matthew},
+           giveni={M\bibinitperiod}}}%
+        {{hash=a3567364ab52973659adf74ee0c6e6f3}{%
+           family={Mildenhall},
+           familyi={M\bibinitperiod},
+           given={Ben},
+           giveni={B\bibinitperiod}}}%
+        {{hash=96e30bdc2cf905aa1109c46617b16252}{%
+           family={Ng},
+           familyi={N\bibinitperiod},
+           given={Ren},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{19c6c0e8df4aa9d6a972c9cad26a1eeb}
+      \strng{fullhash}{19c6c0e8df4aa9d6a972c9cad26a1eeb}
+      \strng{fullhashraw}{19c6c0e8df4aa9d6a972c9cad26a1eeb}
+      \strng{bibnamehash}{19c6c0e8df4aa9d6a972c9cad26a1eeb}
+      \strng{authorbibnamehash}{19c6c0e8df4aa9d6a972c9cad26a1eeb}
+      \strng{authornamehash}{19c6c0e8df4aa9d6a972c9cad26a1eeb}
+      \strng{authorfullhash}{19c6c0e8df4aa9d6a972c9cad26a1eeb}
+      \strng{authorfullhashraw}{19c6c0e8df4aa9d6a972c9cad26a1eeb}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}
+      \field{title}{{StegaStamp}: Invisible Hyperlinks in Physical Photographs}
+      \field{urlday}{13}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1904.05343
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1904.05343
+      \endverb
+    \endentry
+    \entry{westfeld2001f5}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{hash=533530f96719be1a1da0b5a57dbf8942}{%
+           family={Westfeld},
+           familyi={W\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{533530f96719be1a1da0b5a57dbf8942}
+      \strng{fullhash}{533530f96719be1a1da0b5a57dbf8942}
+      \strng{fullhashraw}{533530f96719be1a1da0b5a57dbf8942}
+      \strng{bibnamehash}{533530f96719be1a1da0b5a57dbf8942}
+      \strng{authorbibnamehash}{533530f96719be1a1da0b5a57dbf8942}
+      \strng{authornamehash}{533530f96719be1a1da0b5a57dbf8942}
+      \strng{authorfullhash}{533530f96719be1a1da0b5a57dbf8942}
+      \strng{authorfullhashraw}{533530f96719be1a1da0b5a57dbf8942}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Information Hiding (IH 2001)}
+      \field{title}{{F5}---A Steganographic Algorithm: High Capacity Despite Better Steganalysis}
+      \field{year}{2001}
+    \endentry
+    \entry{yousfi2020imagenet}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=0d3c36fadfcac6655ea5e96138ea3799}{%
+           family={Yousfi},
+           familyi={Y\bibinitperiod},
+           given={Yassine},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=1d9af7ba003bf1c20c7c7e63844a95a3}{%
+           family={Butora},
+           familyi={B\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=964995eaf98a368c4e89dc0ec962a16b}{%
+           family={Khvedchenya},
+           familyi={K\bibinitperiod},
+           given={Eugene},
+           giveni={E\bibinitperiod}}}%
+        {{hash=0b7ff038c1a27c940c01a4fd0cc68365}{%
+           family={Fridrich},
+           familyi={F\bibinitperiod},
+           given={Jessica},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{2245df76b234b368afbaeca535677f67}
+      \strng{fullhash}{3334a6a591b6732af8c6aa04e27c248e}
+      \strng{fullhashraw}{3334a6a591b6732af8c6aa04e27c248e}
+      \strng{bibnamehash}{2245df76b234b368afbaeca535677f67}
+      \strng{authorbibnamehash}{2245df76b234b368afbaeca535677f67}
+      \strng{authornamehash}{2245df76b234b368afbaeca535677f67}
+      \strng{authorfullhash}{3334a6a591b6732af8c6aa04e27c248e}
+      \strng{authorfullhashraw}{3334a6a591b6732af8c6aa04e27c248e}
+      \field{sortinit}{Y}
+      \field{sortinithash}{fd67ad5a9ef0f7456bdd9aab10fe1495}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IEEE International Workshop on Information Forensics and Security (WIFS)}
+      \field{title}{{ImageNet} Pre-trained {CNN}s for {JPEG} Steganalysis}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.1109/WIFS49906.2020.9360897
+      \endverb
+    \endentry
+    \entry{18}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=3bb800a63fc74127449033ba3cbb9c1c}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Jimin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=8b0d91544dfa8311626ea3ba8bab894d}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Xianfeng},
+           giveni={X\bibinitperiod}}}%
+        {{hash=9fe3dd6d4779b3746f709e3a242f46d1}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Xiaolei},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{0dc68458637decf058d8b5e7b9588a59}
+      \strng{fullhash}{0dc68458637decf058d8b5e7b9588a59}
+      \strng{fullhashraw}{0dc68458637decf058d8b5e7b9588a59}
+      \strng{bibnamehash}{0dc68458637decf058d8b5e7b9588a59}
+      \strng{authorbibnamehash}{0dc68458637decf058d8b5e7b9588a59}
+      \strng{authornamehash}{0dc68458637decf058d8b5e7b9588a59}
+      \strng{authorfullhash}{0dc68458637decf058d8b5e7b9588a59}
+      \strng{authorfullhashraw}{0dc68458637decf058d8b5e7b9588a59}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Because the {JPEG} recompression in social networks changes the {DCT} coefficients of uploaded images, applying image steganography in popular image-sharing social networks requires robustness. Currently, most robust steganography algorithms rely on the resistance of embedding to the general {JPEG} recompression process. The operations in a specific compression channel are usually ignored, which reduces the robustness performance. Besides, to acquire the robust cover image, the state-of-the-art robust steganography needs to upload the cover image to social networks several times, which may be insecure regarding behavior security. In this paper, a robust steganography method based on the softmax outputs of a trained classifier and protocol message embedding is proposed. In the proposed method, a deep learning-based robustness classifier is trained to model the specific process of the {JPEG} recompression channel. The prediction result of the classifier is used to select the robust {DCT} blocks to form the embedding domain. The selection information is embedded as the protocol messages into the middle-frequency coefficients of {DCT} blocks. To further improve the recovery possibility of the protocol message, a robustness enhancement method is proposed. It decreases the predicted non-robust possibility of the robustness classifier by modifying low-frequency coefficients of {DCT} blocks. The experimental results show that the proposed method has better robustness performance compared with state-of-the-art robust steganography and does not have the disadvantage regarding behavior security. The method is universal and can be implemented in different {JPEG} compression channels after fine-tuning the classifier. Moreover, it has better security performance compared with the state-of-the-art method when embedding large-sized secret messages.}
+      \field{day}{11}
+      \field{issn}{2510-523X}
+      \field{journaltitle}{{EURASIP} Journal on Information Security}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{1}
+      \field{shortjournal}{{EURASIP} J. on Info. Security}
+      \field{title}{Robust {JPEG} steganography based on the robustness classifier}
+      \field{urlday}{23}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{2023}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{11}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1186/s13635-023-00148-x
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1186/s13635-023-00148-x
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1186/s13635-023-00148-x
+      \endverb
+      \keyw{{JPEG} robust steganography,Robust steganography,Steganography}
+    \endentry
+    \entry{zhang2018dmas}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=f4db9373a5ba3555eac8a45bcd339479}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yi},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=960103f1697b5660e9b81257bdcde5a1}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Xiaodong},
+           giveni={X\bibinitperiod}}}%
+        {{hash=efa14006b4be39c2fca0f7dc33c26238}{%
+           family={Qin},
+           familyi={Q\bibinitperiod},
+           given={Chuan},
+           giveni={C\bibinitperiod}}}%
+        {{hash=4c5ba4a3dd8cd61239cc093d8ce08d01}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Chunfang},
+           giveni={C\bibinitperiod}}}%
+        {{hash=36afd9ada0dacc0c79c8239218da2f65}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Xiangyang},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{efd86db55840b987892abaaf55bb2ea2}
+      \strng{fullhash}{337045e3cff7eb764ac2bf6222d04642}
+      \strng{fullhashraw}{337045e3cff7eb764ac2bf6222d04642}
+      \strng{bibnamehash}{efd86db55840b987892abaaf55bb2ea2}
+      \strng{authorbibnamehash}{efd86db55840b987892abaaf55bb2ea2}
+      \strng{authornamehash}{efd86db55840b987892abaaf55bb2ea2}
+      \strng{authorfullhash}{337045e3cff7eb764ac2bf6222d04642}
+      \strng{authorfullhashraw}{337045e3cff7eb764ac2bf6222d04642}
+      \field{extraname}{1}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Multimedia Tools and Applications}
+      \field{number}{14}
+      \field{title}{Dither Modulation Based Adaptive Steganography Resisting {JPEG} Compression and Statistic Detection}
+      \field{volume}{77}
+      \field{year}{2018}
+      \verb{doi}
+      \verb 10.1007/s11042-017-4506-3
+      \endverb
+    \endentry
+    \entry{20}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=f4db9373a5ba3555eac8a45bcd339479}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yi},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=efa14006b4be39c2fca0f7dc33c26238}{%
+           family={Qin},
+           familyi={Q\bibinitperiod},
+           given={Chuan},
+           giveni={C\bibinitperiod}}}%
+        {{hash=bc44460ab39e264a6aed69ad0d90b175}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Weiming},
+           giveni={W\bibinitperiod}}}%
+        {{hash=d3b36c37b357ec95fd19dfe3f6b45d29}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Fenlin},
+           giveni={F\bibinitperiod}}}%
+        {{hash=36afd9ada0dacc0c79c8239218da2f65}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Xiangyang},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{efd86db55840b987892abaaf55bb2ea2}
+      \strng{fullhash}{67418fff23b6c6cdcf2d388d0f947aa3}
+      \strng{fullhashraw}{67418fff23b6c6cdcf2d388d0f947aa3}
+      \strng{bibnamehash}{efd86db55840b987892abaaf55bb2ea2}
+      \strng{authorbibnamehash}{efd86db55840b987892abaaf55bb2ea2}
+      \strng{authornamehash}{efd86db55840b987892abaaf55bb2ea2}
+      \strng{authorfullhash}{67418fff23b6c6cdcf2d388d0f947aa3}
+      \strng{authorfullhashraw}{67418fff23b6c6cdcf2d388d0f947aa3}
+      \field{extraname}{2}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The mainstream adaptive steganography algorithms often cannot transmit secret messages correctly when stego images suffer from {JPEG} compression. In this respect, researchers proposed a series of robust adaptive steganography methods based on the framework of “Compression-resistant Domain Constructing + {RS}-{STC} Codes” in previous studies. However, these methods leave behind the fault tolerance analysis, resulting in potential mistakes in extracted messages, which brings uncertainty to practical application. To solve this problem, an error model based on burst errors and {STCs} decoding damage is given in this manuscript, utilizing the burst error model based on Poisson distribution. Then the model is verified using the hypothesis test problem judged by the χ2 test method. Based on the proposed model, the error conditions of received stego sequence are depicted, and the fault-tolerant performance of the robust steganography based on “Compression-resistant Domain Constructing + {RS}-{STC} Codes” is deduced, that is, the probability lower bound for {RS}-{STCs} decoding to correctly extract embedded messages. Experiments demonstrate that the practical fault-tolerant results of previous robust steganography methods consist with the theoretical derivation results, which provides a theory support for coding parameter selection and message extraction integrity to the robust steganography based on “Compression-resistant Domain Constructing + {RS}-{STC} Codes”.}
+      \field{day}{1}
+      \field{issn}{0165-1684}
+      \field{journaltitle}{Signal Processing}
+      \field{month}{5}
+      \field{shortjournal}{Signal Processing}
+      \field{title}{On the fault-tolerant performance for a class of robust image steganography}
+      \field{urlday}{24}
+      \field{urlmonth}{10}
+      \field{urlyear}{2026}
+      \field{volume}{146}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{99\bibrangedash 111}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1016/j.sigpro.2018.01.011
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S016516841830001X
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S016516841830001X
+      \endverb
+      \keyw{Fault-tolerant performance,{JPEG} compression resistant,{RS} codes,Robust steganography,{STC} codes,Statistical detection resistant}
+    \endentry
+    \entry{zhu2018hidden}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=38ffff03e437aa19bb83372047132d5b}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Jiren},
+           giveni={J\bibinitperiod}}}%
+        {{hash=bcc42fd394573600c472d94d2b54c8fd}{%
+           family={Kaplan},
+           familyi={K\bibinitperiod},
+           given={Russell},
+           giveni={R\bibinitperiod}}}%
+        {{hash=90edc587e1d523d4e173b1fe6e733445}{%
+           family={Johnson},
+           familyi={J\bibinitperiod},
+           given={Justin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=cd00ce5bc45f687c432e52e0fa1a7aa6}{%
+           family={Fei-Fei},
+           familyi={F\bibinithyphendelim F\bibinitperiod},
+           given={Li},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{b4c92b2121bbd43900ef13d105874496}
+      \strng{fullhash}{49f342adb318f51b280e95c91dd7fdf5}
+      \strng{fullhashraw}{49f342adb318f51b280e95c91dd7fdf5}
+      \strng{bibnamehash}{b4c92b2121bbd43900ef13d105874496}
+      \strng{authorbibnamehash}{b4c92b2121bbd43900ef13d105874496}
+      \strng{authornamehash}{b4c92b2121bbd43900ef13d105874496}
+      \strng{authorfullhash}{49f342adb318f51b280e95c91dd7fdf5}
+      \strng{authorfullhashraw}{49f342adb318f51b280e95c91dd7fdf5}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Computer Vision -- ECCV 2018}
+      \field{title}{{HiDDeN}: Hiding Data With Deep Networks}
+      \field{urlday}{12}
+      \field{urlmonth}{11}
+      \field{urlyear}{2026}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \field{pages}{657\bibrangedash 672}
+      \range{pages}{16}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1807.09937
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1807.09937
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
