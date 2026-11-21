@@ -1,9 +1,6 @@
 """
 positions.py - Mapa pseudoaleatorio de posiciones de inserción y valores de dither.
 
-ESQUELETO: implementa las funciones marcadas con TODO. Orden sugerido:
-  1) blocks_count   2) generate_map   3) positions_by_block (opcional, la usará stego.py)
-
 Qué hace este módulo (apartados 3.3 y 3.4 de la memoria):
   A partir de la semilla que deriva crypto.py, elige 64 posiciones distintas
   (un bloque 8x8 y uno de los 8 coeficientes de frecuencia media) y 64 valores de dither.
@@ -44,10 +41,10 @@ def blocks_count(height: int, width: int) -> int:
     """
     Número de bloques 8x8 completos de una imagen (los bordes incompletos se ignoran).
     Ejemplo: una imagen de 512x512 tiene 64 * 64 = 4096 bloques.
-
-    TODO: (height // BLOCK_SIZE) * (width // BLOCK_SIZE).
-    """
-    raise NotImplementedError
+    Args:
+        height (int): altura de la imagen en píxeles.
+        width (int): anchura de la imagen en píxeles."""
+    return (height // BLOCK_SIZE) * (width // BLOCK_SIZE)
 
 
 def generate_map(seed: bytes, n_blocks: int) -> EmbeddingMap:
@@ -61,19 +58,23 @@ def generate_map(seed: bytes, n_blocks: int) -> EmbeddingMap:
     Raises:
         ValueError: Si la semilla está vacía o si hay menos bloques de los necesarios
                     (se necesitan al menos N_BITS // len(COEFFS) = 8 bloques).
-
-    TODO:
-      - Validar seed y n_blocks.
-      - Crear el generador: rng = np.random.default_rng(int.from_bytes(seed, "big")).
-      - Número de candidatos: n_blocks * len(COEFFS). Cada candidato es un par (bloque, coeficiente).
-      - Elegir N_BITS candidatos sin repetición: rng.choice(candidatos, size=N_BITS, replace=False).
-      - Convertir cada índice idx en Position(block=idx // len(COEFFS),
-        u, v = COEFFS[idx % len(COEFFS)]).
-      - Generar después los dither: rng.random(N_BITS).
-      - Devolver EmbeddingMap con tuplas (no listas) para que el mapa no se pueda modificar.
     """
-    raise NotImplementedError
-
+    if len(seed) == 0:
+        raise ValueError("La semilla no puede estar vacía.")
+    
+    if n_blocks < N_BITS // len(COEFFS):
+        raise ValueError("No hay suficientes bloques para generar el mapa de inserción.")
+    
+    seed_int = int.from_bytes(seed, "big")
+    rng = np.random.default_rng(seed_int)  # Crear el generador
+    candidate_count = n_blocks * len(COEFFS) # Número total de candidatos (bloque, coeficiente)
+    candidates = np.arange(candidate_count)  # Crear un array de candidatos
+    selected_candidates = rng.choice(candidates, size=N_BITS, replace=False).tolist() # Elegir N_BITS candidatos sin repetición
+    idx_positions = [(idx // len(COEFFS), COEFFS[idx % len(COEFFS)]) for idx in selected_candidates]  # Convertir cada índice en Position
+    positions = tuple(Position(block=block, u=u, v=v) for block, (u, v) in idx_positions)  # Crear tuplas de posiciones
+    dither = tuple(rng.random(N_BITS).tolist())  # Generar los valores de dither
+    return EmbeddingMap(positions=positions, dither=dither)  # Devolver EmbeddingMap con tuplas (no listas) para que el mapa no se pueda modificar
+       
 
 def positions_by_block(emap: EmbeddingMap) -> dict[int, list[tuple[int, int, int]]]:
     """
@@ -81,7 +82,10 @@ def positions_by_block(emap: EmbeddingMap) -> dict[int, list[tuple[int, int, int
     (el pseudocódigo de EMBED/EXTRACT lo necesita: "para cada bloque b que aparece en P").
     Returns:
         dict: {bloque: [(i, u, v), ...]}, donde i es el índice del bit (0..63).
-
-    TODO: recorrer emap.positions con enumerate y acumular en un diccionario.
     """
-    raise NotImplementedError
+    block_dict = {}
+    for i, pos in enumerate(emap.positions):
+        if pos.block not in block_dict:
+            block_dict[pos.block] = []
+        block_dict[pos.block].append((i, pos.u, pos.v))
+    return block_dict
