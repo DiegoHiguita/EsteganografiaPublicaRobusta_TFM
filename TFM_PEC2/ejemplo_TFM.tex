@@ -13,7 +13,7 @@
 \title{Diseño y evaluación experimental de un esquema de esteganografía de clave pública resistente a compresión JPEG}
 \titcrt{Esteganografía de Clave Pública Robusta} %Título corto que aparecerá a la cabecera
 \author{Diego Alejandro Higuita Grisales}
-\date{03 de Noviembre de 2026}
+\date{01 de Diciembre de 2026}
 
 
 \nomPDC{Daniel Lerch Hostalot}
@@ -1017,7 +1017,7 @@ Para poder repetir los ensayos, el sistema genera un registro estructurado, en f
 \chapter{Implementación y pruebas}
 \label{chap:implementacion}
 
-En este capítulo describimos cómo hemos implementado el prototipo diseñado en el capítulo~\ref{chap:diseno_solucion}, es decir, cómo organizamos el código, qué decisiones tomamos en cada módulo 
+En este capítulo vamos a describir cómo hemos implementado el prototipo diseñado en el capítulo~\ref{chap:diseno_solucion}, es decir, cómo organizamos el código, qué decisiones tomamos en cada módulo 
 y con qué pruebas comprobamos que se comporta como esperábamos. Los módulos se explican en el orden en que los hemos desarrollado, de los más sencillos a los que integran todo el flujo.
 
 \section{Entorno y organización del código}
@@ -1048,9 +1048,9 @@ Siguiendo el requisito de modularidad (RNF-3), dividimos el código en módulos 
 \hline
 \texttt{positions.py} & Generar el mapa pseudoaleatorio de posiciones y los valores de \textit{dither}. & Implementado y probado. \\
 \hline
-\texttt{stego.py} & Insertar y extraer información mediante QIM-DCT. & En desarrollo. \\
+\texttt{stego.py} & Insertar y extraer información mediante QIM-DCT. & Implementado y probado. \\
 \hline
-\texttt{channel.py} & Simular la recompresión JPEG. & Pendiente. \\
+\texttt{channel.py} & Simular la recompresión JPEG. & Implementado y probado. \\
 \hline
 \texttt{metrics.py} & Calcular $\mathrm{BER}$, $\mathrm{PSNR}$ y $\mathrm{SSIM}$. & Pendiente. \\
 \hline
@@ -1081,7 +1081,8 @@ Las pruebas de este módulo comprueban la capacidad correctora del código con t
 \label{subsec:impl_crypto}
 
 En el módulo \texttt{crypto.py} implementamos el acuerdo de claves con X25519 y la derivación con HKDF-SHA256 de la biblioteca \texttt{cryptography}. Manejamos las claves como bytes en bruto de 32 bytes, sin exponer los objetos de la biblioteca, lo que simplifica las pruebas y el registro de datos. La semilla se deriva con un contexto formado por una etiqueta fija, la clave pública efímera y la clave pública de Bob, como describimos en el apartado~\ref{sec:Modelo_Claves}.
-
+\\
+\\
 Hay dos decisiones que responden directamente a los requisitos de seguridad. Por un lado, la función del 
 emisor devuelve la semilla y la clave pública efímera, pero nunca la privada, de modo que esta no 
 puede acabar en un registro (RS-4). Y por otro, una clave pública de orden bajo, por ejemplo 32 ceros, 
@@ -1099,9 +1100,63 @@ El módulo \texttt{positions.py} convierte la semilla en el mapa de inserción. 
 
 La realización de las pruebas dieron un resultado útil en este módulo. La primera versión devolvía enteros de NumPy y no enteros de Python, y la prueba que volcaba el mapa a JSON, el formato del registro de ensayos, falló. Lo corregimos convirtiendo los valores al construir el mapa. Además, comprobamos que la misma semilla da siempre el mismo mapa, que semillas distintas dan mapas distintos y casi sin posiciones en común, y que los valores quedan dentro de rango. Como limitaciones, PCG64 no es criptográficamente seguro, lo que ya aceptamos en el diseño, y NumPy no garantiza secuencias idénticas entre versiones distintas, por lo que fijamos la versión de la biblioteca.
 
+\subsection{Inserción y extracción QIM-DCT}
+\label{subsec:impl_stego}
+
+En el módulo \texttt{stego.py} implementamos la inserción y la extracción de la trama codificada. Trabajamos solo 
+con la luminancia $Y$, que nos llega como una matriz de enteros de 8 bits. La carga y el guardado 
+de las imágenes quedan fuera y los resuelve otro módulo.
+
+Para insertar, recorremos el mapa de posiciones en orden. En cada posición localizamos el 
+bloque de $8 \times 8$ píxeles, calculamos su DCT ortonormal (restando 128 a los píxeles antes de 
+transformar), modificamos el coeficiente $(u,v)$ con la regla QIM según el bit y su 
+valor de \textit{dither}, y reconstruimos el bloque con la IDCT. El paso de cada coeficiente 
+es $\Delta = \alpha \cdot q^{(50)}_{u,v}$, tomado de la tabla de luminancia de JPEG 
+para $Q=50$. Hacemos todo el cálculo en coma flotante y redondeamos a enteros entre 0 y 
+255 una sola vez, al final, para no acumular errores. Si dos posiciones caen en el mismo bloque 
+no hay problema, porque la transformada es ortonormal y no se redondea entre una modificación y 
+la siguiente. La imagen de entrada nunca se modifica, porque trabajamos siempre sobre una copia.
+
+En la extracción hacemos el camino inverso, es decir, calculamos la DCT de cada bloque del mapa, 
+leemos el coeficiente y decidimos el bit según cuál de los dos retículos queda más cerca del valor 
+recibido, una vez restado el \textit{dither}.
+
+Las pruebas de este módulo son 15. Las primeras trabajan con un solo coeficiente: el bit se recupera 
+siempre, el desplazamiento nunca supera $\Delta/2$, se tolera un ruido de $0{.}24\,\Delta$ y se 
+falla con $0{.}4\,\Delta$, lo que verifica numéricamente el criterio $\Delta/4$ del diseño. Las 
+siguientes ejercitan la inserción y la extracción completas: recuperan los 64 bits exactos con 
+los cuatro valores de $\alpha$, con tramas de solo ceros y solo unos, y con una imagen rectangular 
+cuyas dimensiones no son múltiplos de 8. También comprobamos que solo cambian los bloques del mapa, 
+que la imagen de entrada no se altera y que el PSNR se mantiene por encima de 38~dB. Las últimas 
+cubren el uso incorrecto: con el mapa de otra clave la tasa de error ronda 0{.}5 (base del 
+requisito RS-1), y las entradas no válidas lanzan una excepción.
+
+\subsection{Canal con pérdida}
+\label{subsec:impl_channel}
+
+En este módulo, \texttt{channel.py}, simulamos la recompresión JPEG que sufriría la imagen estego en una plataforma 
+real. Su función recibe una imagen en color y una calidad $Q$, la comprime a JPEG en memoria con 
+OpenCV y la vuelve a decodificar, de modo que devuelve la imagen recomprimida sin escribir 
+ficheros intermedios. Comprimimos la imagen completa y no solo la luminancia, porque es lo que 
+hace un JPEG de verdad. La extracción toma después la luminancia de la imagen recibida.
+
+Esta separación nos obliga a pasar de color a luminancia y al revés, y de eso se encarga un módulo 
+auxiliar que también hemos desarrollado: \texttt{imgutils.py}, el cual carga y guarda las imágenes (guardamos las imágenes estego en 
+PNG, sin pérdidas) y sustituye la luminancia de una imagen en color por la modificada, dejando la 
+crominancia como estaba. Este paso redondea y recorta valores, por lo que la luminancia puede 
+cambiar en una o dos unidades. Es un error muy inferior al margen $\Delta/4$ del esquema, y una 
+de las pruebas lo comprueba directamente.
+
+Las pruebas del canal comprueban que la imagen devuelta tiene el mismo tamaño y tipo, que la de 
+entrada no se altera, que el resultado es determinista, que el error respecto al original crece 
+al bajar $Q$, y que una calidad no válida (fuera de 1 a 100, no entera o booleana) o una imagen 
+con forma o tipo incorrectos lanzan una excepción. Además, probamos la cadena completa sobre 
+imágenes sintéticas: insertar en la luminancia, volver a color, recomprimir y extraer. 
+Con $Q=90$ y $\alpha \in \{2, 3, 4\}$ se recuperan los 64 bits exactos, y con $Q=100$ también 
+con $\alpha=1{.}5$. Estas pruebas no sustituyen al experimento con las imágenes reales, pero 
+comprueban que la cadena entera funciona antes de lanzarlo.
+
 % TODO (PEC 3): ir añadiendo una subsección por módulo conforme se terminen.
-% \subsection{Inserción y extracción QIM-DCT}   -> stego
-% \subsection{Canal con pérdida}                -> channel
 % \subsection{Métricas}                         -> metrics
 % \subsection{Flujo completo}                   -> main
 
@@ -1123,13 +1178,19 @@ Cada módulo tiene su propio conjunto de pruebas unitarias, escritas con la bibl
 \color{white}\textbf{Qué comprueban} &
 \color{white}\textbf{Requisitos} \\
 \hline
-\texttt{frame} & 11 & Límites de los campos, orden de bytes y de bits, ida y vuelta con 32 y 64 bits, criterio de versión y reproducibilidad de $T$. & RF-1, RF-2, RNF-1 \\
+\texttt{frame} & 11 & Límites de los campos, orden de bytes y de bits, ida y vuelta con 32 y 64 bits, criterio de versión y reproducibilidad de $T$. & RF-1, RF-2, RF-5 \\
 \hline
 \texttt{coding} & 9 & Corrección de 1 y 2 símbolos en todas las posiciones, fallo con 3 símbolos y tasa de falsa corrección. & RF-4, RS-2 \\
 \hline
 \texttt{crypto} & 9 & Simetría del secreto, determinismo de la semilla, dependencia del contexto, claves inválidas y de orden bajo. & RF-3, RS-1, RS-3, RS-4 \\
 \hline
 \texttt{positions} & 10 & Determinismo, unicidad y rango de las posiciones, entradas inválidas, solapamiento entre semillas y registro en JSON. & RF-3, RS-3 \\
+\hline
+\texttt{stego} & 15 & Regla QIM sobre un coeficiente (ida y vuelta, desplazamiento máximo $\Delta/2$, tolerancia de $\Delta/4$), ida y vuelta completa con cuatro valores de $\alpha$, bloques modificados, entrada intacta, PSNR y clave incorrecta. & RF-1, RS-1 \\
+\hline
+\texttt{imgutils} & 8 & Forma y tipo de la luminancia, entrada intacta, sustitución de luminancia con error de redondeo acotado, ida y vuelta PNG sin pérdidas y entradas inválidas. & RNF-3 \\
+\hline
+\texttt{channel} & 10 & Forma y tipo de salida, determinismo, mayor distorsión al bajar $Q$, calidades e imágenes inválidas, y cadena completa de inserción, recompresión y extracción. & RF-1, RF-5, RNF-3 \\
 \hline
 \end{tabular}
 \end{table}

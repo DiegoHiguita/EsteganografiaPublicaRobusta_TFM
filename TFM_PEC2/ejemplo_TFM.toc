@@ -67,5 +67,7 @@
 \contentsline {subsection}{\numberline {4.2.2}Codificación Reed-Solomon}{45}{subsection.4.2.2}%
 \contentsline {subsection}{\numberline {4.2.3}Acuerdo de claves y derivación de laS semilla}{45}{subsection.4.2.3}%
 \contentsline {subsection}{\numberline {4.2.4}Mapa de posiciones}{46}{subsection.4.2.4}%
-\contentsline {section}{\numberline {4.3}Pruebas realizadas}{46}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Bibliograf\'{\i }a}{47}{chapter.5}%
+\contentsline {subsection}{\numberline {4.2.5}Inserción y extracción QIM-DCT}{46}{subsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.2.6}Canal con pérdida}{47}{subsection.4.2.6}%
+\contentsline {section}{\numberline {4.3}Pruebas realizadas}{47}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Bibliograf\'{\i }a}{49}{chapter.5}%
