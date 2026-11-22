@@ -1052,7 +1052,7 @@ Siguiendo el requisito de modularidad (RNF-3), dividimos el código en módulos 
 \hline
 \texttt{channel.py} & Simular la recompresión JPEG. & Implementado y probado. \\
 \hline
-\texttt{metrics.py} & Calcular $\mathrm{BER}$, $\mathrm{PSNR}$ y $\mathrm{SSIM}$. & Pendiente. \\
+\texttt{metrics.py} & Calcular $\mathrm{BER}$, $\mathrm{PSNR}$ y $\mathrm{SSIM}$. & Implementado y probado. \\
 \hline
 \texttt{main.py} & Ejecutar el flujo completo con una imagen. & Pendiente. \\
 \hline
@@ -1156,8 +1156,39 @@ Con $Q=90$ y $\alpha \in \{2, 3, 4\}$ se recuperan los 64 bits exactos, y con $Q
 con $\alpha=1{.}5$. Estas pruebas no sustituyen al experimento con las imágenes reales, pero 
 comprueban que la cadena entera funciona antes de lanzarlo.
 
-% TODO (PEC 3): ir añadiendo una subsección por módulo conforme se terminen.
-% \subsection{Métricas}                         -> metrics
+\subsection{Métricas}%                         -> metrics
+\label{subsec:impl_metrics}
+
+El módulo \texttt{metrics.py} reúne todo lo que medimos en cada ensayo. La $\mathrm{BER}$ compara bit a bit 
+la secuencia enviada con la recibida y divide el número de diferencias 
+entre el total de bits, lo que equivale al XOR que definimos en el diseño. 
+Usamos la misma función para la tasa de error antes de la corrección Reed-Solomon, sobre los 64 
+bits codificados, y después de ella, sobre los 32 bits de la trama. 
+El $\mathrm{PSNR}$ y el $\mathrm{SSIM}$ se calculan con \texttt{scikit-image} entre la imagen 
+original y la estego-imagen, ambas en color y antes del canal. Una imagen idéntica a la original da 
+un $\mathrm{PSNR}$ infinito, caso que tratamos de forma explícita.
+
+La parte más importante es la clasificación de cada decodificación. Para ello, el módulo decodifica 
+los 64 bits recibidos y los compara con la trama enviada $M$, de modo que cada ensayo termina en 
+uno de tres estados: recuperación correcta, fallo detectado (el decodificador lanza un error) o 
+falsa corrección (devuelve una trama distinta de $M$ sin avisar). Calculamos también si el 
+receptor aceptaría la trama según el criterio de aceptación, es decir, si RS decodifica sin error y 
+el campo $V$ coincide con $V_{\mathrm{esp}}$. Una falsa corrección puede ser aceptada si su 
+campo $V$ es el esperado, y por eso el estado se determina siempre comparando con $M$ y no solo 
+con $V$. La tasa de recuperación $R$ es la fracción de ensayos en estado correcto.
+
+Las pruebas de este módulo son 20. Comprueban la $\mathrm{BER}$ con valores 
+conocidos (16 errores en 64 bits dan 0{.}25), y el $\mathrm{PSNR}$ con un caso que se calcula a 
+mano: una diferencia constante de una unidad en todos los píxeles da 48{.}13~dB. También verifican 
+que el $\mathrm{SSIM}$ vale 1 para imágenes idénticas y baja cuando difieren, y que las entradas 
+inválidas lanzan una excepción. Sobre la decodificación, confirman que con uno o dos bytes 
+alterados la trama se recupera aunque la $\mathrm{BER}$ previa no sea nula, que con tres o más 
+nunca se recupera, que un fallo detectado no devuelve trama, y que una versión $V$ incorrecta no 
+se acepta. Para la falsa corrección construimos un caso a propósito: tomamos la palabra codificada 
+de otra trama válida y alteramos dos de sus bytes, de modo que RS la corrige hacia esa otra trama. 
+La prueba comprueba que el módulo la clasifica como falsa corrección, y que, al tener la misma 
+versión $V$, el criterio de aceptación la acepta.
+
 % \subsection{Flujo completo}                   -> main
 
 \section{Pruebas realizadas}
@@ -1191,6 +1222,8 @@ Cada módulo tiene su propio conjunto de pruebas unitarias, escritas con la bibl
 \texttt{imgutils} & 8 & Forma y tipo de la luminancia, entrada intacta, sustitución de luminancia con error de redondeo acotado, ida y vuelta PNG sin pérdidas y entradas inválidas. & RNF-3 \\
 \hline
 \texttt{channel} & 10 & Forma y tipo de salida, determinismo, mayor distorsión al bajar $Q$, calidades e imágenes inválidas, y cadena completa de inserción, recompresión y extracción. & RF-1, RF-5, RNF-3 \\
+\hline
+\texttt{metrics} & 20 & BER con valores conocidos, PSNR y SSIM (imágenes idénticas, valor calculado a mano, entradas inválidas), clasificación de la decodificación (correcta, fallo, falsa corrección construida a propósito), criterio de aceptación por versión y tasa de recuperación. & RF-1, RF-4, RS-2 \\
 \hline
 \end{tabular}
 \end{table}

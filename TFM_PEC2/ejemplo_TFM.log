@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.11.20)  22 NOV 2026 00:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.11.20)  22 NOV 2026 12:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -841,7 +841,7 @@ Package geometry Warning: `bmargin' results in NEGATIVE (-30.15993pt).
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<UOCllarg.jpg, id=259, 998.73125pt x 2642.87375pt>
+<UOCllarg.jpg, id=263, 998.73125pt x 2642.87375pt>
 File: UOCllarg.jpg Graphic file (type jpg)
 <use UOCllarg.jpg>
 Package pdftex.def Info: UOCllarg.jpg  used on input line 52.
@@ -870,12 +870,12 @@ Overfull \hbox (53.6248pt too wide) in paragraph at lines 52--52
 
 
 {C:/Users/Diego/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./UOCllarg.jpg>]
-<./licenc/ccby.png, id=268, 66.2475pt x 24.09pt>
+<./licenc/ccby.png, id=272, 66.2475pt x 24.09pt>
 File: ./licenc/ccby.png Graphic file (type png)
 <use ./licenc/ccby.png>
 Package pdftex.def Info: ./licenc/ccby.png  used on input line 52.
 (pdftex.def)             Requested size: 66.24733pt x 24.08992pt.
-<noulogo.png, id=271, 671.6292pt x 173.448pt>
+<noulogo.png, id=275, 671.6292pt x 173.448pt>
 File: noulogo.png Graphic file (type png)
 <use noulogo.png>
 Package pdftex.def Info: noulogo.png  used on input line 52.
@@ -888,7 +888,7 @@ Package fancyhdr Warning: \headheight is too small (35.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-7.67912pt}.
 
-<eimt.png, id=272, 74.1972pt x 10.1178pt>
+<eimt.png, id=276, 74.1972pt x 10.1178pt>
 File: eimt.png Graphic file (type png)
 <use eimt.png>
 Package pdftex.def Info: eimt.png  used on input line 52.
@@ -1152,7 +1152,7 @@ File: eimt.png Graphic file (type png)
 Package pdftex.def Info: eimt.png  used on input line 237.
 (pdftex.def)             Requested size: 73.03314pt x 9.95863pt.
 [14]
-<Imagenes/DG_TFM.pdf, id=466, 523.9575pt x 542.025pt>
+<Imagenes/DG_TFM.pdf, id=471, 523.9575pt x 542.025pt>
 File: Imagenes/DG_TFM.pdf Graphic file (type pdf)
 <use Imagenes/DG_TFM.pdf>
 Package pdftex.def Info: Imagenes/DG_TFM.pdf  used on input line 250.
@@ -1946,7 +1946,7 @@ File: eimt.png Graphic file (type png)
 Package pdftex.def Info: eimt.png  used on input line 753.
 (pdftex.def)             Requested size: 73.03314pt x 9.95863pt.
 [33]
-<Imagenes/ArqPrttp_drawio.png, id=730, 607.068pt x 794.97pt>
+<Imagenes/ArqPrttp_drawio.png, id=735, 607.068pt x 794.97pt>
 File: Imagenes/ArqPrttp_drawio.png Graphic file (type png)
 <use Imagenes/ArqPrttp_drawio.png>
 Package pdftex.def Info: Imagenes/ArqPrttp_drawio.png  used on input line 768.
@@ -1985,7 +1985,7 @@ File: eimt.png Graphic file (type png)
 Package pdftex.def Info: eimt.png  used on input line 793.
 (pdftex.def)             Requested size: 73.03314pt x 9.95863pt.
 [35 <./Imagenes/ArqPrttp_drawio.png>]
-<Imagenes/fig_qim_jpeg.png, id=743, 607.068pt x 375.804pt>
+<Imagenes/fig_qim_jpeg.png, id=748, 607.068pt x 375.804pt>
 File: Imagenes/fig_qim_jpeg.png Graphic file (type png)
 <use Imagenes/fig_qim_jpeg.png>
 Package pdftex.def Info: Imagenes/fig_qim_jpeg.png  used on input line 803.
@@ -2192,7 +2192,7 @@ Package pdftex.def Info: eimt.png  used on input line 1133.
 [46]
 File: noulogo.png Graphic file (type png)
 <use noulogo.png>
-Package pdftex.def Info: noulogo.png  used on input line 1197.
+Package pdftex.def Info: noulogo.png  used on input line 1191.
 (pdftex.def)             Requested size: 165.26283pt x 42.67912pt.
 
 
@@ -2204,14 +2204,17 @@ Package fancyhdr Warning: \headheight is too small (35.0pt):
 
 File: eimt.png Graphic file (type png)
 <use eimt.png>
-Package pdftex.def Info: eimt.png  used on input line 1197.
+Package pdftex.def Info: eimt.png  used on input line 1191.
 (pdftex.def)             Requested size: 73.03314pt x 9.95863pt.
 [47]
+Underfull \hbox (badness 1983) in paragraph at lines 1226--1226
+[]|\OT1/cmr/m/n/8 BER con va-lo-res co-no-ci-dos, PSNR y SSIM
+ []
+
 File: noulogo.png Graphic file (type png)
 <use noulogo.png>
-Package pdftex.def Info: noulogo.png  used on input line 1270.
+Package pdftex.def Info: noulogo.png  used on input line 1303.
 (pdftex.def)             Requested size: 165.26283pt x 42.67912pt.
-
 
 Package fancyhdr Warning: \headheight is too small (35.0pt): 
 (fancyhdr)                Make it at least 42.67912pt, for example:
@@ -2221,17 +2224,17 @@ Package fancyhdr Warning: \headheight is too small (35.0pt):
 
 File: eimt.png Graphic file (type png)
 <use eimt.png>
-Package pdftex.def Info: eimt.png  used on input line 1270.
+Package pdftex.def Info: eimt.png  used on input line 1303.
 (pdftex.def)             Requested size: 73.03314pt x 9.95863pt.
 [48]
 Cap\'{\i }tulo 5.
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 1270.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 1303.
 (C:\Users\Diego\AppData\Local\Programs\MiKTeX\tex/latex/base\ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 File: noulogo.png Graphic file (type png)
 <use noulogo.png>
-Package pdftex.def Info: noulogo.png  used on input line 1270.
+Package pdftex.def Info: noulogo.png  used on input line 1303.
 (pdftex.def)             Requested size: 165.26283pt x 42.67912pt.
 
 
@@ -2243,18 +2246,18 @@ Package fancyhdr Warning: \headheight is too small (35.0pt):
 
 File: eimt.png Graphic file (type png)
 <use eimt.png>
-Package pdftex.def Info: eimt.png  used on input line 1270.
+Package pdftex.def Info: eimt.png  used on input line 1303.
 (pdftex.def)             Requested size: 73.03314pt x 9.95863pt.
 [49
 
 ]
-Overfull \hbox (18.45627pt too wide) in paragraph at lines 1270--1270
+Overfull \hbox (18.45627pt too wide) in paragraph at lines 1303--1303
 \OT1/cmr/m/it/12 im^^Sage-nes JPEG\OT1/cmr/m/n/12 . \OT1/cmr/m/sc/12 url\OT1/cmr/m/n/12 : []$\OT1/cmtt/m/n/12 https : / / daniellerch . me / stego / books / stegopython / jpegimages -[]
  []
 
 File: noulogo.png Graphic file (type png)
 <use noulogo.png>
-Package pdftex.def Info: noulogo.png  used on input line 1270.
+Package pdftex.def Info: noulogo.png  used on input line 1303.
 (pdftex.def)             Requested size: 165.26283pt x 42.67912pt.
 
 Package fancyhdr Warning: \headheight is too small (35.0pt): 
@@ -2265,21 +2268,21 @@ Package fancyhdr Warning: \headheight is too small (35.0pt):
 
 File: eimt.png Graphic file (type png)
 <use eimt.png>
-Package pdftex.def Info: eimt.png  used on input line 1270.
+Package pdftex.def Info: eimt.png  used on input line 1303.
 (pdftex.def)             Requested size: 73.03314pt x 9.95863pt.
 [50]
-Overfull \hbox (3.64702pt too wide) in paragraph at lines 1270--1270
+Overfull \hbox (3.64702pt too wide) in paragraph at lines 1303--1303
 \OT1/cmr/m/it/12 wij-kerhout, The Nether-lands, Oc-to-ber 7-9, 2002, Re-vi-sed Pa-pers\OT1/cmr/m/n/12 . Google-Books-ID: ClxqC-
  []
 
 
-Overfull \hbox (0.18784pt too wide) in paragraph at lines 1270--1270
+Overfull \hbox (0.18784pt too wide) in paragraph at lines 1303--1303
 \OT1/cmr/m/sc/12 doi\OT1/cmr/m/n/12 : []$\OT1/cmtt/m/n/12 10 . 1137 / 0108018$[]\OT1/cmr/m/n/12 . \OT1/cmr/m/sc/12 url\OT1/cmr/m/n/12 : []$\OT1/cmtt/m/n/12 https : / / doi . org / 10 . 1137 / 0108018$[] \OT1/cmr/m/n/12 (vi-si-ta-do 14[]11[]2026). 
  []
 
 File: noulogo.png Graphic file (type png)
 <use noulogo.png>
-Package pdftex.def Info: noulogo.png  used on input line 1270.
+Package pdftex.def Info: noulogo.png  used on input line 1303.
 (pdftex.def)             Requested size: 165.26283pt x 42.67912pt.
 
 Package fancyhdr Warning: \headheight is too small (35.0pt): 
@@ -2290,12 +2293,12 @@ Package fancyhdr Warning: \headheight is too small (35.0pt):
 
 File: eimt.png Graphic file (type png)
 <use eimt.png>
-Package pdftex.def Info: eimt.png  used on input line 1270.
+Package pdftex.def Info: eimt.png  used on input line 1303.
 (pdftex.def)             Requested size: 73.03314pt x 9.95863pt.
 [51]
 File: noulogo.png Graphic file (type png)
 <use noulogo.png>
-Package pdftex.def Info: noulogo.png  used on input line 1283.
+Package pdftex.def Info: noulogo.png  used on input line 1316.
 (pdftex.def)             Requested size: 165.26283pt x 42.67912pt.
 
 
@@ -2307,7 +2310,7 @@ Package fancyhdr Warning: \headheight is too small (35.0pt):
 
 File: eimt.png Graphic file (type png)
 <use eimt.png>
-Package pdftex.def Info: eimt.png  used on input line 1283.
+Package pdftex.def Info: eimt.png  used on input line 1316.
 (pdftex.def)             Requested size: 73.03314pt x 9.95863pt.
 [52] (ejemplo_TFM.aux
 LaTeX Info: Redefining \. on input line 12.
@@ -2318,23 +2321,23 @@ LaTeX2e <2026-11-01>
 L3 programming layer <2026-09-09>
  ***********
 Package rerunfilecheck Info: File `ejemplo_TFM.out' has not changed.
-(rerunfilecheck)             Checksum: 2AAA972303A65B410BF3110FE899FCE4;16208.
+(rerunfilecheck)             Checksum: EB1D96C56D15DBF4E442DBB67F4796AC;16313.
 Package logreq Info: Writing requests to 'ejemplo_TFM.run.xml'.
 \openout1 = `ejemplo_TFM.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 21952 strings out of 467309
- 389274 string characters out of 5402792
- 1303448 words of memory out of 5000000
- 50900 multiletter control sequences out of 15000+600000
+ 21955 strings out of 467309
+ 389329 string characters out of 5402792
+ 1303492 words of memory out of 5000000
+ 50902 multiletter control sequences out of 15000+600000
  637693 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,21n,98p,2181b,2401s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Diego\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/lasy10.pfb>
-Output written on ejemplo_TFM.pdf (53 pages, 1072623 bytes).
+Output written on ejemplo_TFM.pdf (53 pages, 1075634 bytes).
 PDF statistics:
- 1066 PDF objects out of 1200 (max. 8388607)
- 217 named destinations out of 1000 (max. 500000)
- 548 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1071 PDF objects out of 1200 (max. 8388607)
+ 218 named destinations out of 1000 (max. 500000)
+ 556 words of extra memory for PDF output out of 10000 (max. 10000000)
 
