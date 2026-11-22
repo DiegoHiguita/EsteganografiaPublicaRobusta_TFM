@@ -7,9 +7,9 @@
 | coding.py | Reed-Solomon RS(8,4) | hecho |
 | crypto.py | X25519 y HKDF | hecho |
 | positions.py | Mapa pseudoaleatorio de posiciones y dither | hecho |
-| stego.py | Inserción y extracción QIM-DCT | pendiente |
-| channel.py | Recompresión JPEG | pendiente |
-| metrics.py | BER, PSNR, SSIM | pendiente |
+| stego.py | Inserción y extracción QIM-DCT | hecho |
+| channel.py | Recompresión JPEG | hecho |
+| metrics.py | BER, PSNR, SSIM | hecho |
 | main.py | Flujo completo de una imagen | pendiente |
 
 ## Pruebas

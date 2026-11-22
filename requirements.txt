@@ -4,6 +4,6 @@ reedsolo == 1.7.0        # decode() devuelve 3 valores desde la 1.0
 cryptography == 50.0.2		
 numpy ==2.4.6
 opencv-python==5.1.0.95
-Pillow
-scikit-image         # SSIM
+pillow==13.0.0
+scikit-image==0.26.0         # SSIM
 pytest
