@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.11.20)  21 NOV 2026 14:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.11.20)  21 NOV 2026 14:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1946,25 +1946,16 @@ File: eimt.png Graphic file (type png)
 Package pdftex.def Info: eimt.png  used on input line 753.
 (pdftex.def)             Requested size: 73.03314pt x 9.95863pt.
 [33]
-
-LaTeX Warning: File `Imagenes/ArqPrttp.drawio.png' not found on input line 768.
-
-
-c:/Users/Diego/OneDrive/Escritorio/Uni/MASTER/Contenidos/TFM/Prototipo/TFM_PEC2/ejemplo_TFM.tex:768: Package pdftex.def Error: File `Imagenes/ArqPrttp.drawio.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.768 ...h=15truecm]{Imagenes/ArqPrttp.drawio.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+<Imagenes/ArqPrttp_drawio.png, id=720, 607.068pt x 794.97pt>
+File: Imagenes/ArqPrttp_drawio.png Graphic file (type png)
+<use Imagenes/ArqPrttp_drawio.png>
+Package pdftex.def Info: Imagenes/ArqPrttp_drawio.png  used on input line 768.
+(pdftex.def)             Requested size: 426.79134pt x 558.88913pt.
 File: noulogo.png Graphic file (type png)
 <use noulogo.png>
 Package pdftex.def Info: noulogo.png  used on input line 793.
 (pdftex.def)             Requested size: 165.26283pt x 42.67912pt.
+
 
 Package fancyhdr Warning: \headheight is too small (35.0pt): 
 (fancyhdr)                Make it at least 42.67912pt, for example:
@@ -1993,8 +1984,8 @@ File: eimt.png Graphic file (type png)
 <use eimt.png>
 Package pdftex.def Info: eimt.png  used on input line 793.
 (pdftex.def)             Requested size: 73.03314pt x 9.95863pt.
-[35]
-<Imagenes/fig_qim_jpeg.png, id=731, 607.068pt x 375.804pt>
+[35 <./Imagenes/ArqPrttp_drawio.png>]
+<Imagenes/fig_qim_jpeg.png, id=733, 607.068pt x 375.804pt>
 File: Imagenes/fig_qim_jpeg.png Graphic file (type png)
 <use Imagenes/fig_qim_jpeg.png>
 Package pdftex.def Info: Imagenes/fig_qim_jpeg.png  used on input line 803.
@@ -2289,34 +2280,24 @@ LaTeX Info: Redefining \% on input line 12.
 LaTeX2e <2026-11-01>
 L3 programming layer <2026-09-09>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `ejemplo_TFM.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `ejemplo_TFM.out':
-(rerunfilecheck)             Before: 071F318FF8330C608FAB928DC4ECE3B5;15820
-(rerunfilecheck)             After:  A650543E7B44C45E7C0F35D3AD6A29CC;15825.
+Package rerunfilecheck Info: File `ejemplo_TFM.out' has not changed.
+(rerunfilecheck)             Checksum: A650543E7B44C45E7C0F35D3AD6A29CC;15825.
 Package logreq Info: Writing requests to 'ejemplo_TFM.run.xml'.
 \openout1 = `ejemplo_TFM.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 21966 strings out of 467309
- 390037 string characters out of 5402792
- 1303327 words of memory out of 5000000
- 50918 multiletter control sequences out of 15000+600000
+ 21943 strings out of 467309
+ 389137 string characters out of 5402792
+ 1303328 words of memory out of 5000000
+ 50895 multiletter control sequences out of 15000+600000
  637693 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,21n,98p,2181b,2401s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Diego\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Users/Diego/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/lasy10.pfb>
-Output written on ejemplo_TFM.pdf (51 pages, 882081 bytes).
+Output written on ejemplo_TFM.pdf (51 pages, 1063837 bytes).
 PDF statistics:
- 1042 PDF objects out of 1200 (max. 8388607)
+ 1044 PDF objects out of 1200 (max. 8388607)
  213 named destinations out of 1000 (max. 500000)
- 527 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 532 words of extra memory for PDF output out of 10000 (max. 10000000)
 

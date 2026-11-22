@@ -1,7 +1,7 @@
 """
 test_stego.py - Pruebas de stego.py.
 
-Requisitos relacionados: RF-6 (ida y vuelta sin canal, BER = 0), RS-1 (clave incorrecta, BER ~ 0,5),
+Requisitos relacionados: RF-1 (extracción ciega, ida y vuelta sin canal con BER = 0), RS-1 (clave incorrecta, BER ~ 0,5),
 PSNR >= 38 dB. Se usa una imagen sintética reproducible (semilla fija), sin ficheros externos.
 """
 import unittest
@@ -96,7 +96,7 @@ class TestStego(unittest.TestCase):
         self.assertEqual(out.shape, self.luma.shape)
 
     def test_roundtrip_without_channel(self):
-        """embed + extract con el mismo mapa devuelven los 64 bits exactos, para cada alpha (RF-6)."""
+        """embed + extract con el mismo mapa devuelven los 64 bits exactos, para cada alpha (RF-1)."""
         for alpha in ALPHAS:
             with self.subTest(alpha=alpha):
                 out = stego.embed(self.luma, self.bits, self.emap, alpha)
