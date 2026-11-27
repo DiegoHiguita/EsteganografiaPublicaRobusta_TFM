@@ -8,6 +8,7 @@
 \usepackage{float}
 \usepackage{hyperref}
 \definecolor{uocnavy}{RGB}{0, 0, 120}
+\addto\captionsspanish{\def\tablename{Tabla}\def\listtablename{Índice de tablas}}
 
 %Introducción de datos del trabajo
 \title{Diseño y evaluación experimental de un esquema de esteganografía de clave pública resistente a compresión JPEG}
@@ -39,12 +40,12 @@
 % Resumen en el idioma
 
 \abstractidioma{
-En el presente Trabajo Final de Máster vamos a abordar el diseño, implementación y evaluación experimental de un sistema de esteganografía de clave pública en el dominio transformado. El objetivo principal es estudiar la viabilidad de transmitir una trama experimental de 32 bits —concebida como señalización experimental— a través de imágenes digitales expuestas a un canal con pérdida por recompresión JPEG. Se adopta como modelo de amenaza una comunicación bajo observación o censura, con un emisor (\textit{Alice}), un receptor (\textit{Bob}) y un observador (\textit{warden}) que puede analizar las imágenes o recomprimirlas. El sistema utiliza las imágenes de cobertura como medio de transporte encubierto y vincula el mapa de posiciones de inserción a la clave privada del receptor mediante X25519 y HKDF. La metodología propuesta combina la modulación por índice de cuantificación (QIM) sobre coeficientes de la Transformada Discreta del Coseno (DCT) con la codificación de canal Reed--Solomon para corregir errores de extracción dentro de la capacidad correctora del código. La evaluación del prototipo analiza el compromiso entre la fiabilidad en la extracción del mensaje, la degradación visual de la estego-imagen ($\mathrm{PSNR}$ y $\mathrm{SSIM}$) y la detectabilidad estadística mediante la suite de estegoanálisis Aletheia. Los resultados obtenidos en laboratorio permiten caracterizar el comportamiento y las limitaciones de la inserción frecuencial para el establecimiento de canales encubiertos en entornos con compresión de imagen.
+En el presente Trabajo Final de Máster vamos a abordar el diseño, implementación y evaluación experimental de un sistema de esteganografía de clave pública en el dominio transformado. El objetivo principal es estudiar la viabilidad de transmitir una trama experimental de 32 bits —concebida como señalización experimental— a través de imágenes digitales expuestas a un canal con pérdida por recompresión JPEG. Se adopta como modelo de amenaza una comunicación bajo observación o censura, con un emisor (\textit{Alice}), un receptor (\textit{Bob}) y un observador (\textit{warden}) que puede analizar las imágenes o recomprimirlas. El sistema utiliza las imágenes de cobertura como medio de transporte encubierto y vincula el mapa de posiciones de inserción a la clave privada del receptor mediante X25519 y HKDF. La metodología propuesta combina la modulación por índice de cuantificación (QIM) sobre coeficientes de la Transformada Discreta del Coseno (DCT) con la codificación de canal Reed--Solomon para corregir errores de extracción dentro de la capacidad correctora del código. La evaluación del prototipo analiza el compromiso entre la fiabilidad en la extracción del mensaje, la degradación visual de la estego-imagen ($\mathrm{PSNR}$ y $\mathrm{SSIM}$) y la detectabilidad estadística mediante la suite de estegoanálisis Aletheia. Los ensayos de laboratorio permitirán caracterizar el comportamiento y las limitaciones de la inserción frecuencial para el establecimiento de canales encubiertos en entornos con compresión de imagen.
 }
 
 % Resumen en inglés.
 \abstractenglish{
-In this Master's Thesis, we address the design, implementation, and experimental evaluation of a public-key steganography system in the transform domain. The main objective is to investigate the feasibility of transmitting a 32-bit experimental frame, used as experimental signaling, through digital images exposed to a lossy channel caused by JPEG recompression. The threat model is a communication under surveillance or censorship, with a sender (\textit{Alice}), a receiver (\textit{Bob}) and a warden that may analyze or recompress the images. The system uses cover images as a covert medium and ties the embedding position map to the receiver's private key through X25519 and HKDF. The proposed methodology combines Quantization Index Modulation (QIM) applied to Discrete Cosine Transform (DCT) coefficients with Reed--Solomon channel coding to correct extraction errors within the error-correction capability of the code. The prototype evaluation examines the trade-off between message extraction reliability, stego-image visual degradation ($\mathrm{PSNR}$ and $\mathrm{SSIM}$), and statistical detectability using the Aletheia steganalysis framework. The laboratory results characterize the behavior and limitations of frequency-domain embedding for establishing covert channels in image-compression environments.
+In this Master's Thesis, we address the design, implementation, and experimental evaluation of a public-key steganography system in the transform domain. The main objective is to investigate the feasibility of transmitting a 32-bit experimental frame, used as experimental signaling, through digital images exposed to a lossy channel caused by JPEG recompression. The threat model is a communication under surveillance or censorship, with a sender (\textit{Alice}), a receiver (\textit{Bob}) and a warden that may analyze or recompress the images. The system uses cover images as a covert medium and ties the embedding position map to the receiver's private key through X25519 and HKDF. The proposed methodology combines Quantization Index Modulation (QIM) applied to Discrete Cosine Transform (DCT) coefficients with Reed--Solomon channel coding to correct extraction errors within the error-correction capability of the code. The prototype evaluation examines the trade-off between message extraction reliability, stego-image visual degradation ($\mathrm{PSNR}$ and $\mathrm{SSIM}$), and statistical detectability using the Aletheia steganalysis framework. The laboratory experiments will characterize the behavior and limitations of frequency-domain embedding for establishing covert channels in image-compression environments.
 }
 
 \begin{document}
@@ -63,6 +64,7 @@ In this Master's Thesis, we address the design, implementation, and experimental
 
 
 \chapter{Introducción}
+\label{chap:introduccion}
 
 El presente Trabajo Final de Máster se enmarca en el estudio experimental de la esteganografía de clave pública en imágenes digitales frente a canales con pérdida. En este primer capítulo establecemos el marco general del proyecto; analizamos el contexto conceptual y la problemática técnica, detallamos los objetivos generales y específicos, definimos la metodología de trabajo y presentamos la planificación temporal prevista para el desarrollo del prototipo y su evaluación.
 
@@ -70,7 +72,7 @@ El presente Trabajo Final de Máster se enmarca en el estudio experimental de la
 \label{sec:contexto_justificacion}
 
 \subsection{Motivación y Modelo de Amenaza}
-En determinados escenarios de comunicación sometidos a observación o supervisión masiva, la criptografía convencional no resuelve por sí sola el problema de ocultar la existencia de un intercambio de información. Aunque el cifrado protege la confidencialidad del contenido, la presencia de un flujo de datos cifrados resulta explícitamente visible para un observador externo, revelando la intención de mantener una comunicación secreta \cite{5,8}.
+En determinados escenarios de comunicación sometidos a observación o supervisión masiva, la criptografía convencional no resuelve por sí sola el problema de ocultar la existencia de un intercambio de información. Aunque el cifrado protege la confidencialidad del contenido, la presencia de un flujo de datos cifrados resulta explícitamente visible para un observador externo, revelando la intención de mantener una comunicación secreta \cite{5,3}.
 
 Desde esta perspectiva, la esteganografía nos ofrece un enfoque complementario: en lugar de limitarse a proteger el contenido de un mensaje, busca integrarlo en un elemento portador aparentemente inocuo, como por ejemplo una imagen digital, con el propósito de reducir los indicios de que la comunicación se está produciendo \cite{5}. 
 
@@ -93,7 +95,8 @@ donde $V$ representa un campo de 8 bits destinado al identificador de versión d
 Esta trama cumple una función exclusivamente experimental: el patrón $T$ se emplea únicamente para medir la tasa de error de bit ($\mathrm{BER}$) mediante comparación bit a bit entre la señal emitida y la extraída, y nunca para verificar la integridad del mensaje. Se declara explícitamente que el prototipo no incluye autenticación de origen, firmas digitales, $\mathrm{MAC}$ ni comprobación de integridad. Esta decisión nos permite acotar el alcance del prototipo y mantener la trama centrada en la evaluación experimental de la transmisión y recuperación de información. Asimismo, el sistema opera exclusivamente sobre la componente de luminancia ($Y$) del espacio de color YCbCr y solo evalúa la degradación por recompresión JPEG, sin considerar ataques geométricos.
 
 \subsection{El Desafío del Canal Frecuencial JPEG}
-El canal de transmisión frecuencial presenta un desafío técnico crítico. La compresión JPEG divide la imagen en bloques de $8 \times 8$ píxeles y aplica la Transformada Discreta del Coseno (DCT), cuantificando los coeficientes resultantes y provocando una pérdida irreversible de información \cite{10}. Este proceso puede alterar o eliminar las modificaciones realizadas mediante métodos esteganográficos elementales del dominio espacial, como la modificación del bit menos significativo (LSB) \cite{3}.
+El canal de transmisión frecuencial presenta un desafío técnico crítico. La compresión JPEG divide la imagen en bloques de $8 \times 8$ píxeles y aplica la Transformada Discreta del Coseno (DCT), cuantificando los coeficientes resultantes y provocando una 
+pérdida irreversible de información. Este proceso puede alterar o eliminar las modificaciones realizadas mediante métodos esteganográficos elementales del dominio espacial, como la modificación del bit menos significativo (LSB) \cite{3}.
 
 Para estudiar la resistencia frente a esta degradación, planteamos una técnica de inserción en el dominio frecuencial que combina la modulación por índice de cuantificación (\textit{Quantization Index Modulation}, QIM)\cite{11} sobre coeficientes DCT seleccionados con un código de corrección de errores Reed--Solomon $RS(8,4)$ \cite{reed1960}. QIM permite representar los bits mediante regiones de decisión definidas sobre los coeficientes, con el propósito de tolerar determinadas perturbaciones introducidas por la recompresión. Por su parte, Reed--Solomon incorpora redundancia para corregir errores en los símbolos recibidos, dentro de la capacidad correctora de la configuración utilizada. La eficacia de esta combinación frente a JPEG deberá determinarse experimentalmente.
 
@@ -132,7 +135,7 @@ Con el fin de delimitar el alcance técnico y experimental del prototipo, se est
 \end{itemize}
 
 \section{Impacto ético-social, sostenibilidad y de diversidad}
-\label{s:etic}
+\label{sec:impacto_etico_social}
 
 %Esta sección tendría que identificar los impactos positivos y/o negativos del trabajo final en las tres dimensiones de la competencia transversal UOC “Compromiso ético y global”..La Guía transversal sobre la Competencia Ética y Global os ayudará a redactar estos apartados.
 
@@ -259,9 +262,7 @@ Para ejecutar la planificación definida y desarrollar el prototipo experimental
 \begin{itemize}
 
 \item \textbf{Recursos de hardware:} Equipo informático personal con arquitectura x64 y al menos 8 GB de memoria RAM, suficiente para la ejecución de los algoritmos de esteganografía, los procesos de codificación y decodificación, las pruebas de compresión JPEG y el cálculo de las métricas de evaluación. No se requiere el uso de una $\mathrm{GPU}$ dedicada.
-
-\item \textbf{Recursos de software:} Entorno de desarrollo basado en Python 3.11, junto con las librerías \texttt{NumPy}, \texttt{OpenCV} y \texttt{Pillow} para el procesamiento y análisis de imágenes, y \texttt{scikit-image} para calcular el $\mathrm{SSIM}$; \texttt{reedsolo} para la aplicación del código Reed--Solomon $RS(8,4)$; y \texttt{cryptography} para implementar el intercambio de claves X25519 y la derivación de claves mediante HKDF. También utilizaremos la suite \texttt{Aletheia} \cite{1} para la evaluación mediante técnicas de estegoanálisis y un sistema de control de versiones para gestionar el desarrollo del prototipo.
-
+\item \textbf{Recursos de software:} Entorno de desarrollo basado en Python 3.11, junto con las librerías \texttt{NumPy} y \texttt{OpenCV} para el procesamiento de imágenes, \texttt{scikit-image} para calcular el $\mathrm{PSNR}$ y el $\mathrm{SSIM}$ y \texttt{Matplotlib} para generar las figuras de los resultados; \texttt{reedsolo} para la aplicación del código Reed--Solomon $RS(8,4)$; y \texttt{cryptography} para implementar el intercambio de claves X25519 y la derivación de claves mediante HKDF. También utilizaremos la suite \texttt{Aletheia} \cite{1} para la evaluación mediante técnicas de estegoanálisis y un sistema de control de versiones para gestionar el desarrollo del prototipo.
 \item \textbf{Recursos de datos:} Conjunto de imágenes de prueba obtenido a partir de un subconjunto del corpus ALASKA2, que contiene imágenes en color en formato JPEG. Para los experimentos se utilizarán exclusivamente las imágenes originales (\textit{cover}), descartando las que contienen información esteganográfica (\textit{stego}). Este corpus nos permitirá evaluar el comportamiento del prototipo sobre imágenes con características visuales diversas y estudiar su respuesta ante diferentes condiciones de recompresión JPEG.
 \end{itemize}
 
@@ -309,24 +310,23 @@ Identificamos los principales riesgos que podrían afectar a la planificación t
 % El resto del artículo se organiza de la siguiente manera: La Sección 2 contiene la revisión de la literatura. En la Sección 3 , proponemos enfoques para la incrustación de información eficiente y sin errores en el área DCT de imágenes digitales mediante el método QIM . En la Sección 4 , presentamos un nuevo algoritmo de incrustación basado en los enfoques propuestos . La Sección 5 muestra los resultados de experimentos computacionales con este algoritmo. La Sección 6 incluye una comparación con trabajos previos y un análisis de los resultados. La Sección 7 resume nuestra investigación.
 
 \section{Declaración sobre el uso de inteligencia artificial generativa}
+\label{sec:declaracion_ia}
 
-%Explicación de cualquier uso que se haya hecho de herramientas de inteligencia artificial generativa (como ChatGPT, Gemini, DALL-E, u otras) durante la concepción y desarrollo de este Trabajo Final, así como la redacción de esta memoria y la preparación de la presentación. Es obligatorio especificar las herramientas concretas utilizadas, la finalidad (por ejemplo, ideación, esbozo de código, corrección gramatical, generación de imágenes, etc.), los períodos o fases del trabajo en los que se emplearon, las acciones realizadas para validar los contenidos generados mediante IA y una valoración crítica del impacto de su uso. Se debe aclarar explícitamente qué partes del trabajo son autoría íntegra del estudiante y cuáles se han basado en inputs o resultados generados por IA, asegurando en todo momento que la responsabilidad intelectual y la validación final del contenido recaen totalmente en el estudiante, y que su uso ha sido discutido con el tutor/a del Trabajo y se ha realizado acorde a sus indicaciones. 
-
-En cumplimiento de las directrices académicas de la UOC respecto al uso de tecnologías emergentes, detallamos a continuación la utilización de herramientas de Inteligencia Artificial Generativa (IAG) durante la concepción, estructuración y redacción de las fases desarrolladas hasta la presente entrega (PEC 1 y PEC 2):
+En cumplimiento de las directrices académicas de la UOC respecto al uso de tecnologías emergentes, se detalla a continuación la utilización de herramientas de Inteligencia Artificial Generativa (IAG) durante la concepción, el desarrollo del prototipo y la redacción de la memoria hasta la presente entrega:
 
 \begin{itemize}
-    \item \textbf{Herramientas utilizadas:} Se han utilizado puntualmente herramientas de Inteligencia Artificial Generativa basadas en modelos de lenguaje (\textit{Large Language Models}), concretamente ChatGPT y Gemini.
+    \item \textbf{Herramientas utilizadas:} Se han utilizado puntualmente herramientas de Inteligencia Artificial Generativa basadas en modelos de lenguaje (\textit{Large Language Models}), concretamente ChatGPT y Gemini en las fases iniciales, y Claude en la etapa de desarrollo y evaluación de la PEC 3, manteniendo además a Gemini como apoyo puntual de revisión y contraste.
 
-    \item \textbf{Finalidad y fases de uso:} La utilización de estas herramientas ha abarcado la fase inicial de planificación (PEC 1) y la elaboración del Estado del Arte y el Diseño del Sistema (PEC 2). Se han empleado como apoyo para el formateo de sintaxis LaTeX, la corrección gramatical y de estilo académico, la estructuración de los apartados, la aclaración de conceptos técnicos y el refinamiento de la redacción formal, especialmente en la especificación del modelo de claves ECDH/KDF y la formulación del plan experimental.
+    \item \textbf{Finalidad y fases de uso:} En la planificación y el diseño inicial (PEC 1 y PEC 2), ChatGPT y Gemini se emplearon como apoyo en la redacción, el formato en \LaTeX{}, la síntesis de ideas y la comprobación de coherencia entre apartados. En la etapa de desarrollo y evaluación de la PEC 3, se utilizó Claude como apoyo auxiliar: escribió las pruebas unitarias y el script \texttt{analyze.py} (para generar figuras y tablas de resultados), y aportó ayuda secundaria mediante estructuras base para código, detección de fallos puntuales en la depuración, apoyo en la redacción de partes del capítulo~\ref{chap:implementacion} y revisiones formales de formato, etiquetas y bibliografía.
 
-    \item \textbf{Validación del contenido:} Las decisiones metodológicas y de arquitectura del prototipo, entre ellas la delimitación de la carga útil a 32 bits, el esquema de canal $RS(8,4) + \mathrm{QIM\text{-}DCT}$, la derivación de la semilla mediante ECDH+HKDF, la transmisión de la clave pública efímera ($epk_A$) mediante un canal auxiliar y la exclusión de mecanismos de autenticación del emisor, corresponden al autor. La información técnica y las propuestas obtenidas mediante IAG se han revisado y contrastado mediante la consulta de literatura especializada y el análisis crítico de su adecuación al alcance del trabajo.
+    \item \textbf{Autoría y validación del contenido:} La autoría intelectual, el planteamiento del problema, la arquitectura y la implementación principal del prototipo, la selección de parámetros (la trama experimental de 32 bits, la codificación Reed--Solomon $\mathrm{RS}(8,4)$, la modulación $\mathrm{QIM\text{-}DCT}$, la derivación de semilla con ECDH+HKDF y la exclusión de mecanismos de autenticación e integridad), la ejecución del piloto experimental y las conclusiones corresponden al autor. La decisión de transmitir $epk_A$ por un canal auxiliar, que el autor ya venía considerando, se adoptó tras valorar alternativas con apoyo de IA. Todos los textos, sugerencias o fragmentos asistidos por IAG fueron revisados, adaptados, completados y validados directamente por el autor mediante pruebas reproducibles y contraste con la literatura especializada.
 
-    \item \textbf{Valoración crítica e impacto:} Las herramientas de IAG han servido como apoyo a las tareas de redacción, maquetación y discusión técnica, facilitando la preparación del documento. La selección de las soluciones adoptadas, su justificación y la responsabilidad sobre el contenido final corresponden al autor.
+    \item \textbf{Valoración crítica e impacto:} El uso de estas herramientas ha facilitado tareas auxiliares de formato, depuración y generación de material de soporte (como pruebas y scripts de análisis), reduciendo fricciones operativas sin sustituir el criterio técnico ni la toma de decisiones del autor. La responsabilidad final sobre la exactitud, el alcance y las limitaciones declaradas en la memoria y en el prototipo recae íntegramente en el autor.
 \end{itemize}
 
-%Se declara de forma explícita que la responsabilidad intelectual, la autoría del diseño propuesto y la validación final de todos los contenidos expresados en este documento recaen íntegramente en el estudiante, habiendo seguido las orientaciones y directrices fijadas para el desarrollo del Trabajo Final de Máster.
 
 \chapter{Estado del arte}
+\label{chap:estado_arte}
 %Estado del arte del tema en cuestión. Tendría que acabar mostrando por qué el trabajo es importante y aporta algo, y con las hipótesis del trabajo.
 
 \section{Fundamentos de Esteganografía en Imágenes y Métricas de Rendimiento}
@@ -396,11 +396,11 @@ El comportamiento de un canal encubierto no solo está condicionado por la imper
 
 \paragraph{Cómo se evalúa la robustez.} En los trabajos revisados, la robustez se mide a dos niveles: a nivel de bit (tasa de error de bit o su complemento, la exactitud de bits) y a nivel de mensaje (tasa de éxito, es decir, proporción de imágenes cuyo mensaje se recupera íntegro tras decodificar el código corrector) \cite{18,20,zhu2018hidden}. Las condiciones del canal se fijan mediante el compresor empleado (por ejemplo, las funciones de MATLAB o la biblioteca mozjpeg \cite{18}) y el factor de calidad $Q$, y los resultados dependen de ambos y del corpus utilizado. Esta es también la lógica de evaluación que seguiremos en nuestro prototipo ($\mathrm{BER}$ y recuperación de la trama frente a $Q$).
 
-\paragraph{Métodos con codificación de canal y modulación por dither.} Zhang et al. \cite{20} parten del marco de esteganografía robusta, es decir, construcción de un dominio resistente a la compresión + códigos RS-STC, que combina un código Reed--Solomon con códigos de trellis de síndromes (STC). Su contribución no es un nuevo método de inserción, sino un análisis de tolerancia a fallos de los métodos que siguen este marco: modelan los errores tras la recompresión como errores en ráfaga mediante una distribución de Poisson, validan el modelo con una prueba $\chi^2$ y obtienen una cota inferior de la probabilidad de que el decodificador RS-STC extraiga correctamente el mensaje, que contrastan con resultados experimentales. Entre los métodos de esta familia figura DMAS \cite{zhang2018dmas}, que modifica coeficientes AC de frecuencias medias mediante modulación con \textit{dither} y emplea RS junto con STC. Esa modulación es una realización práctica de QIM, propuesta por Chen y Wornell \cite{11}. Por tanto, la combinación de una inserción basada en cuantificación con Reed--Solomon no es en sí misma novedosa en la esteganografía JPEG robusta. Lo específico de nuestro prototipo es la configuración: QIM sin STC ni funciones de coste adaptativas, un código fijo $RS(8,4)$ sobre una trama de 32 bits, un mapa de posiciones derivado de $SK_B$ y de información pública del protocolo, y el estudio sistemático del efecto de $\Delta$ sobre $\mathrm{BER}$, $\mathrm{PSNR}$, $\mathrm{SSIM}$ y detectabilidad. Los límites de \cite{20} son que se circunscribe a la recompresión JPEG y a esa familia de métodos, que su resultado es una cota y no una garantía, y que no evalúa la detectabilidad.
+\paragraph{Métodos con codificación de canal y modulación por dither.} Zhang et al. \cite{20} estudian los métodos de esteganografía robusta que combinan un dominio resistente a la compresión con códigos RS-STC (un código Reed--Solomon junto con códigos de trellis de síndromes). Su contribución no es un nuevo método de inserción, sino un análisis de en qué casos esos métodos recuperan bien el mensaje tras la recompresión JPEG. Entre los métodos de esta familia figura DMAS \cite{zhang2018dmas}, que modifica coeficientes AC de frecuencias medias mediante modulación con \textit{dither} y emplea RS junto con STC. Esa modulación es una realización práctica de QIM, propuesta por Chen y Wornell \cite{11}. Por tanto, combinar una inserción basada en cuantificación con Reed--Solomon no es en sí mismo novedoso en la esteganografía JPEG robusta. Lo específico de nuestro prototipo es la configuración: QIM sin STC ni funciones de coste adaptativas, un código fijo $RS(8,4)$ sobre una trama de 32 bits, un mapa de posiciones derivado de $SK_B$ y de información pública del protocolo, y el estudio sistemático del efecto de $\Delta$ sobre $\mathrm{BER}$, $\mathrm{PSNR}$, $\mathrm{SSIM}$ y detectabilidad. Los límites de \cite{20} son que se circunscribe a la recompresión JPEG y a esa familia de métodos, y que no evalúa la detectabilidad.
 
 \paragraph{Selección de regiones robustas mediante aprendizaje.} Zhang, Zhao y He \cite{18} abordan la robustez desde la elección de la región de inserción: entrenan un clasificador de robustez que predice qué bloques DCT no cambian tras la recompresión, y lo emplean para delimitar el dominio de inserción del mensaje secreto. La información de selección se inserta como mensaje de protocolo en coeficientes de frecuencias medias, protegida con un código Reed--Solomon (símbolos de 8 bits), mientras que el mensaje secreto se codifica con BCH. Evalúan la recompresión con mozjpeg y con MATLAB ($Q$ = 75, 85 y 90) sobre BOSSbase 1.01, miden la tasa de éxito de extracción y la comparan con GMAS y con otros métodos robustos, y evalúan la detectabilidad con DCTR y GFR. Sus resultados indican mayor tasa de éxito que GMAS, pero la seguridad frente a los detectores es mejor que la de GMAS solo con cargas altas, y el clasificador debe ajustarse a cada canal de compresión.
 
-\paragraph{Alternativas aprendidas de extremo a extremo.} HiDDeN \cite{zhu2018hidden} entrena conjuntamente un codificador, un decodificador y un adversario, e intercala entre codificador y decodificador capas de ruido que simulan desenfoque gaussiano, eliminación de píxeles (\textit{dropout}), recorte y compresión JPEG. Como la cuantificación JPEG no es diferenciable, durante el entrenamiento se emplean aproximaciones diferenciables (JPEG-Mask y JPEG-Drop) y la robustez se verifica después con JPEG real. Los autores miden la exactitud de bits sobre imágenes de test no vistas: con JPEG real de $Q=50$, la exactitud pasa del 50\,\% (modelo entrenado sin ruido) al 85\,\% (modelo entrenado con JPEG simulado), y reconocen que en distorsiones del dominio frecuencial su modelo rinde peor que un producto comercial de marcado de agua. Entre sus limitaciones para nuestro contexto destacan que la robustez se limita a las distorsiones incluidas en el entrenamiento, que los mensajes son cortos (30 bits en el experimento de robustez) y que la robustez y el secreto se evalúan en configuraciones distintas: el experimento de esteganografía supone un canal sin ruido, y en él el estegoanalizador ATS \cite{lerch2016ats} detecta las imágenes con un 98\,\% de acierto si conoce los pesos del modelo y no mejor que el azar si no los conoce. StegaStamp \cite{tancik2020stegastamp} extiende la idea a la captura física de imágenes: su canal simulado incluye deformación de perspectiva, desenfoque de movimiento y de enfoque, manipulación de color, ruido y compresión JPEG. Codifica 100 bits que, tras corrección de errores con un código BCH, transportan 56 bits de datos, y sus autores informan de la recuperación de aproximadamente el 95\,\% de los bits en condiciones reales de impresión y captura. Su objetivo es la invisibilidad perceptual para enlazar fotografías con recursos en línea, no la indetectabilidad estadística, y requiere una red adicional de detección y rectificación de la imagen.
+\paragraph{Alternativas aprendidas de extremo a extremo.} HiDDeN \cite{zhu2018hidden} entrena conjuntamente un codificador, un decodificador y un adversario, e incluye entre ambos capas de ruido que simulan distorsiones como el recorte o la compresión JPEG. Entre sus limitaciones para nuestro contexto destacan que la robustez se limita a las distorsiones incluidas en el entrenamiento, que los mensajes son cortos (30 bits en el experimento de robustez) y que la robustez y el secreto se evalúan en configuraciones distintas: en el experimento de esteganografía el canal no tiene ruido, y en él el estegoanalizador ATS \cite{lerch2016ats} detecta las imágenes con un 98\,\% de acierto si conoce los pesos del modelo y no mejor que el azar si no los conoce. StegaStamp \cite{tancik2020stegastamp} extiende la idea a la captura física de imágenes: su canal simulado incluye distorsiones como el desenfoque, el ruido o la compresión JPEG. Su objetivo es la invisibilidad perceptual para enlazar fotografías con recursos en línea, no la indetectabilidad estadística, y requiere una red adicional de detección y rectificación de la imagen.
 
 \begin{table}[H]
 \centering
@@ -416,9 +416,9 @@ El comportamiento de un canal encubierto no solo está condicionado por la imper
 \color{white}\textbf{Limitaciones} \\
 \hline
 Zhang et al. (2018) \cite{20} &
-Recompresión JPEG (modelo de errores en ráfaga). &
-Modelo teórico (Poisson, prueba $\chi^2$) y tasa de extracción correcta tras JPEG comparada con la cota teórica. &
-Solo recompresión JPEG y familia RS-STC; la cota no es una garantía; no evalúa detectabilidad. \\
+Recompresión JPEG. &
+Tasa de extracción correcta tras recompresión JPEG. &
+Solo recompresión JPEG y familia RS-STC; no evalúa detectabilidad. \\
 \hline
 Zhang et al. (2023) \cite{18} &
 Recompresión JPEG (mozjpeg y MATLAB; $Q$ = 75, 85, 90). &
@@ -427,12 +427,12 @@ Clasificador ajustado a cada canal; seguridad mejor que GMAS solo con cargas alt
 \hline
 Zhu et al. (2018), HiDDeN \cite{zhu2018hidden} &
 Desenfoque gaussiano, \textit{dropout}, recorte y JPEG (simulado en entrenamiento). &
-Exactitud de bits sobre imágenes no vistas; con JPEG real de $Q=50$, 85\,\% tras entrenar con JPEG simulado. &
+Exactitud de bits sobre imágenes no vistas. &
 Robustez limitada a lo visto en entrenamiento; mensajes cortos; robustez y secreto evaluados por separado. \\
 \hline
 Tancik et al. (2020), StegaStamp \cite{tancik2020stegastamp} &
 Perspectiva, desenfoque, color, ruido, JPEG, impresión y captura. &
-Recuperación de bits en condiciones reales (cerca del 95\,\% de 100 bits, con BCH). &
+Recuperación de bits en condiciones reales de impresión y captura. &
 Objetivo de invisibilidad perceptual, no de indetectabilidad; requiere detección y rectificación de la imagen. \\
 \hline
 \end{tabular}
@@ -591,9 +591,9 @@ Iguala o supera el estado del arte en baja detectabilidad. \\
 Zhang et al. (2018) \cite{20} &
 JPEG; familia «dominio resistente + RS-STC» (incluye DMAS, con dither modulation). &
 No aplica. &
-Sí: modelo de errores en ráfaga tras recompresión. &
+Sí: tasa de extracción tras recompresión. &
 No evaluado. &
-Cota inferior de la probabilidad de extracción correcta, coherente con los experimentos. \\
+Análisis de tolerancia a fallos de esa familia de métodos. \\
 \hline
 
 Zhang et al. (2023) \cite{18} &
@@ -607,7 +607,7 @@ Mayor tasa de éxito que GMAS y otros métodos robustos; seguridad mejor que GMA
 Zhu et al. (2018), HiDDeN \cite{zhu2018hidden} &
 Redes de extremo a extremo (codificador, decodificador, adversario). &
 No aplica. &
-Sí: JPEG simulado en entrenamiento; 85\,\% de exactitud de bits con $Q=50$. &
+Sí: JPEG simulado en entrenamiento; exactitud de bits sobre imágenes no vistas. &
 ATS \cite{lerch2016ats} (solo en el experimento sin ruido). &
 Robustez frente a varias distorsiones; 98\,\% de detección si se conocen los pesos. \\
 \hline
@@ -617,12 +617,12 @@ Redes de extremo a extremo con canal físico simulado. &
 No aplica. &
 Sí: JPEG y otras distorsiones, impresión y captura. &
 No evaluado. &
-Cerca del 95\,\% de 100 bits recuperados en condiciones reales (con BCH). \\
+Recuperación de bits en condiciones reales de impresión y captura. \\
 \hline
 
 \textbf{Prototipo (TFM)} &
 DCT-QIM sobre luminancia $Y$ con $RS(8,4)$. &
-Mapa de posiciones derivado de $SK_B$ y de información pública (X25519,HKDF,PRNG). &
+Mapa de posiciones derivado de $SK_B$ y de información pública (X25519, HKDF, PRNG). &
 Se evaluará la recompresión JPEG con distintos factores de calidad $Q$. &
 Aletheia. &
 $\mathrm{BER}$ de la trama de 32 bits ($M=V\parallel T$), $\mathrm{PSNR}$, $\mathrm{SSIM}$ y detectabilidad, limitados a las imágenes y detectores evaluados. \\
@@ -678,7 +678,7 @@ RF-1 & Extracción ciega, sin la imagen original. Como Bob no sabe a priori si u
 \hline
 RF-2 & Trama $M$ de 32 bits: versión $V$ (8 bits) y patrón numérico sintético $T$ (24 bits), usado únicamente para comparar bit a bit la trama enviada y la recibida. & Comparación bit a bit en cada ensayo. \\
 \hline
-RF-3 & El mapa de posiciones se deriva de $PK_B$ y de un par efímero, y se reconstruye con $SK_B$ y $epk_A$ (apartado~\ref{sec:Modelo_Claves}). & RS-1 y RS-3. \\
+RF-3 & El mapa de posiciones se deriva de $PK_B$ y de un par efímero, y se reconstruye con $SK_B$ y $epk_A$ (apartado~\ref{sec:modelo_claves}). & RS-1 y RS-3. \\
 \hline
 RF-4 & Codificación $RS(8,4)$ antes de la inserción, que recupera la trama si el canal altera como máximo dos símbolos por bloque. & Recuperación con 0, 1 y 2 símbolos alterados. \\
 \hline
@@ -686,7 +686,7 @@ RF-5 & Parámetros de inserción y de recompresión configurables, y un registro
 \hline
 RS-1 & Acceso al mapa: con una clave incorrecta, la $\mathrm{BER}$ antes de la corrección es próxima a 0.5. & Media entre 0.45 y 0.55 y ninguna aceptación en 5000 extracciones. \\
 \hline
-RS-2 & Falsos positivos: Bob no acepta imágenes sin señal. & Cero aceptaciones en al menos 5000 extracciones (cota $6\cdot10^{-4}$ al 95\,\%). \\
+RS-2 & Falsos positivos: Bob no acepta imágenes sin señal. & Cero aceptaciones en al menos 5000 extracciones. \\
 \hline
 RS-3 & Reproducibilidad del mapa: con las mismas claves, el mismo mapa; con claves distintas, mapas distintos. & Comparación de mapas en todas las repeticiones. \\
 \hline
@@ -784,7 +784,7 @@ Para mantener una arquitectura flexible, distinguimos entre las decisiones que d
     \item Una arquitectura modular (emisor, canal con pérdida y receptor) y una evaluación en cuatro ejes: tolerancia al canal, calidad visual, acceso al mapa y detectabilidad.
 \end{itemize}
 
-\textbf{Decisiones pendientes de concretar:} el paso de cuantificación $\Delta$, dentro del rango del apartado~\ref{subsec:parametros}, y el subconjunto concreto de imágenes del corpus. Esta separación nos permite justificar las configuraciones a medida que avancemos en las pruebas y analizar su efecto sobre la robustez, la calidad visual y la detectabilidad.
+\textbf{Parámetros concretados:} el paso de cuantificación $\Delta$ y el subconjunto de imágenes del corpus se fijan en el apartado~\ref{subsec:parametros}. Esta separación nos permite justificar las configuraciones y analizar su efecto sobre la robustez, la calidad visual y la detectabilidad.
 
 \section{Especificación de módulos del prototipo}
 \label{sec:especificacion_modulos}
@@ -813,7 +813,7 @@ Hay un detalle más. Todas las marcas se desplazan una cantidad $d\in[0,\Delta)$
 \textbf{Pasos.}
 \begin{enumerate}
     \item Generar el par efímero $(esk_A, epk_A)$ y calcular el secreto compartido con $PK_B$.
-    \item Derivar con HKDF la semilla e inicializar con ella el PRNG (apartado~\ref{sec:Modelo_Claves}).
+    \item Derivar con HKDF la semilla e inicializar con ella el PRNG (apartado~\ref{sec:modelo_claves}).
     \item Codificar la trama $M$ con $RS(8,4)$: cuatro bytes de datos y cuatro de paridad, es decir, 64 bits.
     \item Obtener la componente de luminancia $Y$ de la imagen y dividirla en bloques de $8\times8$.
     \item Con el PRNG, elegir 64 posiciones distintas (un bloque y un coeficiente del conjunto $\mathcal{C}$ cada una) y los 64 valores de \textit{dither}.
@@ -934,11 +934,11 @@ Como cada coeficiente tiene su propio paso, definimos $\Delta_{u,v}=\alpha\,q_{u
 \subsection{Elección del código corrector}
 \label{subsec:eleccion_codigo}
 
-Con posiciones pseudoaleatorias, los errores del canal afectan a bits sueltos, casi independientes entre sí, y un código por bytes como Reed-Solomon pierde su ventaja frente a las ráfagas: $RS(8,4)$ corrige hasta dos símbolos (bytes) erróneos, y tres bits alterados en tres bytes distintos ya lo superan. Un cálculo analítico, suponiendo que cada bit falla con probabilidad $p=0{.}05$, indica que la trama se pierde en el 54\,\% de los casos con $RS(8,4)$, en el 7\,\% con un BCH acortado $(59,32)$ que corrige hasta 5 bits cualesquiera, y en el 21\,\% con repetición triple de los 32 bits. Mantenemos $RS(8,4)$ fijo, conforme al objetivo del trabajo, y tratamos su adecuación como un resultado experimental: registraremos los símbolos y bits erróneos de cada ensayo para comprobar si los errores son independientes o se agrupan. No implementamos BCH ni repetición, y si los errores resultaran independientes, lo discutiremos como una limitación del código elegido.
+Con posiciones pseudoaleatorias, los errores del canal afectan a bits sueltos, casi independientes entre sí, y un código por bytes como Reed-Solomon pierde su ventaja frente a las ráfagas: $RS(8,4)$ corrige hasta dos símbolos (bytes) erróneos, y tres bits alterados en tres bytes distintos ya lo superan. Mantenemos $RS(8,4)$ fijo, conforme al objetivo del trabajo, y tratamos su adecuación como un resultado experimental: registraremos los símbolos y bits erróneos de cada ensayo para comprobar si los errores son independientes o se agrupan. Si los errores resultaran independientes, lo discutiremos como una limitación del código elegido.
 
 
 \section{Modelo de claves}
-\label{sec:Modelo_Claves}
+\label{sec:modelo_claves}
 
 Para incorporar la asimetría al prototipo empleamos un acuerdo de claves Diffie--Hellman sobre curva elíptica (ECDH), con la curva X25519 \cite{rfc7748}, y una función de derivación de claves (KDF), concretamente HKDF con SHA-256 \cite{rfc5869}. El objetivo es que emisor y destinatario obtengan un secreto compartido y lo usen para generar de forma determinista el mapa de posiciones, sin necesidad de haber compartido antes una semilla secreta.
 
@@ -968,7 +968,7 @@ La clave $epk_A$ debe llegar al destinatario para que pueda calcular el secreto 
 Craver \cite{craver1998} aborda este problema para la esteganografía de clave pública con un \textit{warden} activo: complementa el canal subliminal con un canal supraliminal, cuyo contenido no se oculta pero no puede alterarse sin destruir la imagen, para intercambiar la clave pública. Esta línea queda como trabajo futuro. En el prototipo asumimos, como declaramos en el capítulo~1 (apartado~\ref{subsec:delimitacion_alcance}), que $epk_A$ llega a Bob por un canal auxiliar público, distinto de la imagen. Esto tiene tres consecuencias: el sistema no oculta que existe un intercambio de claves, no evaluamos la recuperación de $epk_A$ y las propiedades que defendemos se limitan al acceso al mapa de posiciones.
 
 \section{Plan de evaluación experimental}
-\label{subsec:plan_experimental}
+\label{sec:plan_experimental}
 
 Para responder a los objetivos de la sección~\ref{subsec:objetivos_experimentales}, estructuramos el plan como un procedimiento parametrizable, trazable y reproducible.
 
@@ -1018,43 +1018,48 @@ Para poder repetir los ensayos, el sistema genera un registro estructurado, en f
 \label{chap:implementacion}
 
 En este capítulo vamos a describir cómo hemos implementado el prototipo diseñado en el capítulo~\ref{chap:diseno_solucion}, es decir, cómo organizamos el código, qué decisiones tomamos en cada módulo 
-y con qué pruebas comprobamos que se comporta como esperábamos. Los módulos se explican en el orden en que los hemos desarrollado, de los más sencillos a los que integran todo el flujo.
+y con qué pruebas comprobamos que se comporta como esperábamos. El trabajo corresponde a la fase~3 del plan (desarrollo e integración del prototipo), cuyas tareas, de T3.1 a T3.5, nos sirven de guía a lo largo del capítulo. Los módulos se explican en el orden en que los hemos desarrollado, de los más sencillos a los que integran todo el flujo.
 
 \section{Entorno y organización del código}
 \label{sec:entorno_codigo}
 
-Hemos desarrollado el prototipo en Python 3.11 sobre un equipo personal con Windows, sin GPU, tal como se planificó en el capítulo~1. Las bibliotecas que utilizamos son \texttt{reedsolo} para la codificación Reed-Solomon, \texttt{cryptography} para X25519 y HKDF, \texttt{NumPy} para el generador pseudoaleatorio y la manipulación de bloques, \texttt{OpenCV} y \texttt{Pillow} para el procesamiento de imágenes y la recompresión JPEG, y \texttt{scikit-image} para el cálculo del $\mathrm{SSIM}$. Las versiones exactas quedan registradas en un fichero de requisitos, para que el entorno se pueda reconstruir.
-\\
-\\
-Siguiendo el requisito de modularidad (RNF-3), dividimos el código en módulos independientes, cada uno con una única responsabilidad y con sus propias pruebas unitarias (Tabla~\ref{tab:modulos}). Esta separación nos permite validar cada pieza por separado antes de integrarla con las demás, que era la medida de mitigación prevista para el riesgo de integración (Riesgo~4).
+Hemos desarrollado el prototipo en Python 3.11 sobre un equipo personal con Windows, sin GPU, tal como se planificó en el capítulo~1. Las bibliotecas que utilizamos son \texttt{reedsolo} para la codificación Reed-Solomon, \texttt{cryptography} para X25519 y HKDF, \texttt{NumPy} para el generador pseudoaleatorio y la manipulación de bloques, \texttt{OpenCV} para el procesamiento de imágenes y la recompresión JPEG, \texttt{scikit-image} para el cálculo del $\mathrm{PSNR}$ y el $\mathrm{SSIM}$ y \texttt{Matplotlib} para las figuras. Las versiones exactas quedan registradas en un fichero de requisitos, para que el entorno se pueda reconstruir. El código del prototipo está disponible en el 
+repositorio \url{https://github.com/DiegoHiguita/EsteganografiaPublicaRobusta_TFM}.
+
+Siguiendo el requisito de modularidad (RNF-3), dividimos el código en módulos independientes, cada uno con una única responsabilidad y con sus propias pruebas unitarias (Tabla~\ref{tab:modulos}). Esta separación nos permite validar cada pieza por separado antes de integrarla con las demás, que era la medida de mitigación prevista para el riesgo de integración (Riesgo~4). La tabla indica también a qué tarea de la fase~3 pertenece cada módulo.
 
 \begin{table}[H]
 \centering
 \scriptsize
-\caption{Módulos del prototipo y estado de la implementación.}
+\caption{Módulos del prototipo, tarea a la que pertenecen y estado de la implementación.}
 \label{tab:modulos}
-\begin{tabular}{|p{2.6cm}|p{7.8cm}|p{3.6cm}|}
+\begin{tabular}{|p{2.5cm}|p{6.6cm}|p{1.1cm}|p{3.2cm}|}
 \hline
 \rowcolor{uocnavy}
 \color{white}\textbf{Módulo} &
 \color{white}\textbf{Función} &
+\color{white}\textbf{Tarea} &
 \color{white}\textbf{Estado} \\
 \hline
-\texttt{frame.py} & Construir y analizar la trama de 32 bits y convertir entre bytes y bits. & Implementado y probado. \\
+\texttt{frame.py} & Construir y analizar la trama de 32 bits y convertir entre bytes y bits. & T3.2 & Implementado y probado. \\
 \hline
-\texttt{coding.py} & Codificar y decodificar con Reed-Solomon $RS(8,4)$. & Implementado y probado. \\
+\texttt{coding.py} & Codificar y decodificar con Reed-Solomon $RS(8,4)$. & T3.2 & Implementado y probado. \\
 \hline
-\texttt{crypto.py} & Generar claves X25519 y derivar la semilla con HKDF. & Implementado y probado. \\
+\texttt{crypto.py} & Generar claves X25519 y derivar la semilla con HKDF. & T3.1 & Implementado y probado. \\
 \hline
-\texttt{positions.py} & Generar el mapa pseudoaleatorio de posiciones y los valores de \textit{dither}. & Implementado y probado. \\
+\texttt{positions.py} & Generar el mapa pseudoaleatorio de posiciones y los valores de \textit{dither}. & T3.1 & Implementado y probado. \\
 \hline
-\texttt{stego.py} & Insertar y extraer información mediante QIM-DCT. & Implementado y probado. \\
+\texttt{stego.py} & Insertar y extraer información mediante QIM-DCT. & T3.3 & Implementado y probado. \\
 \hline
-\texttt{channel.py} & Simular la recompresión JPEG. & Implementado y probado. \\
+\texttt{imgutils.py} & Cargar y guardar imágenes y pasar entre color y luminancia. & T3.4 & Implementado y probado. \\
 \hline
-\texttt{metrics.py} & Calcular $\mathrm{BER}$, $\mathrm{PSNR}$ y $\mathrm{SSIM}$. & Implementado y probado. \\
+\texttt{channel.py} & Simular la recompresión JPEG. & T3.4 & Implementado y probado. \\
 \hline
-\texttt{main.py} & Ejecutar el flujo completo con una imagen. & Pendiente. \\
+\texttt{metrics.py} & Calcular $\mathrm{BER}$, $\mathrm{PSNR}$ y $\mathrm{SSIM}$, y clasificar la decodificación. & T3.4 & Implementado y probado. \\
+\hline
+\texttt{main.py} & Ejecutar el flujo completo y registrar cada ensayo. & T3.4 & Implementado y probado. \\
+\hline
+\texttt{analyze.py} & Generar figuras y tablas a partir del registro de ensayos. & T3.5 & Implementado; validado con el piloto. \\
 \hline
 \end{tabular}
 \end{table}
@@ -1065,8 +1070,9 @@ Siguiendo el requisito de modularidad (RNF-3), dividimos el código en módulos 
 \subsection{Trama experimental}
 \label{subsec:impl_frame}
 
-El módulo \texttt{frame.py} construye y analiza la trama $M=V\parallel T$ de 32 bits. Para que emisor y 
-receptor interpreten los datos de la misma forma, fijamos tres convenciones: $V$ ocupa el primer byte, los bytes se ordenan en \textit{big-endian} y los bits de cada byte se recorren del más al menos significativo. El valor esperado de $V$ para el criterio de aceptación (RF-1) es una constante del módulo, $V_{\mathrm{esp}}=\texttt{0x01}$, y el patrón $T$ no se escribe a mano: lo genera una función a partir de un generador con semilla registrada, de modo que cada ensayo se puede repetir (RNF-1).
+Empezamos por la trama, porque es lo más sencillo y lo que más módulos necesitan. El módulo \texttt{frame.py} construye y analiza la trama $M=V\parallel T$ de 32 bits. Para que emisor y 
+receptor interpreten los datos de la misma forma, fijamos tres convenciones: $V$ ocupa el primer byte, los bytes se ordenan en \textit{big-endian} y los bits de cada byte se recorren del más al menos significativo. El valor esperado de $V$ para el criterio de aceptación (RF-1) es una constante del módulo, $V_{\mathrm{esp}}=\texttt{0x01}$, y el patrón $T$ no se escribe a mano: lo genera una función a partir de un generador con semilla registrada, de modo que cada ensayo se puede repetir (RF-5).
+
 Una decisión que cambiamos durante la implementación afecta a las funciones de conversión entre bytes y bits. 
 En las primeras versiones solo aceptaban tramas de 32 bits. Al conectarlas con Reed-Solomon vimos que también debían procesar los 8 bytes, es decir, los 64 bits, de la trama codificada, tanto al insertarla como al reconstruirla en el receptor. Por eso las generalizamos a cualquier longitud múltiplo de 8.
 
@@ -1075,35 +1081,34 @@ En las primeras versiones solo aceptaban tramas de 32 bits. Al conectarlas con R
 
 Para $RS(8,4)$, en \texttt{coding.py} utilizamos la biblioteca \texttt{reedsolo} con cuatro símbolos de paridad sobre $\mathrm{GF}(2^8)$: la entrada son cuatro bytes y la salida, ocho. El decodificador puede terminar de dos maneras cuando hay demasiados errores: lanza una excepción, y entonces sabemos que la trama no se ha podido corregir, o devuelve una trama distinta de la original sin avisar, que es lo que llamamos falsa corrección. Mantenemos separados los dos casos porque, en la evaluación, cuentan ambos como fallos de recuperación.
 
-Las pruebas de este módulo comprueban la capacidad correctora del código con todas las combinaciones que interesan: un byte alterado en cada una de las ocho posiciones, las 28 parejas de posiciones (el límite de dos símbolos erróneos), 16 bits alterados concentrados en dos bytes, y tres bits sueltos en tres bytes distintos, que superan la capacidad. Esta última prueba confirma por qué el código pierde ventaja con errores independientes (apartado~\ref{subsec:eleccion_codigo}). Además, contrastamos la probabilidad teórica de falsa corrección: con 100\,000 palabras aleatorias de 8 bytes y una semilla fija, el decodificador aceptó 42, es decir, $4{.}20\cdot10^{-4}$, que coincide con el valor teórico $4{.}2\cdot10^{-4}$ calculado en el diseño.
+Las pruebas de este módulo comprueban la capacidad correctora del código con todas las combinaciones que interesan: un byte alterado en cada una de las ocho posiciones, las 28 parejas de posiciones (el límite de dos símbolos erróneos), 16 bits alterados concentrados en dos bytes, y tres bits sueltos en tres bytes distintos, que superan la capacidad. Esta última prueba confirma por qué el código pierde ventaja con errores independientes (apartado~\ref{subsec:eleccion_codigo}). Además, contrastamos la probabilidad teórica de falsa corrección: con 100\,000 palabras aleatorias de 8 bytes y una semilla fija, el decodificador aceptó 42, es decir, una frecuencia de $4{.}20\cdot10^{-4}$. Con la trama y la codificación ya probadas quedaba resuelta la tarea T3.2, y el siguiente paso era la parte criptográfica.
 
-\subsection{Acuerdo de claves y derivación de laS semilla}
+\subsection{Acuerdo de claves y derivación de la semilla}
 \label{subsec:impl_crypto}
 
-En el módulo \texttt{crypto.py} implementamos el acuerdo de claves con X25519 y la derivación con HKDF-SHA256 de la biblioteca \texttt{cryptography}. Manejamos las claves como bytes en bruto de 32 bytes, sin exponer los objetos de la biblioteca, lo que simplifica las pruebas y el registro de datos. La semilla se deriva con un contexto formado por una etiqueta fija, la clave pública efímera y la clave pública de Bob, como describimos en el apartado~\ref{sec:Modelo_Claves}.
-\\
-\\
+En el módulo \texttt{crypto.py} implementamos el acuerdo de claves con X25519 y la derivación con HKDF-SHA256 de la biblioteca \texttt{cryptography}. Manejamos las claves como bytes en bruto de 32 bytes, sin exponer los objetos de la biblioteca, lo que simplifica las pruebas y el registro de datos. La semilla se deriva con un contexto formado por una etiqueta fija, la clave pública efímera y la clave pública de Bob, como describimos en el apartado~\ref{sec:modelo_claves}.
+
 Hay dos decisiones que responden directamente a los requisitos de seguridad. Por un lado, la función del 
 emisor devuelve la semilla y la clave pública efímera, pero nunca la privada, de modo que esta no 
 puede acabar en un registro (RS-4). Y por otro, una clave pública de orden bajo, por ejemplo 32 ceros, 
-se rechaza con un error en lugar de producir un secreto predecible. 
+se rechaza con un error en lugar de producir un secreto predecible. Más adelante, al preparar los ensayos reproducibles, añadimos un parámetro opcional a la generación de claves para poder construir una clave privada a partir de unos bytes dados. Este parámetro es solo para las pruebas, y sin él las claves siguen siendo aleatorias.
 
-Con las pruebas pudimos comprobar que Alice y Bob  obtienen el mismo secreto y la misma semilla, que cambiar cualquier elemento del contexto cambia la 
+Con las pruebas pudimos comprobar que Alice y Bob obtienen el mismo secreto y la misma semilla, que cambiar cualquier elemento del contexto cambia la 
 semilla, y que una clave privada incorrecta produce otra semilla distinta (base del requisito RS-1).
 
 \subsection{Mapa de posiciones}
 \label{subsec:impl_positions}
 
 El módulo \texttt{positions.py} convierte la semilla en el mapa de inserción. Inicializamos con ella el generador
- de NumPy (PCG64), elegimos sin repetición 64 pares (bloque, coeficiente) entre todos los candidatos,
- que son el número de bloques por los ocho coeficientes de frecuencia media, y después generamos los 64 valores de \textit{dither} entre 0 y 1. El orden importa: primero las posiciones y después los \textit{dither}, porque emisor y receptor deben consumir el generador igual para obtener el mismo mapa. El bit $i$ de la trama codificada se inserta en la posición $i$ del mapa. Devolvemos el resultado como tuplas, para que no se pueda modificar por accidente.
+de NumPy (PCG64), elegimos sin repetición 64 pares (bloque, coeficiente) entre todos los candidatos,
+que son el número de bloques por los ocho coeficientes de frecuencia media, y después generamos los 64 valores de \textit{dither} entre 0 y 1. El orden importa: primero las posiciones y después los \textit{dither}, porque emisor y receptor deben consumir el generador igual para obtener el mismo mapa. El bit $i$ de la trama codificada se inserta en la posición $i$ del mapa. Devolvemos el resultado como tuplas, para que no se pueda modificar por accidente.
 
-La realización de las pruebas dieron un resultado útil en este módulo. La primera versión devolvía enteros de NumPy y no enteros de Python, y la prueba que volcaba el mapa a JSON, el formato del registro de ensayos, falló. Lo corregimos convirtiendo los valores al construir el mapa. Además, comprobamos que la misma semilla da siempre el mismo mapa, que semillas distintas dan mapas distintos y casi sin posiciones en común, y que los valores quedan dentro de rango. Como limitaciones, PCG64 no es criptográficamente seguro, lo que ya aceptamos en el diseño, y NumPy no garantiza secuencias idénticas entre versiones distintas, por lo que fijamos la versión de la biblioteca.
+La realización de las pruebas dio un resultado útil en este módulo. La primera versión devolvía enteros de NumPy y no enteros de Python, y la prueba que volcaba el mapa a JSON, el formato del registro de ensayos, falló. Lo corregimos convirtiendo los valores al construir el mapa. Además, comprobamos que la misma semilla da siempre el mismo mapa, que semillas distintas dan mapas distintos y casi sin posiciones en común, y que los valores quedan dentro de rango. Como limitaciones, PCG64 no es criptográficamente seguro, lo que ya aceptamos en el diseño, y NumPy no garantiza secuencias idénticas entre versiones distintas, por lo que fijamos la versión de la biblioteca. Con este módulo y el anterior completamos la tarea T3.1.
 
 \subsection{Inserción y extracción QIM-DCT}
 \label{subsec:impl_stego}
 
-En el módulo \texttt{stego.py} implementamos la inserción y la extracción de la trama codificada. Trabajamos solo 
+El corazón del prototipo, la tarea T3.3, está en el módulo \texttt{stego.py}, donde implementamos la inserción y la extracción de la trama codificada. Trabajamos solo 
 con la luminancia $Y$, que nos llega como una matriz de enteros de 8 bits. La carga y el guardado 
 de las imágenes quedan fuera y los resuelve otro módulo.
 
@@ -1117,7 +1122,7 @@ para $Q=50$. Hacemos todo el cálculo en coma flotante y redondeamos a enteros e
 no hay problema, porque la transformada es ortonormal y no se redondea entre una modificación y 
 la siguiente. La imagen de entrada nunca se modifica, porque trabajamos siempre sobre una copia.
 
-En la extracción hacemos el camino inverso, es decir, calculamos la DCT de cada bloque del mapa, 
+En la extracción hacemos el camino inverso: calculamos la DCT de cada bloque del mapa, 
 leemos el coeficiente y decidimos el bit según cuál de los dos retículos queda más cerca del valor 
 recibido, una vez restado el \textit{dither}.
 
@@ -1134,8 +1139,8 @@ requisito RS-1), y las entradas no válidas lanzan una excepción.
 \subsection{Canal con pérdida}
 \label{subsec:impl_channel}
 
-En este módulo, \texttt{channel.py}, simulamos la recompresión JPEG que sufriría la imagen estego en una plataforma 
-real. Su función recibe una imagen en color y una calidad $Q$, la comprime a JPEG en memoria con 
+Para poder integrar el sistema completo (tarea T3.4) necesitábamos simular la recompresión JPEG que sufriría la imagen estego en una plataforma 
+real, y eso es lo que hace el módulo \texttt{channel.py}. Su función recibe una imagen en color y una calidad $Q$, la comprime a JPEG en memoria con 
 OpenCV y la vuelve a decodificar, de modo que devuelve la imagen recomprimida sin escribir 
 ficheros intermedios. Comprimimos la imagen completa y no solo la luminancia, porque es lo que 
 hace un JPEG de verdad. La extracción toma después la luminancia de la imagen recibida.
@@ -1156,7 +1161,7 @@ Con $Q=90$ y $\alpha \in \{2, 3, 4\}$ se recuperan los 64 bits exactos, y con $Q
 con $\alpha=1{.}5$. Estas pruebas no sustituyen al experimento con las imágenes reales, pero 
 comprueban que la cadena entera funciona antes de lanzarlo.
 
-\subsection{Métricas}%                         -> metrics
+\subsection{Métricas}
 \label{subsec:impl_metrics}
 
 El módulo \texttt{metrics.py} reúne todo lo que medimos en cada ensayo. La $\mathrm{BER}$ compara bit a bit 
@@ -1189,12 +1194,61 @@ de otra trama válida y alteramos dos de sus bytes, de modo que RS la corrige ha
 La prueba comprueba que el módulo la clasifica como falsa corrección, y que, al tener la misma 
 versión $V$, el criterio de aceptación la acepta.
 
-% \subsection{Flujo completo}                   -> main
+\subsection{Flujo completo}
+\label{subsec:impl_main}
 
-\section{Pruebas realizadas}
+En el módulo \texttt{main.py} unimos todos los anteriores, y con él cerramos la integración de la tarea T3.4. Su función principal, \texttt{run\_trial}, 
+ejecuta un ensayo completo sobre una imagen: construye la trama $M$ y la 
+codifica con Reed-Solomon, deriva el mapa a partir de las claves, inserta los 
+64 bits en la luminancia, mide el $\mathrm{PSNR}$ y el $\mathrm{SSIM}$ respecto a 
+la original, recomprime la imagen en JPEG con la calidad $Q$, extrae los bits como 
+lo haría Bob y clasifica la decodificación. Recibe la imagen, su identificador y su 
+hash, la calidad $Q$, el factor $\alpha$ y una semilla maestra, y devuelve un registro 
+con todos los resultados del ensayo.
+
+Para que los ensayos sean reproducibles, las claves y la trama de cada uno no son 
+aleatorias, sino que se derivan de la semilla maestra y de un identificador 
+del ensayo, formado por la imagen, la calidad, $\alpha$ y el tipo de ensayo. Con los mismos 
+parámetros se obtiene siempre el mismo registro. Para ello, la generación de claves del 
+módulo de claves (apartado~\ref{subsec:impl_crypto}) admite, de forma opcional, los 
+bytes de la clave privada. Esto solo se usa en las pruebas, ya que en un uso real las 
+claves son aleatorias.
+
+Cada ensayo puede ser de tres tipos. En el normal, Bob usa la clave correcta. En el de clave incorrecta, Bob 
+usa otra clave privada distinta, lo que comprueba que sin la clave no se accede al 
+mapa (RS-1). En el de imagen limpia no se inserta nada y Bob intenta extraer de la 
+imagen original, lo que comprueba que no se aceptan imágenes sin señal (RS-2).
+
+El registro de cada ensayo lo añadimos a un fichero en formato JSON, con una línea por 
+ensayo. Incluye, entre otros campos, el identificador y el hash de la imagen, la versión 
+del código, la calidad $Q$, el factor $\alpha$, la trama enviada, el $\mathrm{PSNR}$, el $\mathrm{SSIM}$, la $\mathrm{BER}$ antes y 
+después de la corrección, el estado de la decodificación y la decisión de 
+aceptación. El resultado de Aletheia queda como no disponible, ya que no se calcula en 
+este módulo. Ninguna clave privada, secreto compartido ni semilla se guarda en el 
+registro (RS-4). Además, \texttt{main.py} incluye una interfaz de línea de comandos que 
+recorre una carpeta de imágenes y lanza todas las combinaciones de 
+calidad y $\alpha$, con los dos ensayos de control por cada calidad.
+
+Las pruebas de este módulo son 12. Comprobamos que el registro contiene todos los 
+campos y se puede guardar como JSON, que con $Q=100$ y $\alpha=4$ la trama se 
+recupera y se acepta, y que con $Q=90$ y $\alpha=2$ también. Verificamos que mismos parámetros 
+dan el mismo registro (RF-5), que ensayos distintos usan tramas distintas y que el 
+primer byte enviado es la versión esperada. Con una clave incorrecta y con una imagen limpia, 
+probados en 30 imágenes distintas, la trama no se recupera nunca, y con la clave 
+incorrecta la $\mathrm{BER}$ media queda entre 0{.}4 y 0{.}6. Por último, comprobamos
+que ninguna clave privada, secreto ni semilla aparece en el registro, que un 
+tipo de ensayo no válido lanza un error y que cada registro se escribe como una línea 
+independiente.
+
+\subsection{Análisis de resultados}
+\label{subsec:impl_analyze}
+
+Para no depender de hojas de cálculo, añadimos un último módulo, \texttt{analyze.py}, que lee el fichero de registro y genera las figuras y las tablas de la evaluación: un mapa de calor de la tasa de recuperación por calidad y por $\alpha$, la $\mathrm{BER}$ antes de la corrección en función de $Q$, el $\mathrm{PSNR}$ y el $\mathrm{SSIM}$ por $\alpha$, y dos tablas ya en formato \LaTeX{} (la de recuperación y la de los controles), que incluimos directamente en este capítulo. Así, cuando lancemos el experimento completo, bastará con ejecutarlo de nuevo sobre el nuevo registro. Este módulo no tiene pruebas unitarias, porque solo transforma datos ya registrados en figuras. Este módulo lo desarrolló la herramienta de IA generativa (véase el apartado~\ref{sec:declaracion_ia}). Lo validamos con el piloto, revisando las figuras a mano.
+
+\section{Pruebas unitarias}
 \label{sec:pruebas}
 
-Cada módulo tiene su propio conjunto de pruebas unitarias, escritas con la biblioteca \texttt{unittest} de Python y ejecutables con un único comando. Las pruebas comprueban cada requisito del apartado~\ref{subsec:requisitos_funcionales} que depende del módulo, y se lanzan completas cada vez que modificamos el código. La Tabla~\ref{tab:pruebas} resume su estado.
+La tarea T3.5 pedía pruebas funcionales y la corrección de los errores que fuesen apareciendo, y la mayor parte de ese trabajo la cubren las pruebas unitarias. Cada módulo tiene su propio conjunto, escritas con la biblioteca \texttt{unittest} de Python y ejecutables con un único comando. Las pruebas comprueban cada requisito del apartado~\ref{subsec:requisitos_funcionales} que depende del módulo, y se lanzan completas cada vez que modificamos el código. En total son 107, y la Tabla~\ref{tab:pruebas} resume su estado.
 
 \begin{table}[H]
 \centering
@@ -1213,7 +1267,7 @@ Cada módulo tiene su propio conjunto de pruebas unitarias, escritas con la bibl
 \hline
 \texttt{coding} & 9 & Corrección de 1 y 2 símbolos en todas las posiciones, fallo con 3 símbolos y tasa de falsa corrección. & RF-4, RS-2 \\
 \hline
-\texttt{crypto} & 9 & Simetría del secreto, determinismo de la semilla, dependencia del contexto, claves inválidas y de orden bajo. & RF-3, RS-1, RS-3, RS-4 \\
+\texttt{crypto} & 12 & Simetría del secreto, determinismo de la semilla, dependencia del contexto, claves inválidas y de orden bajo, y claves reproducibles a partir de unos bytes. & RF-3, RS-1, RS-3, RS-4 \\
 \hline
 \texttt{positions} & 10 & Determinismo, unicidad y rango de las posiciones, entradas inválidas, solapamiento entre semillas y registro en JSON. & RF-3, RS-3 \\
 \hline
@@ -1225,11 +1279,77 @@ Cada módulo tiene su propio conjunto de pruebas unitarias, escritas con la bibl
 \hline
 \texttt{metrics} & 20 & BER con valores conocidos, PSNR y SSIM (imágenes idénticas, valor calculado a mano, entradas inválidas), clasificación de la decodificación (correcta, fallo, falsa corrección construida a propósito), criterio de aceptación por versión y tasa de recuperación. & RF-1, RF-4, RS-2 \\
 \hline
+\texttt{main} & 12 & Campos y formato JSON del registro, recuperación con canal suave, reproducibilidad, tramas distintas por ensayo, controles de clave incorrecta e imagen limpia, ausencia de secretos y escritura línea a línea. & RF-1, RF-2, RF-5, RS-1, RS-2, RS-4 \\
+\hline
 \end{tabular}
 \end{table}
 
-% TODO: actualizar los números de pruebas y añadir las de stego, channel y metrics.
-% TODO: añadir la prueba de integración (ida y vuelta sin canal, BER = 0) y el resultado piloto.
+\section{Prueba de integración con imágenes reales}
+\label{sec:piloto}
+
+Las pruebas unitarias usan imágenes sintéticas, así que, con todos los módulos ya integrados, quisimos ver cómo se comportaba el sistema completo con imágenes reales antes de lanzar el experimento definitivo. Usamos 20 imágenes de la carpeta \texttt{Cover} del conjunto ALASKA2, las nueve calidades JPEG previstas ($Q \in \{50, 60, 70, 75, 80, 85, 90, 95, 100\}$) y los cuatro valores de $\alpha$ ($1{.}5$, $2$, $3$ y $4$). A cada combinación le añadimos los dos controles descritos en el apartado~\ref{subsec:impl_main}, el de clave incorrecta y el de imagen sin insertar, lo que suma 1\,080 ensayos: 720 normales y 360 de control. Este conjunto es demasiado pequeño para sacar conclusiones, y la evaluación completa se hará más adelante con las 500 imágenes previstas. Aquí lo usamos como prueba de que el prototipo funciona de principio a fin y de que el registro recoge lo necesario.
+
+Cada ensayo genera un registro con los campos descritos antes. A modo de ejemplo, este es el de un ensayo normal con $Q=75$ y $\alpha=2$, donde se recupera la trama sin ningún error de bit:
+
+\begin{verbatim}
+{"trial_id": "00001.jpg|Q75|a2|normal", "image_id": "00001.jpg",
+ "image_sha256": "6736b93a...", "code_version": "pec3-0.1",
+ "control": "normal", "quality": 75, "jpeg_codec": "opencv-5.1.0",
+ "alpha": 2, "rs_config": "RS(8,4)", "frame_hex": "012b370f",
+ "psnr": 63.46, "ssim": 0.99986, "ber_raw": 0.0, "ber_rs": 0.0,
+ "status": "correcta", "accepted": true,
+ "aletheia": null, "aletheia_status": "no_disponible",
+ "time_s": 0.127}
+\end{verbatim}
+
+\paragraph{Recuperación.} La Tabla~\ref{tab:recuperacion} y la Figura~\ref{fig:recuperacion} muestran la tasa de recuperación $R$ por calidad y por $\alpha$. Con $\alpha=3$ y $\alpha=4$ se recupera la trama en todos los casos, incluso con $Q=50$. Con $\alpha=2$ la recuperación es completa a partir de $Q=60$, mientras que con $Q=50$ llega al 0{.}45. Con $\alpha=1{.}5$ solo es total a partir de $Q=75$. Este comportamiento es el que predice el criterio del capítulo~\ref{chap:diseno_solucion}, según el cual el paso debe superar el doble del paso de cuantificación del canal: con $\alpha=1{.}5$ no se cumple y la trama se pierde con las calidades más bajas, con $\alpha=2$ estamos justo en el límite, y con $\alpha \geq 3$ hay margen. La $\mathrm{BER}$ antes de Reed-Solomon (Figura~\ref{fig:ber}) sigue el mismo patrón: con $Q \geq 90$ es nula para cualquier $\alpha$, y con $Q=50$ llega a 0{.}25 para $\alpha=1{.}5$ y a 0{.}05 para $\alpha=2$.
+
+\input{resultados/tabla_recuperacion.tex}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{resultados/fig_recuperacion.pdf}
+\caption{Tasa de recuperación $R$ por calidad JPEG $Q$ y factor $\alpha$ en el piloto (20 imágenes por celda).}
+\label{fig:recuperacion}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{resultados/fig_ber.pdf}
+\caption{$\mathrm{BER}$ media antes de la corrección Reed-Solomon en función de la calidad $Q$. Las curvas de $\alpha=3$ y $\alpha=4$ valen cero y se solapan.}
+\label{fig:ber}
+\end{figure}
+
+\paragraph{Calidad visual.} Con los valores de $\alpha$ probados, el $\mathrm{PSNR}$ entre la imagen original y la estego-imagen queda entre 56{.}9 y 68{.}2~dB, y el $\mathrm{SSIM}$ no baja de 0{.}9988, muy por encima de los umbrales de 38~dB y 0{.}95 que fijamos. Como cabe esperar, la calidad baja ligeramente al aumentar $\alpha$ (Figura~\ref{fig:calidad}).
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{resultados/fig_calidad.pdf}
+\caption{$\mathrm{PSNR}$ y $\mathrm{SSIM}$ entre la imagen original y la estego-imagen, según $\alpha$.}
+\label{fig:calidad}
+\end{figure}
+
+\paragraph{Controles.} En los dos controles la $\mathrm{BER}$ media ronda 0{.}5 (Tabla~\ref{tab:controles}), que es lo esperado cuando no se conoce el mapa. Ningún ensayo de control fue aceptado. Hubo una única falsa corrección, con clave incorrecta, y el criterio de aceptación la rechazó porque su campo de versión no era el esperado.
+
+\input{resultados/tabla_controles.tex}
+
+\paragraph{Rendimiento.} Un ensayo completo tarda de media 0{.}12~s y como máximo 0{.}22~s en el equipo de desarrollo, muy por debajo de los 10~s que fijamos en el requisito RNF-1.
+
+\section{Errores detectados y su corrección}
+\label{sec:errores}
+
+Parte de la tarea T3.5 consistía en corregir los errores que fuesen apareciendo al integrar los módulos, y esta sección recoge los más significativos. Casi todos los encontramos gracias a las pruebas, y tras corregirlos dejamos pruebas que los cubren para que no puedan volver sin que lo notemos.
+
+El primero fue un error de lógica que no producía ninguna excepción: la primera versión de la extracción devolvía solo el primer bit en lugar de los 64, y los cuatro tests de ida y vuelta fallaron a la vez. Un fallo así habría pasado desapercibido en el experimento completo, donde habría parecido un canal que destruye la información en lugar de un error de programación. De naturaleza parecida fue un error en el cálculo de la $\mathrm{BER}$, donde la comprobación de secuencia vacía estaba invertida y rechazaba precisamente las secuencias válidas.
+
+Un segundo grupo fueron los errores de tipos entre módulos. El caso ya descrito en el módulo del mapa, los enteros de NumPy que no se pueden guardar en JSON, nos hizo vigilar los tipos en el resto de módulos que alimentan el registro, y por eso convertimos explícitamente los valores del $\mathrm{PSNR}$ y el $\mathrm{SSIM}$ a números de Python antes de guardarlos.
+
+El tercer grupo fueron las entradas que la primera versión aceptaba sin avisar. OpenCV, por ejemplo, admite calidades JPEG fuera de rango y las recorta en silencio, de modo que un valor mal escrito en un barrido habría dado resultados falsos sin ningún error visible. Por eso el canal valida la calidad antes de comprimir. Algo parecido ocurría al sustituir la luminancia: una matriz de forma incorrecta pero ``estirable'' por NumPy se aceptaba sin queja, un fallo que encontramos al revisar el código y no con las pruebas, y que corregimos validando la forma de forma explícita.
+
+\section{Limitaciones y trabajo pendiente}
+\label{sec:limitaciones_impl}
+
+El prototipo cumple lo previsto en la fase~3, pero conviene dejar claro qué falta. La evaluación completa, con las 500 imágenes y los 18\,000 ensayos, queda para la fase de evaluación, y el estegoanálisis con Aletheia todavía no se ha ejecutado, por eso el campo correspondiente del registro figura como no disponible. Además, simulamos el canal con una única implementación de JPEG, la de OpenCV, y las imágenes de ALASKA2 se distribuyen ya en formato JPEG, por lo que las decodificamos antes de insertar. Por último, las claves reproducibles de los ensayos son un recurso de prueba y no deben usarse fuera de ellas.
 
 % -------------------------------
 
@@ -1274,14 +1394,14 @@ Cada módulo tiene su propio conjunto de pruebas unitarias, escritas con la bibl
 %     \item ¿La metodología prevista ha sido suficientemente adecuada?
 %     \item ¿Ha habido que introducir cambios para garantizar el éxito del trabajo? ¿Por qué? 
 % \end{itemize}
-% \item De los impactos previstos en \ref{s:etic}, ético-sociales, de sostenibilidad y de diversidad, evaluar/mencionar si se han mitigado (si eran negativos) o si se han conseguido (si eran positivos). 
-% \item Si han aparecido impactos no previstos a \ref{s:etic}, evaluar/mencionar cómo se han mitigado (si eran negativos) o que han aportado (si eran positivos).
+% \item De los impactos previstos en \ref{sec:impacto_etico_social}, ético-sociales, de sostenibilidad y de diversidad, evaluar/mencionar si se han mitigado (si eran negativos) o si se han conseguido (si eran positivos). 
+% \item Si han aparecido impactos no previstos a \ref{sec:impacto_etico_social}, evaluar/mencionar cómo se han mitigado (si eran negativos) o que han aportado (si eran positivos).
 % \item Las líneas de trabajo futuro que no se han podido explorar en este trabajo y han quedado pendientes.
 
 
 %\item Una descripción de las conclusiones del trabajo: Qué lecciones se han aprendido del trabajo?
 %\item Una reflexión crítica sobre el logro de los objetivos planteados inicialmente: Hemos conseguido todos los objetivos? Si la respuesta es negativa, por qué motivo?
-%\item De los impactos previstos a la sección \ref{s:etic}, una evaluación, o al menos, mención, sobre si se han mitigado (si eran negativos) o si se han conseguido (si eran positivos). 
+%\item De los impactos previstos a la sección \ref{sec:impacto_etico_social}, una evaluación, o al menos, mención, sobre si se han mitigado (si eran negativos) o si se han conseguido (si eran positivos). 
 %\end{itemize}
 
 %\section{Líneas de futuro}

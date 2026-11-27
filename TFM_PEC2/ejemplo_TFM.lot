@@ -8,6 +8,8 @@
 \contentsline {table}{\numberline {3.2}{\ignorespaces Casos de uso del prototipo.}}{33}{table.3.2}%
 \contentsline {table}{\numberline {3.3}{\ignorespaces Parámetros de inserción y criterio de elección.}}{39}{table.3.3}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Módulos del prototipo y estado de la implementación.}}{44}{table.4.1}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Pruebas unitarias por módulo.}}{48}{table.4.2}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Módulos del prototipo, tarea a la que pertenecen y estado de la implementación.}}{45}{table.4.1}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Pruebas unitarias por módulo.}}{50}{table.4.2}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Tasa de recuperación $R$ por calidad $Q$ y factor $\alpha $ (20 imágenes por celda).}}{51}{table.4.3}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Controles de acceso al mapa y de falsos positivos.}}{53}{table.4.4}%
 \addvspace {10\p@ }

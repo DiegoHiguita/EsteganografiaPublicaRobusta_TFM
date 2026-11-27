@@ -6,4 +6,7 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Arquitectura general del sistema de transmisión esteganográfica a través del canal con pérdida.}}{35}{figure.3.1}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Ejemplo ilustrativo de QIM con \textit {dither} y recompresión JPEG, con un paso $q=10$ de JPEG. En A, $\Delta =4q$ y el bit sobrevive; en B, $\Delta =q$ y se pierde.}}{36}{figure.3.2}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Tasa de recuperación $R$ por calidad JPEG $Q$ y factor $\alpha $ en el piloto (20 imágenes por celda).}}{52}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces $\mathrm {BER}$ media antes de la corrección Reed-Solomon en función de la calidad $Q$. Las curvas de $\alpha =3$ y $\alpha =4$ valen cero y se solapan.}}{52}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces $\mathrm {PSNR}$ y $\mathrm {SSIM}$ entre la imagen original y la estego-imagen, según $\alpha $.}}{53}{figure.4.3}%
 \addvspace {10\p@ }

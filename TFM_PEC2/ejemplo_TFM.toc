@@ -33,7 +33,7 @@
 \contentsline {paragraph}{Alternativas aprendidas de extremo a extremo.}{24}{section*.8}%
 \contentsline {subsection}{\numberline {2.3.4}Estegoanálisis y detectabilidad}{25}{subsection.2.3.4}%
 \contentsline {subsection}{\numberline {2.3.5}Software y herramientas existentes}{26}{subsection.2.3.5}%
-\contentsline {section}{\numberline {2.4}Esteganografía de clave pública: de los modelos formales a la práctica experimental}{27}{section.2.4}%
+\contentsline {section}{\numberline {2.4}Esteganografía de clave pública: de los modelos formales a la práctica experimental}{26}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}El marco fundacional de von Ahn y Hopper}{27}{subsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.4.2}Extensión del modelo ante adversarios activos: Backes y Cachin}{27}{subsection.2.4.2}%
 \contentsline {section}{\numberline {2.5}Análisis comparativo}{28}{section.2.5}%
@@ -65,10 +65,19 @@
 \contentsline {section}{\numberline {4.2}Módulos implementados}{45}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Trama experimental}{45}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Codificación Reed-Solomon}{45}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}Acuerdo de claves y derivación de laS semilla}{45}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.3}Acuerdo de claves y derivación de la semilla}{46}{subsection.4.2.3}%
 \contentsline {subsection}{\numberline {4.2.4}Mapa de posiciones}{46}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}Inserción y extracción QIM-DCT}{46}{subsection.4.2.5}%
+\contentsline {subsection}{\numberline {4.2.5}Inserción y extracción QIM-DCT}{47}{subsection.4.2.5}%
 \contentsline {subsection}{\numberline {4.2.6}Canal con pérdida}{47}{subsection.4.2.6}%
-\contentsline {subsection}{\numberline {4.2.7}Métricas}{47}{subsection.4.2.7}%
-\contentsline {section}{\numberline {4.3}Pruebas realizadas}{48}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Bibliograf\'{\i }a}{49}{chapter.5}%
+\contentsline {subsection}{\numberline {4.2.7}Métricas}{48}{subsection.4.2.7}%
+\contentsline {subsection}{\numberline {4.2.8}Flujo completo}{48}{subsection.4.2.8}%
+\contentsline {subsection}{\numberline {4.2.9}Análisis de resultados}{49}{subsection.4.2.9}%
+\contentsline {section}{\numberline {4.3}Pruebas unitarias}{49}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Prueba de integración con imágenes reales}{50}{section.4.4}%
+\contentsline {paragraph}{Recuperación.}{51}{section*.13}%
+\contentsline {paragraph}{Calidad visual.}{53}{section*.14}%
+\contentsline {paragraph}{Controles.}{53}{section*.15}%
+\contentsline {paragraph}{Rendimiento.}{53}{section*.16}%
+\contentsline {section}{\numberline {4.5}Errores detectados y su corrección}{53}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Limitaciones y trabajo pendiente}{54}{section.4.6}%
+\contentsline {chapter}{\numberline {5}Bibliograf\'{\i }a}{55}{chapter.5}%

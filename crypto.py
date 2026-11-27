@@ -16,24 +16,31 @@ SEED_SIZE = 32                     # bytes de la semilla derivada
 CONTEXT_LABEL = b"tfm-stego-v1"    # etiqueta del contexto C de la derivación (apartado 3.4 de la memoria)
 
 
-def generate_keypair() -> tuple[bytes, bytes]:
+def generate_keypair(private_bytes: bytes | None = None) -> tuple[bytes, bytes]:
     """
     Genera un par de claves X25519.
+    Args:
+        private_bytes (bytes | None): si se da, 32 bytes con los que construir la clave privada
+            (solo para pruebas reproducibles). Si es None, la clave es aleatoria.
     Returns:
         tuple[bytes, bytes]: (clave_privada, clave_publica), de 32 bytes cada una.
+    Raises:
+        ValueError: Si private_bytes no tiene 32 bytes.
     """
-    pk = X25519PrivateKey.generate()
-    private_bytes = pk.private_bytes(
-        encoding=serialization.Encoding.Raw, #bytes en formato binario puro, sin codificación adicional ni estructura ASN.1/DER.
-        format=serialization.PrivateFormat.Raw,
-        encryption_algorithm=serialization.NoEncryption()
-    )
+    if private_bytes is None:
+        private_key_obj = X25519PrivateKey.generate()
+    else:
+        if len(private_bytes) != KEY_SIZE:
+            raise ValueError(f"La clave privada debe tener {KEY_SIZE} bytes.")
+        private_key_obj = X25519PrivateKey.from_private_bytes(private_bytes)
 
-    public_bytes = pk.public_key().public_bytes(
-        encoding=serialization.Encoding.Raw,
-        format=serialization.PublicFormat.Raw
+    private_key = private_key_obj.private_bytes(
+        serialization.Encoding.Raw, serialization.PrivateFormat.Raw, serialization.NoEncryption()
     )
-    return private_bytes, public_bytes 
+    public_key = private_key_obj.public_key().public_bytes(
+        serialization.Encoding.Raw, serialization.PublicFormat.Raw
+    )
+    return private_key, public_key
 
 def compute_shared_secret(private_key: bytes, peer_public_key: bytes) -> bytes:
     """

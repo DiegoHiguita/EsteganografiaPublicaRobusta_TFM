@@ -99,6 +99,23 @@ class TestCrypto(unittest.TestCase):
         self.assertEqual(len(seed), crypto.SEED_SIZE)
         self.assertEqual(len(epk), crypto.KEY_SIZE)
 
+    def test_keypair_from_private_bytes_is_reproducible(self):
+        """La misma clave privada da siempre el mismo par."""
+        priv = bytes(range(32))
+        a = crypto.generate_keypair(priv)
+        b = crypto.generate_keypair(priv)
+        self.assertEqual(a, b)
+        self.assertEqual(a[0], priv)
+        self.assertEqual(len(a[1]), 32)
+
+    def test_keypair_from_private_bytes_invalid_length(self):
+        """Una clave privada de longitud incorrecta lanza ValueError."""
+        with self.assertRaises(ValueError):
+            crypto.generate_keypair(b"corta")
+
+    def test_keypair_without_argument_is_random(self):
+        """Sin argumento, dos llamadas dan pares distintos."""
+        self.assertNotEqual(crypto.generate_keypair(), crypto.generate_keypair())
 
 if __name__ == "__main__":
     unittest.main()

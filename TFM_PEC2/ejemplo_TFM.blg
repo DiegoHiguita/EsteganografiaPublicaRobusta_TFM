@@ -1,14 +1,14 @@
 [0] Config.pm:329> INFO - This is Biber 2.22
-[0] Config.pm:332> INFO - Logfile is 'ejemplo_TFM.blg'
-[150] biber-MSWIN64:342> INFO - === 
-[208] Biber.pm:421> INFO - Reading 'ejemplo_TFM.bcf'
-[378] Biber.pm:1002> INFO - Found 36 citekeys in bib section 0
-[398] Biber.pm:4487> INFO - Processing section 0
-[412] Biber.pm:4680> INFO - Looking for bibtex file 'referencias.bib' for section 0
-[502] bibtex.pm:1713> INFO - LaTeX decoding ...
-[603] bibtex.pm:1519> INFO - Found BibTeX data source 'referencias.bib'
-[906] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[906] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
-[907] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'es-ES'
-[952] bbl.pm:676> INFO - Writing 'ejemplo_TFM.bbl' with encoding 'UTF-8'
-[977] bbl.pm:779> INFO - Output to ejemplo_TFM.bbl
+[1] Config.pm:332> INFO - Logfile is 'ejemplo_TFM.blg'
+[242] biber-MSWIN64:342> INFO - === 
+[303] Biber.pm:421> INFO - Reading 'ejemplo_TFM.bcf'
+[593] Biber.pm:1002> INFO - Found 34 citekeys in bib section 0
+[666] Biber.pm:4487> INFO - Processing section 0
+[684] Biber.pm:4680> INFO - Looking for bibtex file 'referencias.bib' for section 0
+[811] bibtex.pm:1713> INFO - LaTeX decoding ...
+[998] bibtex.pm:1519> INFO - Found BibTeX data source 'referencias.bib'
+[1771] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1771] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1772] Biber.pm:4307> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'es-ES'
+[1887] bbl.pm:676> INFO - Writing 'ejemplo_TFM.bbl' with encoding 'UTF-8'
+[1947] bbl.pm:779> INFO - Output to ejemplo_TFM.bbl

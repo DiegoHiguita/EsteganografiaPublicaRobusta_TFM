@@ -427,10 +427,6 @@ All rights reserved. Reproduction in whole or in part of this work by any means 
 \textcolor{darkblueUOC}{\textbf{\@nomPDC}}
 
 \vspace*{1cm}
-\textcolor{darkblueUOC}{\nompracode}\\
-\textcolor{darkblueUOC}{\@nomPRA}
-
-\vspace*{1cm}
 
 \textcolor{darkblueUOC}{\@date}
 \vspace*{\fill}
@@ -528,8 +524,6 @@ All rights reserved. Reproduction in whole or in part of this work by any means 
 \hline
 \textcolor{darkblueUOC}{\nompdccode} &\@nomPDC\\
 \hline
-\textcolor{darkblueUOC}{\nompracode} & \@nomPRA \\
-\hline
 \textcolor{darkblueUOC}{\datalliuramentcode} & \@date\\
 \hline
 \textcolor{darkblueUOC}{\titulaciocode} & \@titulac\\
@@ -588,4 +582,3 @@ All rights reserved. Reproduction in whole or in part of this work by any means 
 
 
 \relax
-

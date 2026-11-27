@@ -1,9 +1,8 @@
 # Python 3.11.4
-# pip freeze | findstr /i "reedsolo cryptography numpy opencv pillow scikit-image" 
+# pip freeze | findstr /i "reedsolo cryptography numpy opencv scikit-image matplotlib"
 reedsolo == 1.7.0        # decode() devuelve 3 valores desde la 1.0
-cryptography == 50.0.2		
+cryptography == 50.0.2
 numpy ==2.4.6
 opencv-python==5.1.0.95
-pillow==13.0.0
 scikit-image==0.26.0         # SSIM
-pytest
+matplotlib==3.11.2

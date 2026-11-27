@@ -647,77 +647,6 @@
       \endverb
       \keyw{Cover Image,Distortion Function,Filter Bank,Stego Image,Wavelet Coefficient}
     \endentry
-    \entry{10}{online}{}{}
-      \name{author}{1}{}{%
-        {{hash=7a17c6b4817d8ed2aa5cdd30d7e1ddb0}{%
-           family={Hostalot},
-           familyi={H\bibinitperiod},
-           given={Daniel\bibnamedelima Lerch},
-           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
-      }
-      \strng{namehash}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
-      \strng{fullhash}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
-      \strng{fullhashraw}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
-      \strng{bibnamehash}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
-      \strng{authorbibnamehash}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
-      \strng{authornamehash}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
-      \strng{authorfullhash}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
-      \strng{authorfullhashraw}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
-      \field{extraname}{1}
-      \field{sortinit}{H}
-      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{shorttitle}
-      \field{abstract}{Capítulo 'Esteganografía en imágenes {JPEG}' del libro 'Esteganografía para programadores Python'}
-      \field{langid}{spanish}
-      \field{shorttitle}{Esteganografía para programadores Python}
-      \field{title}{Esteganografía para programadores Python: Esteganografía en imágenes {JPEG}}
-      \field{urlday}{2}
-      \field{urlmonth}{10}
-      \field{urlyear}{2026}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://daniellerch.me/stego/books/stegopython/jpegimages-es/
-      \endverb
-      \verb{url}
-      \verb https://daniellerch.me/stego/books/stegopython/jpegimages-es/
-      \endverb
-    \endentry
-    \entry{2}{online}{}{}
-      \name{author}{1}{}{%
-        {{hash=7a17c6b4817d8ed2aa5cdd30d7e1ddb0}{%
-           family={Hostalot},
-           familyi={H\bibinitperiod},
-           given={Daniel\bibnamedelima Lerch},
-           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
-      }
-      \strng{namehash}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
-      \strng{fullhash}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
-      \strng{fullhashraw}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
-      \strng{bibnamehash}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
-      \strng{authorbibnamehash}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
-      \strng{authornamehash}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
-      \strng{authorfullhash}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
-      \strng{authorfullhashraw}{7a17c6b4817d8ed2aa5cdd30d7e1ddb0}
-      \field{extraname}{2}
-      \field{sortinit}{H}
-      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Laboratorio de Esteganografía, Estegoanálisis y watermarking}
-      \field{langid}{spanish}
-      \field{title}{{StegoLab}}
-      \field{urlday}{26}
-      \field{urlmonth}{9}
-      \field{urlyear}{2026}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://daniellerch.me/stegolab-es/
-      \endverb
-      \verb{url}
-      \verb https://daniellerch.me/stegolab-es/
-      \endverb
-    \endentry
     \entry{kodovsky2012jpegrich}{inproceedings}{}{}
       \name{author}{2}{}{%
         {{hash=6d246bbc0f02984feac492853e2011eb}{%
@@ -749,6 +678,9 @@
       \field{year}{2012}
       \field{pages}{81\bibrangedash 93}
       \range{pages}{13}
+      \verb{doi}
+      \verb 10.1117/12.907495
+      \endverb
     \endentry
     \entry{rfc5869}{report}{}{}
       \name{author}{2}{}{%
@@ -847,6 +779,40 @@
       \verb https://www.rfc-editor.org/info/rfc7748
       \endverb
     \endentry
+    \entry{2}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=ec46ce3bef1df5569e32d84182dbfacb}{%
+           family={Lerch\bibnamedelima Hostalot},
+           familyi={L\bibinitperiod\bibinitdelim H\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{ec46ce3bef1df5569e32d84182dbfacb}
+      \strng{fullhash}{ec46ce3bef1df5569e32d84182dbfacb}
+      \strng{fullhashraw}{ec46ce3bef1df5569e32d84182dbfacb}
+      \strng{bibnamehash}{ec46ce3bef1df5569e32d84182dbfacb}
+      \strng{authorbibnamehash}{ec46ce3bef1df5569e32d84182dbfacb}
+      \strng{authornamehash}{ec46ce3bef1df5569e32d84182dbfacb}
+      \strng{authorfullhash}{ec46ce3bef1df5569e32d84182dbfacb}
+      \strng{authorfullhashraw}{ec46ce3bef1df5569e32d84182dbfacb}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Laboratorio de Esteganografía, Estegoanálisis y watermarking}
+      \field{langid}{spanish}
+      \field{title}{{StegoLab}}
+      \field{urlday}{26}
+      \field{urlmonth}{9}
+      \field{urlyear}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://daniellerch.me/stegolab-es/
+      \endverb
+      \verb{url}
+      \verb https://daniellerch.me/stegolab-es/
+      \endverb
+    \endentry
     \entry{1}{software}{}{}
       \name{author}{2}{}{%
         {{hash=e7947392c7131c7deb0a58426f61f977}{%
@@ -875,7 +841,6 @@
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{An open-source toolbox for steganalysis}
       \field{month}{1}
-      \field{note}{original-date: 2017-08-26T20:50:34Z}
       \field{shorttitle}{Aletheia}
       \field{title}{Aletheia: an open-source toolbox for steganalysis}
       \field{urlday}{25}
@@ -923,25 +888,8 @@
       \field{year}{2016}
       \field{pages}{45\bibrangedash 59}
       \range{pages}{15}
-    \endentry
-    \entry{8}{online}{}{}
-      \field{sortinit}{M}
-      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
-      \field{labeltitlesource}{shorttitle}
-      \field{abstract}{Why metadata matters as much as message content: traffic analysis, what encrypted platforms still observe and retain, and practical approaches to minimising metadata …}
-      \field{langid}{spanish}
-      \field{shorttitle}{Metadata}
-      \field{title}{Metadata: The Half of Privacy That Encryption Doesn't Cover}
-      \field{titleaddon}{Attomus}
-      \field{urlday}{3}
-      \field{urlmonth}{10}
-      \field{urlyear}{2026}
-      \field{urldateera}{ce}
-      \verb{urlraw}
-      \verb https://attomus.com/blog/2026-metadata-what-encryption-does-not-hide/
-      \endverb
-      \verb{url}
-      \verb https://attomus.com/blog/2026-metadata-what-encryption-does-not-hide/
+      \verb{doi}
+      \verb 10.1016/j.engappai.2015.12.013
       \endverb
     \endentry
     \entry{15}{article}{}{}
@@ -1028,13 +976,11 @@
       \field{isbn}{9783540364153}
       \field{langid}{english}
       \field{month}{7}
-      \field{note}{Google-Books-{ID}: {ClxqCQAAQBAJ}}
       \field{pagetotal}{438}
       \field{shorttitle}{Information Hiding}
       \field{title}{Information Hiding: 5th International Workshop, {IH} 2002, Noordwijkerhout, The Netherlands, October 7-9, 2002, Revised Papers}
       \field{year}{2003}
       \field{dateera}{ce}
-      \keyw{Computers / General,Computers / Information Technology,Computers / Networking / General,Computers / Operating Systems / General,Computers / Security / Cryptography \& Encryption,Computers / Social Aspects,Law / Science \& Technology,Social Science / General}
     \endentry
     \entry{provos2001outguess}{inproceedings}{}{}
       \name{author}{1}{}{%
@@ -1151,6 +1097,9 @@
       \field{year}{2015}
       \field{pages}{15\bibrangedash 23}
       \range{pages}{9}
+      \verb{doi}
+      \verb 10.1145/2756601.2756608
+      \endverb
     \endentry
     \entry{13}{article}{}{}
       \name{author}{2}{}{%
@@ -1267,6 +1216,9 @@
       \field{booktitle}{Information Hiding (IH 2001)}
       \field{title}{{F5}---A Steganographic Algorithm: High Capacity Despite Better Steganalysis}
       \field{year}{2001}
+      \verb{doi}
+      \verb 10.1007/3-540-45496-9_21
+      \endverb
     \endentry
     \entry{yousfi2020imagenet}{inproceedings}{}{}
       \name{author}{4}{}{%
